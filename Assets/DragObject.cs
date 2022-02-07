@@ -38,6 +38,9 @@ public class DragObject : MonoBehaviour {
           y = 0;
         }
       }
+      if(transform.position.x + x < -1.29f || transform.position.x + x > 1.29f) {
+        x = 0;
+      }
       transform.Translate(x, y, 0, Space.World);
       
 
