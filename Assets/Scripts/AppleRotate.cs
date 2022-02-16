@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AppleRotate : MonoBehaviour {
   public float speed = 30;
-  public Animator appleAnimator;
+  public Animator warpAnimator;
   public GameObject[] clouds;
+  public GameObject cubeToGenerate;
+  public GameObject cubeParent;
 
   private float timer = 0;
   private int clickNum = 0;
@@ -38,7 +40,9 @@ public class AppleRotate : MonoBehaviour {
     if (isClick) {
       timer += Time.deltaTime;
       if (clickNum >= 3) {
-        appleAnimator.Play("WrapAnim");
+        var myNewCube = Instantiate(cubeToGenerate, new Vector3(-.3f, -.786f, .4f), Quaternion.identity);
+        myNewCube.transform.parent = gameObject.transform;
+        warpAnimator.Play("cubeAnim");
         isClick = false;
         CanShake = false;
       }
