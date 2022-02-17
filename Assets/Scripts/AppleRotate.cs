@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.Events;
 
 public class AppleRotate : MonoBehaviour {
   public float speed = 30;
   public Animator warpAnimator;
   public GameObject[] clouds;
-  public GameObject cubeToGenerate;
+  public GameObject apple;
+  public GameObject cube;
   public GameObject cubeParent;
+  public GameObject waterPipe;
+  public GameObject tree;
+  public Transform startButton;
+  public Transform startButtonEndMovePos;
+  public Transform secondStageCameraPos;
+  public Transform cube4PosAfterClick;
+  public Transform smallTreePos;
+
+
 
   private float timer = 0;
   private int clickNum = 0;
   private bool isClick = false;
   private bool CanShake = true;
+  private bool isRotate = true;
   // Start is called before the first frame update
   void Start() {
     foreach (var cloud in clouds) {
@@ -26,7 +39,10 @@ public class AppleRotate : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
+    if (isRotate) {
+      transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
+    }
+
 
     if (Input.GetMouseButtonDown(0) && CanShake) {
       CameraShake.ins.Shake();
@@ -40,9 +56,11 @@ public class AppleRotate : MonoBehaviour {
     if (isClick) {
       timer += Time.deltaTime;
       if (clickNum >= 3) {
-        var myNewCube = Instantiate(cubeToGenerate, new Vector3(-.3f, -.786f, .4f), Quaternion.identity);
-        myNewCube.transform.parent = gameObject.transform;
-        warpAnimator.Play("cubeAnim");
+        //var myNewCube = Instantiate(cubeToGenerate, new Vector3(-.3f, -.786f, .4f), Quaternion.identity);
+        //myNewCube.transform.parent = gameObject.transform;
+        cube.SetActive(true);
+        //warpAnimator.Play("cubeAnim");
+        cube.GetComponent<showStartButton>().appRotate = this;
         isClick = false;
         CanShake = false;
       }
@@ -70,5 +88,25 @@ public class AppleRotate : MonoBehaviour {
         a += Time.deltaTime / 3;
       }
     }
+  }
+  public void ShowTree() {
+    tree.SetActive(true);
+    tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {
+
+    });
+    tree.transform.DOScale(1, 1);
+  }
+  public void StartTheSecondStage() {
+    isRotate = false;
+    apple.SetActive(false);
+    Camera.main.transform.DOMove(secondStageCameraPos.position, 1).OnComplete(()=> {
+      Animator anitor = cube.GetComponent<Animator>();
+      Destroy(anitor);
+      Transform cube4 = cube.transform.Find("Cube 4");
+      cube4.DOMove(cube4PosAfterClick.position, 2);
+      waterPipe.SetActive(true);
+    });
+    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+    transform.DORotate(new Vector3(0, 0, 0), 1);
   }
 }
