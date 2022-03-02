@@ -11,7 +11,12 @@ public class AppleRotate : MonoBehaviour {
   public GameObject apple;
   public GameObject cube;
   public GameObject cubeParent;
+  //FirstStage
   public GameObject waterPipe;
+  //SecondStage
+  public GameObject waterPipe1;
+  public GameObject waterPipe2;
+
   public GameObject tree;
   public Transform startButton;
   public Transform startButtonEndMovePos;
@@ -109,4 +114,18 @@ public class AppleRotate : MonoBehaviour {
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
     transform.DORotate(new Vector3(0, 0, 0), 1);
   }
+  public void StartTheThirdStage() 
+  {
+    isRotate = false;
+    apple.SetActive(false);
+    Camera.main.transform.DOMove(secondStageCameraPos.position, 1).OnComplete(() => {
+      Animator anitor = cube.GetComponent<Animator>();
+      Destroy(anitor);
+      waterPipe.SetActive(false);
+      waterPipe1.SetActive(true);
+      waterPipe2.SetActive(true);
+    });
+      Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+      transform.DORotate(new Vector3(0, 0, 0), 1);
+    }
 }
