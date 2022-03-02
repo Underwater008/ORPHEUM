@@ -10,6 +10,10 @@ public class WaterPipeControl : MonoBehaviour {
   public GameObject leftCube;
   public GameObject pipe;
   public GameObject bottomSphere;
+  public GameObject firstDoor;
+  public GameObject parentApple;
+
+  Sequence animSquence = DOTween.Sequence();
 
   private int clickCount = 0;
   private bool isRotate = false;
@@ -38,10 +42,17 @@ public class WaterPipeControl : MonoBehaviour {
       else if(clickCount == 5) {
         bottomSphere.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
           tree.DOScale(1.5f, 1);
+
           tree.transform.DOLocalMove(biggerTreePos.localPosition, 1).OnComplete(() => {
 
+          
           });
+
         });
+
+       animSquence.Append(firstDoor.transform.DOLocalMove(new Vector3(0, 0, -0.5f), 5f));
+       animSquence.AppendInterval(5f);
+       animSquence.Append(parentApple.transform.DORotate(new Vector3(0, 90f, 0), 2f));
       }
       else {
         isRotate = false;
