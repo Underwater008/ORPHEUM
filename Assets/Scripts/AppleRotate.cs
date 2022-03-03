@@ -101,7 +101,9 @@ public class AppleRotate : MonoBehaviour {
     });
     tree.transform.DOScale(1, 1);
   }
-  public void StartTheSecondStage() {
+
+  //When we show the first puzzle in IoC
+  public void StartTheSecondStage() {   
     isRotate = false;
     apple.SetActive(false);
     Camera.main.transform.DOMove(secondStageCameraPos.position, 1).OnComplete(()=> {
@@ -114,18 +116,16 @@ public class AppleRotate : MonoBehaviour {
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
     transform.DORotate(new Vector3(0, 0, 0), 1);
   }
+
+  //When we shou the second puzzle in IoC
   public void StartTheThirdStage() 
   {
-    isRotate = false;
-    apple.SetActive(false);
-    Camera.main.transform.DOMove(secondStageCameraPos.position, 1).OnComplete(() => {
-      Animator anitor = cube.GetComponent<Animator>();
-      Destroy(anitor);
-      waterPipe.SetActive(false);
+
+      
       waterPipe1.SetActive(true);
       waterPipe2.SetActive(true);
-    });
-      Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-      transform.DORotate(new Vector3(0, 0, 0), 1);
+      waterPipe.SetActive(false);
     }
+
+    
 }

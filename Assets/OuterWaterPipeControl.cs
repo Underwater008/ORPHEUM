@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class WaterPipeControl : MonoBehaviour {
+public class OuterWaterPipeControl : MonoBehaviour {
   public Transform cubesParent;
   public Transform tree;
   public Transform biggerTreePos;
@@ -54,11 +54,9 @@ public class WaterPipeControl : MonoBehaviour {
           tree.transform.DOLocalMove(biggerTreePos.localPosition, 1).OnComplete(() => {
             firstDoor.transform.DOLocalMove(new Vector3(0, 0, -0.5f), 2f).OnComplete(() => {
             // Hide the first puzzle and show the second puzzle
-            
-            parentApple.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
-            
-            secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
             appleRotate.StartTheThirdStage();
+            parentApple.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
           });
           });
           });
