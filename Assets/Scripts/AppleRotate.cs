@@ -12,10 +12,11 @@ public class AppleRotate : MonoBehaviour {
   public GameObject cube;
   public GameObject cubeParent;
   //FirstStage
-  public GameObject waterPipe;
+  public GameObject puzzle1;
   //SecondStage
-  public GameObject waterPipe1;
-  public GameObject waterPipe2;
+  public GameObject puzzle2;
+  //public GameObject waterPipe1;
+  //public GameObject waterPipe2;
 
   public GameObject tree;
   public Transform startButton;
@@ -111,7 +112,7 @@ public class AppleRotate : MonoBehaviour {
       Destroy(anitor);
       Transform cube4 = cube.transform.Find("Cube 4");
       cube4.DOMove(cube4PosAfterClick.position, 2);
-      waterPipe.SetActive(true);
+      puzzle1.SetActive(true);
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
     transform.DORotate(new Vector3(0, 0, 0), 1);
@@ -122,9 +123,9 @@ public class AppleRotate : MonoBehaviour {
   {
 
       
-      waterPipe1.SetActive(true);
-      waterPipe2.SetActive(true);
-      waterPipe.SetActive(false);
+      puzzle2.SetActive(true);
+      //waterPipe2.SetActive(true);
+      puzzle1.SetActive(false);
     }
 
     
