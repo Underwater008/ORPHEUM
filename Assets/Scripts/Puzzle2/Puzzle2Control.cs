@@ -24,10 +24,13 @@ public class Puzzle2Control : MonoBehaviour
   public SwitchDetect switch2Detect;
   public SwitchDetect switch3Detect;
 
+  public WaterPipeControl stageControl;
+  private bool isChangeThirdStage = false;
+  public SoundManager soundManager;
   // Start is called before the first frame update
   void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -52,22 +55,28 @@ public class Puzzle2Control : MonoBehaviour
         PassStep3();
         }
 
-        if (switch3Detect.GetComponent<SwitchDetect>().detected == true) {
-        switch4.SetActive(false);
-        //switch4.SetActive(true);
+    if (switch3Detect.GetComponent<SwitchDetect>().detected == true) {
+      switch4.SetActive(false);
+      if (!isChangeThirdStage) 
+      {
+        isChangeThirdStage = true;
         PassStep4();
-        }
+      }
+    }
     }
 
     public void PassStep1() {
-    staticPipe1.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
-
+    openTube1.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
+      staticPipe1.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
+      });
     });
     }
 
     public void PassStep2() {
-    staticPipe2.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
+    openTube2.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
+      staticPipe2.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
 
+      });
     });
     }
 
@@ -78,11 +87,15 @@ public class Puzzle2Control : MonoBehaviour
     }
 
     public void PassStep4() {
-    staticPipe4.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
+    staticPipe4.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => 
+    {
+      soundManager.PlayAudioWaterOk();
+      bottomExit.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => 
+      {
+        stageControl.StartThirdStage();
 
-    bottomExit.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
 
-    });
+      });
     });
     }
 }

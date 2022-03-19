@@ -18,7 +18,7 @@ public class StartButtonControl : MonoBehaviour {
 
   public void OnClick() {
     transform.DOMove(posAfterClick.position, 1).OnComplete(()=> {
-      appRotate.StartTheSecondStage();
+      appRotate.StartTheFirstStage();
     });
   }
 }

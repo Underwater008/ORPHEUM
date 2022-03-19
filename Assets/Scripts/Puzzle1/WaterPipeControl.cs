@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class WaterPipeControl : MonoBehaviour {
@@ -12,10 +13,11 @@ public class WaterPipeControl : MonoBehaviour {
   public GameObject bottomSphere;
   public GameObject firstDoor;
   public GameObject secondDoor;
+  public GameObject thirdDoor;
   public GameObject parentApple;
   public AppleRotate appleRotate;
 
-
+  public SoundManager soundManager;
   private int clickCount = 0;
   private bool isRotate = false;
   // Start is called before the first frame update
@@ -31,6 +33,8 @@ public class WaterPipeControl : MonoBehaviour {
   // Button click on the water pipes.
   public void OnClick() {
     if (isRotate) return;
+    soundManager.PlayAudioClick();
+    soundManager.PlayAudioRotate();
     clickCount++;
     Debug.Log(clickCount);
     isRotate = true;
@@ -46,39 +50,33 @@ public class WaterPipeControl : MonoBehaviour {
       }
 
       // Solved the 1st puzzle in IoC
-      else if (clickCount == 5)
-      {
+      else if (clickCount == 5) {
         Debug.Log(clickCount);
+        soundManager.PlayAudioWaterOk();
         bottomSphere.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => {
           tree.DOScale(1.5f, 1);
           tree.transform.DOLocalMove(biggerTreePos.localPosition, 1).OnComplete(() => {
             firstDoor.transform.DOLocalMove(new Vector3(0, 0, -0.5f), 2f).OnComplete(() => {
-            // Hide the first puzzle and show the second puzzle
-            
-            parentApple.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
-            
-            secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
-            appleRotate.StartTheThirdStage();
-          });
-          });
+              // Hide the first puzzle and show the second puzzle
+              parentApple.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+                secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+                appleRotate.StartTheSecondStage();
+              });
+            });
           });
 
         });
       }
-
-      else if(clickCount==8) 
-      { 
-      }
-      else if(clickCount==11)
-      {
+      else if (clickCount == 8) {
 
       }
-      else if(clickCount==13)
-      {
+      else if (clickCount == 11) {
 
       }
-      else if(clickCount==15) 
-      {
+      else if (clickCount == 13) {
+
+      }
+      else if (clickCount == 15) {
 
       }
       else {
@@ -86,6 +84,29 @@ public class WaterPipeControl : MonoBehaviour {
       }
     });
     //leftCube.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1);
+
   }
- 
+  public void StartThirdStage() 
+  {
+    
+    tree.DOScale(2f, 1);
+    tree.transform.DOLocalMove(biggerTreePos.localPosition, 1).OnComplete(() => 
+    {
+      secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, 0), 2f).OnComplete(() => {
+        parentApple.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
+          thirdDoor.transform.DOLocalMove(new Vector3(0.5f, 0.5f, 0), 2f);
+          appleRotate.StartTheThirdStage();
+        });
+      });
+    });
+  }
+  public void CloseDoor() 
+  {
+    thirdDoor.transform.DOLocalMove(new Vector3(0, 0.5f, 0), 2f);
+  }
+  public void RestartGame() 
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
+  
 }

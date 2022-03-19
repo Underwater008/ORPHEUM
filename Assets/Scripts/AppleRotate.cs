@@ -15,8 +15,10 @@ public class AppleRotate : MonoBehaviour {
   public GameObject puzzle1;
   //SecondStage
   public GameObject puzzle2;
+  public GameObject puzzle3;
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
+  public GameObject startBtn;
 
   public GameObject tree;
   public Transform startButton;
@@ -32,6 +34,7 @@ public class AppleRotate : MonoBehaviour {
   private bool isClick = false;
   private bool CanShake = true;
   private bool isRotate = true;
+  public bool isStart = false;
   // Start is called before the first frame update
   void Start() {
     foreach (var cloud in clouds) {
@@ -50,7 +53,8 @@ public class AppleRotate : MonoBehaviour {
     }
 
 
-    if (Input.GetMouseButtonDown(0) && CanShake) {
+    if (isStart && CanShake) {
+      startBtn.SetActive(false);
       CameraShake.ins.Shake();
       if (isClick == false) {
         isClick = true;
@@ -104,7 +108,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   //When we show the first puzzle in IoC
-  public void StartTheSecondStage() {   
+  public void StartTheFirstStage() {   
     isRotate = false;
     apple.SetActive(false);
     Camera.main.transform.DOMove(secondStageCameraPos.position, 1).OnComplete(()=> {
@@ -119,14 +123,20 @@ public class AppleRotate : MonoBehaviour {
   }
 
   //When we shou the second puzzle in IoC
-  public void StartTheThirdStage() 
+  public void StartTheSecondStage() 
   {
-
-      
-      puzzle2.SetActive(true);
-      //waterPipe2.SetActive(true);
-      puzzle1.SetActive(false);
+    Debug.Log("puzzle2");
+    puzzle2.SetActive(true);
+    puzzle1.SetActive(false);
     }
+  public void StartTheThirdStage() {
+    Debug.Log("puzzle3");
+    puzzle3.SetActive(true);
+    puzzle2.SetActive(false);
+  }
 
-    
+  public void StartGame() 
+  {
+    isStart = true;
+  }
 }
