@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1376,9 +1376,10 @@ MonoBehaviour:
   startButtonEndMovePos: {fileID: 1578422525}
   cameraPlayPos: {fileID: 1391919480}
   cameraOriginalPos: {fileID: 677963966}
-  firstDoor: {fileID: 0}
+  firstDoor: {fileID: 8681279562339622813}
   firstDoorOpenPos: {fileID: 0}
   smallTreePos: {fileID: 848974060}
+  UIs: []
   isStart: 0
 --- !u!1 &1378026502
 GameObject:
@@ -18697,8 +18698,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5168756820005272265}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7427487, y: 2.7427483, z: 2.742748}
+  m_LocalPosition: {x: 0, y: 0.09, z: 0}
+  m_LocalScale: {x: 2.7427487, y: 2.7427483, z: 3.104609}
   m_Children: []
   m_Father: {fileID: 221612294}
   m_RootOrder: 0
@@ -19265,7 +19266,7 @@ GameObject:
   - component: {fileID: 8681279562339622815}
   - component: {fileID: 8681279562339622814}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: 1stDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

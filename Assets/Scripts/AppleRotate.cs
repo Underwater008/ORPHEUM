@@ -80,7 +80,7 @@ public class AppleRotate : MonoBehaviour {
     Camera.main.transform.DOMove(cameraPlayPos.position, 1).OnComplete(()=> {
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
-      firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {
+      firstDoor.DOLocalMoveZ(-.8f, 2).OnComplete(()=> {
         //UIs.SetActive(true);
       });
     });
