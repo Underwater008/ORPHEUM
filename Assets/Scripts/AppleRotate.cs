@@ -52,11 +52,12 @@ public class AppleRotate : MonoBehaviour {
 
     if (isStart && CanShake) {
       startUI.SetActive(false);
-      CameraShake.ins.Shake();
-      ShowStartButton();
-      //cubeBase.GetComponent<showStartButton>().appRotate = this;
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(()=>{
+        CameraShake.ins.Shake();
+        ShowStartButton();
+      });
       CanShake = false;
-
+      //cubeBase.GetComponent<showStartButton>().appRotate = this;
     }
   }
 
@@ -76,7 +77,7 @@ public class AppleRotate : MonoBehaviour {
   public void StartTheFirstStage() {   
     isRotate = false;
     //apple.SetActive(false);
-    
+    puzzle1.SetActive(true);
     Camera.main.transform.DOMove(cameraPlayPos.position, 1).OnComplete(()=> {
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
