@@ -104,9 +104,6 @@ public class WaterPipeControl : MonoBehaviour {
   {
     thirdDoor.transform.DOLocalMove(new Vector3(0, 0.5f, 0), 2f);
   }
-  public void RestartGame() 
-  {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-  }
+  
   
 }

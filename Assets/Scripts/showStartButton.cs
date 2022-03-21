@@ -8,8 +8,8 @@ public class showStartButton : MonoBehaviour
 {
   public AppleRotate appRotate;
   public void ShowStartButton() {
-    appRotate.startButton.gameObject.SetActive(true);
-    appRotate.startButton.DOMove(appRotate.startButtonEndMovePos.position, 1);
+    appRotate.firstButton.gameObject.SetActive(true);
+    appRotate.firstButton.DOMove(appRotate.startButtonEndMovePos.position, 1);
     appRotate.ShowTree();
   }
 }

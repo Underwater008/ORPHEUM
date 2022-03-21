@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,7 +288,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2752
+  m_Name: pb_Mesh-121082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1600,7 +1600,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2764
+  m_Name: pb_Mesh-121094
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1936,7 +1936,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2716
+  m_Name: pb_Mesh-121046
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2266,7 +2266,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2728
+  m_Name: pb_Mesh-121058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2456,18 +2456,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  warpAnimator: {fileID: 9204749744582512028, guid: 26b2519f46852454f9074bfe882385ef, type: 3}
-  clouds:
-  - {fileID: 1718707255}
-  apple: {fileID: 744628845}
-  cube: {fileID: 1080810874}
-  cubeParent: {fileID: 656777603}
+  cubeBase: {fileID: 1080810874}
+  startUI: {fileID: 1642346710}
   puzzle1: {fileID: 81671935}
   puzzle2: {fileID: 625519659}
   puzzle3: {fileID: 1466815410}
-  startBtn: {fileID: 1642346710}
   tree: {fileID: 1611711106}
-  startButton: {fileID: 451832274}
+  firstButton: {fileID: 451832274}
   startButtonEndMovePos: {fileID: 1013476777}
   secondStageCameraPos: {fileID: 329793561}
   cube4PosAfterClick: {fileID: 1393246520}
@@ -2846,11 +2841,6 @@ Transform:
   m_Father: {fileID: 656777606}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &744628845 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c8609d447d0b3c2429677ecaf639a051, type: 3}
-  m_PrefabInstance: {fileID: 238710208}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &759426228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,7 +3975,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2740
+  m_Name: pb_Mesh-121070
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4418,7 +4408,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aee95d22e1d15184e9bdd49b030d9d89, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2653283828524288488, guid: 4b4ed71bc4cae4446adb4c4ab2b2fcc0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b4ed71bc4cae4446adb4c4ab2b2fcc0, type: 3}
 --- !u!1 &1134989173
 GameObject:
@@ -5302,7 +5293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22340
+  m_Name: pb_Mesh134714
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5967,7 +5958,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2674
+  m_Name: pb_Mesh-121004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6334,7 +6325,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22118
+  m_Name: pb_Mesh134492
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6887,7 +6878,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22338
+  m_Name: pb_Mesh134712
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

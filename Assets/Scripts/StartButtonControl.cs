@@ -17,6 +17,7 @@ public class StartButtonControl : MonoBehaviour {
   }
 
   public void OnClick() {
+    Debug.Log("pressed first button");
     transform.DOMove(posAfterClick.position, 1).OnComplete(()=> {
       appRotate.StartTheFirstStage();
     });
