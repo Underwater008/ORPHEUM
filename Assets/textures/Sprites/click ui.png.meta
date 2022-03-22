@@ -1,0 +1,2520 @@
+fileFormatVersion: 2
+guid: 323eb8e91f916407cbab3dc8e250bd82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5028027209085698649
+    second: click ui_0
+  - first:
+      213: -2984716563020741726
+    second: click ui_1
+  - first:
+      213: -5057443064169167674
+    second: click ui_2
+  - first:
+      213: -5710833240987112749
+    second: click ui_3
+  - first:
+      213: 2151274793877923036
+    second: click ui_4
+  - first:
+      213: 6563506244657415883
+    second: click ui_5
+  - first:
+      213: -7692502746273631144
+    second: click ui_6
+  - first:
+      213: 3262457690565243107
+    second: click ui_7
+  - first:
+      213: -3518593869619522435
+    second: click ui_8
+  - first:
+      213: -8551890009735233857
+    second: click ui_9
+  - first:
+      213: 7725042079888970171
+    second: click ui_10
+  - first:
+      213: 9210519913554308573
+    second: click ui_11
+  - first:
+      213: -5305727245508798715
+    second: click ui_12
+  - first:
+      213: 6160250345162653864
+    second: click ui_13
+  - first:
+      213: -4250960626026198870
+    second: click ui_14
+  - first:
+      213: 2575662494837696134
+    second: click ui_15
+  - first:
+      213: 415758541040102972
+    second: click ui_16
+  - first:
+      213: -746404805638990655
+    second: click ui_17
+  - first:
+      213: -2976616049456314693
+    second: click ui_18
+  - first:
+      213: 4820326826103961047
+    second: click ui_19
+  - first:
+      213: 6024768801874022768
+    second: click ui_20
+  - first:
+      213: -3731926736000369217
+    second: click ui_21
+  - first:
+      213: 8871620391668036111
+    second: click ui_22
+  - first:
+      213: -2001968485987992092
+    second: click ui_23
+  - first:
+      213: -8717825085070576976
+    second: click ui_24
+  - first:
+      213: 6645752534769103912
+    second: click ui_25
+  - first:
+      213: 381548252349355996
+    second: click ui_26
+  - first:
+      213: 187855865865078833
+    second: click ui_27
+  - first:
+      213: 4690449910224625027
+    second: click ui_28
+  - first:
+      213: 3405972955450753394
+    second: click ui_29
+  - first:
+      213: 3962260898818623970
+    second: click ui_30
+  - first:
+      213: -8876741134695840839
+    second: click ui_31
+  - first:
+      213: -1099563133899690864
+    second: click ui_32
+  - first:
+      213: -402377576067759314
+    second: click ui_33
+  - first:
+      213: 1229563917751318598
+    second: click ui_34
+  - first:
+      213: 1075245025395992778
+    second: click ui_35
+  - first:
+      213: -8304061609769051108
+    second: click ui_36
+  - first:
+      213: 7507253199358221155
+    second: click ui_37
+  - first:
+      213: 3525736135178248804
+    second: click ui_38
+  - first:
+      213: -8651160055045109392
+    second: click ui_39
+  - first:
+      213: -1565935911477198235
+    second: click ui_40
+  - first:
+      213: 9108990180188202814
+    second: click ui_41
+  - first:
+      213: -1209272416515373983
+    second: click ui_42
+  - first:
+      213: 7082638142503736849
+    second: click ui_43
+  - first:
+      213: -5411328182811999711
+    second: click ui_44
+  - first:
+      213: 5328964091673847439
+    second: click ui_45
+  - first:
+      213: 8233186911917686504
+    second: click ui_46
+  - first:
+      213: 7864677978502201362
+    second: click ui_47
+  - first:
+      213: -4748457028416934270
+    second: click ui_48
+  - first:
+      213: -171664851218195013
+    second: click ui_49
+  - first:
+      213: -5345372239063463730
+    second: click ui_50
+  - first:
+      213: -6578977130761382277
+    second: click ui_51
+  - first:
+      213: -9043496247638885564
+    second: click ui_52
+  - first:
+      213: -1958773418505598099
+    second: click ui_53
+  - first:
+      213: -6952194131813073241
+    second: click ui_54
+  - first:
+      213: -2038780197928693931
+    second: click ui_55
+  - first:
+      213: 7316811381147412852
+    second: click ui_56
+  - first:
+      213: 8559301244700789314
+    second: click ui_57
+  - first:
+      213: -3753406816183982204
+    second: click ui_58
+  - first:
+      213: -5788402805593292922
+    second: click ui_59
+  - first:
+      213: -6924474693545365807
+    second: click ui_60
+  - first:
+      213: 7818247146492732438
+    second: click ui_61
+  - first:
+      213: -4690635595160670039
+    second: click ui_62
+  - first:
+      213: 8807796442923146212
+    second: click ui_63
+  - first:
+      213: 4199892147052399635
+    second: click ui_64
+  - first:
+      213: 1018937352878176787
+    second: click ui_65
+  - first:
+      213: -9203511448090830033
+    second: click ui_66
+  - first:
+      213: -4823871039230357997
+    second: click ui_67
+  - first:
+      213: 1448017180622831159
+    second: click ui_68
+  - first:
+      213: 6522589213580743806
+    second: click ui_69
+  - first:
+      213: 4245268358671429261
+    second: click ui_70
+  - first:
+      213: -529716861757982567
+    second: click ui_71
+  - first:
+      213: 5414400248395705953
+    second: click ui_72
+  - first:
+      213: 513437281207943687
+    second: click ui_73
+  - first:
+      213: -7727233190694126649
+    second: click ui_74
+  - first:
+      213: 7176754577624772148
+    second: click ui_75
+  - first:
+      213: -9082278833359597326
+    second: click ui_76
+  - first:
+      213: 514671707462409624
+    second: click ui_77
+  - first:
+      213: -7421280633766572830
+    second: click ui_78
+  - first:
+      213: -7788185190952584482
+    second: click ui_79
+  - first:
+      213: 6389813532544604444
+    second: click ui_80
+  - first:
+      213: -1297351458099088152
+    second: click ui_81
+  - first:
+      213: 2685172052482338725
+    second: click ui_82
+  - first:
+      213: 540009815397462079
+    second: click ui_83
+  - first:
+      213: -5920413348289085685
+    second: click ui_84
+  - first:
+      213: -7647235632020983003
+    second: click ui_85
+  - first:
+      213: -7782015745342835686
+    second: click ui_86
+  - first:
+      213: 8956468995915657641
+    second: click ui_87
+  - first:
+      213: 3240169284368228291
+    second: click ui_88
+  - first:
+      213: 3688651345291467421
+    second: click ui_89
+  - first:
+      213: -5903477034537610822
+    second: click ui_90
+  - first:
+      213: 1917815128657342579
+    second: click ui_91
+  - first:
+      213: -2962606213687373119
+    second: click ui_92
+  - first:
+      213: -6669753239059212068
+    second: click ui_93
+  - first:
+      213: 824193454095767854
+    second: click ui_94
+  - first:
+      213: -4728777008447769979
+    second: click ui_95
+  - first:
+      213: -8582672360617917349
+    second: click ui_96
+  - first:
+      213: -8919264807619105770
+    second: click ui_97
+  - first:
+      213: -9099231528258823122
+    second: click ui_98
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: click ui_0
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 12783
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adb27994ebd83ab0800000000000000
+      internalID: -5028027209085698649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_1
+      rect:
+        serializedVersion: 2
+        x: 2538
+        y: 12776
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a38ce189182496d0800000000000000
+      internalID: -2984716563020741726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_2
+      rect:
+        serializedVersion: 2
+        x: 3551
+        y: 12769
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c40f60245a50d9b0800000000000000
+      internalID: -5057443064169167674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_3
+      rect:
+        serializedVersion: 2
+        x: 4565
+        y: 12758
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da6873bc6b0fb0b0800000000000000
+      internalID: -5710833240987112749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_4
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 11729
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4685fe60ddadd10800000000000000
+      internalID: 2151274793877923036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_5
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 11718
+        width: 116
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc60dd19722461b50800000000000000
+      internalID: 6563506244657415883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_6
+      rect:
+        serializedVersion: 2
+        x: 2493
+        y: 11710
+        width: 129
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854b4a6428dbe3590800000000000000
+      internalID: -7692502746273631144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_7
+      rect:
+        serializedVersion: 2
+        x: 3512
+        y: 11703
+        width: 143
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0f1ecfbf3964d20800000000000000
+      internalID: 3262457690565243107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_8
+      rect:
+        serializedVersion: 2
+        x: 4526
+        y: 11697
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74167494817b2fc0800000000000000
+      internalID: -3518593869619522435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_9
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 10663
+        width: 179
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbef4839855915980800000000000000
+      internalID: -8551890009735233857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_10
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 10657
+        width: 194
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb11ab6b7dcd43b60800000000000000
+      internalID: 7725042079888970171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_11
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 10650
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddde01cdf0752df70800000000000000
+      internalID: 9210519913554308573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_12
+      rect:
+        serializedVersion: 2
+        x: 3473
+        y: 10641
+        width: 221
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50716506e254e56b0800000000000000
+      internalID: -5305727245508798715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_13
+      rect:
+        serializedVersion: 2
+        x: 4487
+        y: 10631
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0c5eeec0b9d7550800000000000000
+      internalID: 6160250345162653864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_14
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 9604
+        width: 259
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8498b45dd8105c0800000000000000
+      internalID: -4250960626026198870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_15
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 9591
+        width: 272
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686e81284679eb320800000000000000
+      internalID: 2575662494837696134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_16
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 9584
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ea707b03215c500800000000000000
+      internalID: 415758541040102972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_17
+      rect:
+        serializedVersion: 2
+        x: 3431
+        y: 9578
+        width: 302
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c45e3da8cc34a5f0800000000000000
+      internalID: -746404805638990655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_18
+      rect:
+        serializedVersion: 2
+        x: 4448
+        y: 9571
+        width: 318
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb60e6b497fe0b6d0800000000000000
+      internalID: -2976616049456314693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_19
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 8467
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5763b85bd35e240800000000000000
+      internalID: 4820326826103961047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_20
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 8454
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0719e810e474c9350800000000000000
+      internalID: 6024768801874022768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_21
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 8441
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd3aecf768853cc0800000000000000
+      internalID: -3731926736000369217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_22
+      rect:
+        serializedVersion: 2
+        x: 3324
+        y: 8431
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f023c7b0eb35e1b70800000000000000
+      internalID: 8871620391668036111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_23
+      rect:
+        serializedVersion: 2
+        x: 4334
+        y: 8421
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edb825d4449734e0800000000000000
+      internalID: -2001968485987992092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_24
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 6412
+        width: 494
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2f06e2640140780800000000000000
+      internalID: -8717825085070576976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_25
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 6406
+        width: 507
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824701c38b47a3c50800000000000000
+      internalID: 6645752534769103912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_26
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 6396
+        width: 520
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd754fd2d188b4500800000000000000
+      internalID: 381548252349355996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_27
+      rect:
+        serializedVersion: 2
+        x: 3311
+        y: 6386
+        width: 539
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1388cd92ae56b9200800000000000000
+      internalID: 187855865865078833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_28
+      rect:
+        serializedVersion: 2
+        x: 4327
+        y: 6380
+        width: 556
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d93bf9753d71140800000000000000
+      internalID: 4690449910224625027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_29
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 5347
+        width: 572
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271ca3c7b52744f20800000000000000
+      internalID: 3405972955450753394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_30
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 5340
+        width: 585
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e901856b47ccf630800000000000000
+      internalID: 3962260898818623970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_31
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 5333
+        width: 598
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b34b5f08fa7fc480800000000000000
+      internalID: -8876741134695840839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_32
+      rect:
+        serializedVersion: 2
+        x: 3272
+        y: 5327
+        width: 617
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c2bcbc7219db0f0800000000000000
+      internalID: -1099563133899690864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_33
+      rect:
+        serializedVersion: 2
+        x: 4285
+        y: 5320
+        width: 637
+        height: 631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2306e8f9b77a6af0800000000000000
+      internalID: -402377576067759314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_34
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 4287
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64874326ed9401110800000000000000
+      internalID: 1229563917751318598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_35
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 4280
+        width: 663
+        height: 663
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8eb3957a90cee00800000000000000
+      internalID: 1075245025395992778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_36
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 4268
+        width: 682
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cd1c476fb02cc80800000000000000
+      internalID: -8304061609769051108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_37
+      rect:
+        serializedVersion: 2
+        x: 3233
+        y: 4261
+        width: 695
+        height: 695
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b59aa720f1f2860800000000000000
+      internalID: 7507253199358221155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_38
+      rect:
+        serializedVersion: 2
+        x: 4246
+        y: 4254
+        width: 715
+        height: 714
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462ee05b55eede030800000000000000
+      internalID: 3525736135178248804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_39
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 3221
+        width: 728
+        height: 728
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079ccf704c7e0f780800000000000000
+      internalID: -8651160055045109392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_40
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 3214
+        width: 740
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562cf5fc59da44ae0800000000000000
+      internalID: -1565935911477198235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_41
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 3208
+        width: 760
+        height: 760
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37a3a0be42a96e70800000000000000
+      internalID: 9108990180188202814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_42
+      rect:
+        serializedVersion: 2
+        x: 3194
+        y: 3201
+        width: 773
+        height: 774
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1644ce8e42dc73fe0800000000000000
+      internalID: -1209272416515373983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_43
+      rect:
+        serializedVersion: 2
+        x: 4207
+        y: 3189
+        width: 793
+        height: 792
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116519c7dd59a4260800000000000000
+      internalID: 7082638142503736849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_44
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 2161
+        width: 810
+        height: 806
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1224e6c20b917e4b0800000000000000
+      internalID: -5411328182811999711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_45
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 2149
+        width: 818
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8628097b9844f940800000000000000
+      internalID: 5328964091673847439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_46
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 2142
+        width: 838
+        height: 838
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eebf3600e7224270800000000000000
+      internalID: 8233186911917686504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_47
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 2135
+        width: 851
+        height: 852
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210067dd3f2f42d60800000000000000
+      internalID: 7864677978502201362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_48
+      rect:
+        serializedVersion: 2
+        x: 4168
+        y: 2129
+        width: 870
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e6006bd771a1eb0800000000000000
+      internalID: -4748457028416934270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_49
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1095
+        width: 889
+        height: 884
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd18b23abf1e9df0800000000000000
+      internalID: -171664851218195013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_50
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1089
+        width: 896
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec84362054c61d5b0800000000000000
+      internalID: -5345372239063463730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_51
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1082
+        width: 915
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b769c8f0827c2b4a0800000000000000
+      internalID: -6578977130761382277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_52
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 1073
+        width: 932
+        height: 932
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bf7e7c31c0f7280800000000000000
+      internalID: -9043496247638885564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_53
+      rect:
+        serializedVersion: 2
+        x: 4130
+        y: 1064
+        width: 947
+        height: 947
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b0f7234f901d4e0800000000000000
+      internalID: -1958773418505598099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_54
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 11713
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aef9bb7548d48f90800000000000000
+      internalID: -6952194131813073241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_55
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 11707
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f0c5f363cc4b3e0800000000000000
+      internalID: -2038780197928693931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_56
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 11694
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479a3dd5f298a8560800000000000000
+      internalID: 7316811381147412852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_57
+      rect:
+        serializedVersion: 2
+        x: 3489
+        y: 11681
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a03f7022fb8c670800000000000000
+      internalID: 8559301244700789314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_58
+      rect:
+        serializedVersion: 2
+        x: 4503
+        y: 11668
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487e2d7136839ebc0800000000000000
+      internalID: -3753406816183982204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_59
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 10632
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fbcbb01567bafa0800000000000000
+      internalID: -5788402805593292922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_60
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 10619
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1deeb0324f257ef90800000000000000
+      internalID: -6924474693545365807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_61
+      rect:
+        serializedVersion: 2
+        x: 2421
+        y: 10606
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61429ec5b5eff7c60800000000000000
+      internalID: 7818247146492732438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_62
+      rect:
+        serializedVersion: 2
+        x: 3435
+        y: 10593
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a035ab37c387eeb0800000000000000
+      internalID: -4690635595160670039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_63
+      rect:
+        serializedVersion: 2
+        x: 4444
+        y: 10586
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb126af2349b3a70800000000000000
+      internalID: 8807796442923146212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_64
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 9546
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cc200e7a3094a30800000000000000
+      internalID: 4199892147052399635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_65
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 9536
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a3ea6bf1ef32e00800000000000000
+      internalID: 1018937352878176787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_66
+      rect:
+        serializedVersion: 2
+        x: 2363
+        y: 9526
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b1e4aa91f864080800000000000000
+      internalID: -9203511448090830033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_67
+      rect:
+        serializedVersion: 2
+        x: 3376
+        y: 9513
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e416809da2e0db0800000000000000
+      internalID: -4823871039230357997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_68
+      rect:
+        serializedVersion: 2
+        x: 4390
+        y: 9501
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ebfaf24f3681410800000000000000
+      internalID: 1448017180622831159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_69
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 8538
+        width: 338
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e745643e454e48a50800000000000000
+      internalID: 6522589213580743806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_70
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 8531
+        width: 349
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ee0de64193aea30800000000000000
+      internalID: 4245268358671429261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_71
+      rect:
+        serializedVersion: 2
+        x: 2375
+        y: 8525
+        width: 364
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998716f125116a8f0800000000000000
+      internalID: -529716861757982567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_72
+      rect:
+        serializedVersion: 2
+        x: 3389
+        y: 8512
+        width: 383
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ea965d650d32b40800000000000000
+      internalID: 5414400248395705953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_73
+      rect:
+        serializedVersion: 2
+        x: 4409
+        y: 8505
+        width: 396
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70287d8ac78102700800000000000000
+      internalID: 513437281207943687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_74
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 7473
+        width: 416
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb711c8a5a53c490800000000000000
+      internalID: -7727233190694126649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_75
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 7465
+        width: 429
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43eab77a344f89360800000000000000
+      internalID: 7176754577624772148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_76
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 7459
+        width: 442
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f05d82658345f180800000000000000
+      internalID: -9082278833359597326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_77
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 7452
+        width: 461
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d9d3be03b742700800000000000000
+      internalID: 514671707462409624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_78
+      rect:
+        serializedVersion: 2
+        x: 4370
+        y: 7446
+        width: 474
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec8bdd4590520990800000000000000
+      internalID: -7421280633766572830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_79
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 7382
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda305815decae390800000000000000
+      internalID: -7788185190952584482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_80
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 7374
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c191e4c9d8d2da850800000000000000
+      internalID: 6389813532544604444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_81
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 7362
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e43b27f8b1eefde0800000000000000
+      internalID: -1297351458099088152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_82
+      rect:
+        serializedVersion: 2
+        x: 3265
+        y: 7349
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af240d41c5a34520800000000000000
+      internalID: 2685172052482338725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_83
+      rect:
+        serializedVersion: 2
+        x: 4279
+        y: 7336
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f307df5e0108e7700800000000000000
+      internalID: 540009815397462079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_84
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 6302
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f7fbb6d6776dda0800000000000000
+      internalID: -5920413348289085685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_85
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 6289
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523fdaf95bf8fd590800000000000000
+      internalID: -7647235632020983003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_86
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 6279
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14f75619e9b00490800000000000000
+      internalID: -7782015745342835686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_87
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 6269
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a13a5f2915cb4c70800000000000000
+      internalID: 8956468995915657641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_88
+      rect:
+        serializedVersion: 2
+        x: 4222
+        y: 6256
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf56e60cc467fc20800000000000000
+      internalID: 3240169284368228291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_89
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 5223
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a5d50fad8b03330800000000000000
+      internalID: 3688651345291467421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_90
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 5210
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab195b04ae2a21ea0800000000000000
+      internalID: -5903477034537610822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_91
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 5197
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370bd70d2b27d9a10800000000000000
+      internalID: 1917815128657342579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_92
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 5185
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c29ccf5855b2e6d0800000000000000
+      internalID: -2962606213687373119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_93
+      rect:
+        serializedVersion: 2
+        x: 4168
+        y: 5177
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd85d5654c64073a0800000000000000
+      internalID: -6669753239059212068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_94
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 4138
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e299499649f107b00800000000000000
+      internalID: 824193454095767854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_95
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 4128
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582bf6d6d52006eb0800000000000000
+      internalID: -4728777008447769979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_96
+      rect:
+        serializedVersion: 2
+        x: 2086
+        y: 4118
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b544ec106f834e880800000000000000
+      internalID: -8582672360617917349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_97
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 4105
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c683ce9e7683480800000000000000
+      internalID: -8919264807619105770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: click ui_98
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 4092
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c1915822909b180800000000000000
+      internalID: -9099231528258823122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

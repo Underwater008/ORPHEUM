@@ -18,13 +18,13 @@ public class PlaneRotate : MonoBehaviour
 
   public void OnClick() {
     if (isRotate) return;
-    soundManager.PlayAudioClick();
-    soundManager.PlayAudioRotate();
     clickCount++;
     Debug.Log(clickCount);
+    soundManager.PlayAudioClick();
+    soundManager.PlayAudioRotate();
     isRotate = true;
     // Rotate puzzle1 90 degrees when clicked the button
-    rotateTarget.DORotate(new Vector3(0, 0, clickCount * 90), 1).OnComplete(() => {
+    rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1).OnComplete(() => {
       isRotate = false;
     });
   }
