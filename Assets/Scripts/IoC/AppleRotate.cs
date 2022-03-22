@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class AppleRotate : MonoBehaviour {
   public float speed = 30;
   //public Animator warpAnimator;
+  public GameObject theGarden;
  
   //public GameObject apple;
   public GameObject cubeBase;
@@ -30,6 +31,7 @@ public class AppleRotate : MonoBehaviour {
   public Transform cameraOriginalPos;     //the position camera move to look at the cube
   public Transform firstDoor;
   public Transform firstDoorOpenPos;
+  public Transform secondDoor;
   public Transform smallTreePos;
 
   public GameObject[] UIs;
@@ -68,11 +70,9 @@ public class AppleRotate : MonoBehaviour {
     //ShowTree();
   }
 
-  public void ShowTree() {
-    tree.SetActive(true);
-    //tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
-    tree.transform.DOScale(0.5f, 1);
-  }
+  //public void ShowTree() {
+    
+  //}
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {   
@@ -94,10 +94,27 @@ public class AppleRotate : MonoBehaviour {
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() 
   {
-    Debug.Log("puzzle2");
-    puzzle2.SetActive(true);
-    puzzle1.SetActive(false);
-    }
+    firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle2");
+      puzzle2.SetActive(true);
+      puzzle1.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
+        tree.SetActive(true);
+        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
+        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+            });
+          });
+        });  
+      });
+    });
+
+  }
 
   public void StartTheThirdStage() {
     Debug.Log("puzzle3");

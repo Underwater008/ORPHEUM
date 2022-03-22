@@ -9,12 +9,13 @@ public class SwitchDetect : MonoBehaviour
 
   public bool detected;
 
-  private void OnTriggerEnter(Collider other) {
-    if (other.tag == "OpenTubes") {
+  private void OnTriggerStay(Collider other) {
+        if (other.gameObject == openTube) {
       detected = true;
       Debug.Log(detected);
     }
   }
+
   // Start is called before the first frame update
   void Start()
     {
@@ -24,6 +25,6 @@ public class SwitchDetect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        detected = false;
     }
 }

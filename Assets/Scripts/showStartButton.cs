@@ -10,6 +10,5 @@ public class showStartButton : MonoBehaviour
   public void ShowStartButton() {
     appRotate.firstButton.gameObject.SetActive(true);
     appRotate.firstButton.DOMove(appRotate.startButtonEndMovePos.position, 1);
-    appRotate.ShowTree();
   }
 }
