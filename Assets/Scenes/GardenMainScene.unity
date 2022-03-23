@@ -2486,7 +2486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1436833362
 Transform:
   m_ObjectHideFlags: 0
@@ -2495,7 +2495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436833361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.133, y: 0.519, z: -0}
+  m_LocalPosition: {x: 0.133, y: 0.519, z: 0}
   m_LocalScale: {x: 0.27828205, y: 0.27828205, z: 0.27828205}
   m_Children: []
   m_Father: {fileID: 1355017256}
@@ -3899,6 +3899,7 @@ MonoBehaviour:
   switch1: {fileID: 1183694051}
   switch0Detect: {fileID: 1713864511}
   switch1Detect: {fileID: 1183694053}
+  switch1Cube: {fileID: 1436833361}
   stageControl: {fileID: 1290402955}
   soundManager: {fileID: 804967498}
 --- !u!1 &1996238623

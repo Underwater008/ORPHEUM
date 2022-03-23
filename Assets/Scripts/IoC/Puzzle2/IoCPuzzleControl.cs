@@ -11,6 +11,8 @@ public class IoCPuzzleControl : MonoBehaviour
   public SwitchDetect switch0Detect;
   public SwitchDetect switch1Detect;
 
+  public GameObject switch1Cube;
+
   public AppleRotate stageControl;
   private bool isChangeThirdStage = false;
   public SoundManager soundManager;
@@ -26,12 +28,14 @@ public class IoCPuzzleControl : MonoBehaviour
     {
         if (switch0Detect.GetComponent<SwitchDetect>().detected == true) {
         soundManager.PlayAudioWaterOk();
+        switch1Cube.SetActive(true);
         switch1.SetActive(true);
         }
         else
         switch1.SetActive(false);
+        //switch1Cube.SetActive(false);
 
-        if (switch1Detect.GetComponent<SwitchDetect>().detected == true) {
+        if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch1Cube == true) {
           if (!isChangeThirdStage) {
             isChangeThirdStage = true;
             Pass1();
