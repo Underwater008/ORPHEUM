@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e8318b2280661e1409774b9fe509b845, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.6664568, g: 0.8446951, b: 0.63253915, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -783,11 +783,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285541549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.132, z: -0.571}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.034769416, y: 0.1259318, z: -0.5956582}
   m_LocalScale: {x: 0.31895, y: 0.31895, z: 0.31895}
   m_Children: []
-  m_Father: {fileID: 1990996945}
+  m_Father: {fileID: 474129440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289622825
@@ -1227,7 +1227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453414835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.639, y: 0.176, z: -0.057}
+  m_LocalPosition: {x: 0.5, y: 0.421, z: -0.057}
   m_LocalScale: {x: 0.29294428, y: 0.26494396, z: 0.2753322}
   m_Children: []
   m_Father: {fileID: 1561528075}
@@ -1311,6 +1311,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &474129439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474129440}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &474129440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474129439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.66, z: -0.628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 285541554}
+  - {fileID: 6416152673092145960}
+  m_Father: {fileID: 543051681}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543051680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &543051681
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,7 +1367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543051680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.514, y: 0.062, z: 0.034}
+  m_LocalPosition: {x: 1.434, y: 0.062, z: 0.034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 548174928}
@@ -1343,6 +1375,7 @@ Transform:
   - {fileID: 1574315961}
   - {fileID: 150754153}
   - {fileID: 1539638404}
+  - {fileID: 474129440}
   m_Father: {fileID: 1290402954}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3845,7 +3878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713864506}
   m_LocalRotation: {x: 0.7071054, y: -0.70710826, z: 0.000000059604645, w: -0.0000002160669}
-  m_LocalPosition: {x: -0.0009, y: -0.0015, z: -0.0069}
+  m_LocalPosition: {x: -0.0009, y: 0.032, z: -0.161}
   m_LocalScale: {x: 0.023587814, y: 0.025543781, z: 0.038369894}
   m_Children: []
   m_Father: {fileID: 156810212014688889}
@@ -3966,7 +3999,7 @@ Camera:
   m_GameObject: {fileID: 1730143701}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -4348,9 +4381,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.034775496, y: 0.65393186, z: -0.65265864}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 285541554}
-  - {fileID: 6416152673092145960}
+  m_Children: []
   m_Father: {fileID: 543051681}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5160,8 +5191,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.028812196, y: 0.019999998, z: 0.02}
-  m_Center: {x: -0.0044059767, y: 0.0000000016390919, z: -2.4575501e-11}
+  m_Size: {x: 0.048927832, y: 0.019999998, z: 0.020000001}
+  m_Center: {x: -0.014463793, y: 0.000000001639092, z: 1.8170207e-10}
 --- !u!114 &655154457107343289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5324,7 +5355,7 @@ MonoBehaviour:
   rotateTarget: {fileID: 624859053}
   target: {fileID: 0}
   soundManager: {fileID: 804967498}
-  puzzle1: 0
+  puzzle1: 1
   puzzle2: 0
   puzzle3: 0
 --- !u!1 &1322977222476737167
@@ -22439,7 +22470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 0}
-  target: {fileID: 1990996944}
+  target: {fileID: 474129439}
   soundManager: {fileID: 804967498}
   puzzle1: 0
   puzzle2: 1
@@ -22790,12 +22821,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5299468908068395623}
-  m_LocalRotation: {x: -0.0000017285349, y: -0.70526606, z: -0.7089427, w: 0.0000017434361}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.216047, y: 65.402794, z: 65.02095}
+  m_LocalRotation: {x: -0.0000017285348, y: -0.70526606, z: -0.7089428, w: 0.000001743436}
+  m_LocalPosition: {x: -0.034769773, y: -0.00606817, z: -0.024658859}
+  m_LocalScale: {x: 4.216047, y: 65.40283, z: 65.02093}
   m_Children:
   - {fileID: 6412634240297634259}
-  m_Father: {fileID: 1990996945}
+  m_Father: {fileID: 474129440}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6492153046107642096

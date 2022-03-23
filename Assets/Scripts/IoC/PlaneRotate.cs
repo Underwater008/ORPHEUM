@@ -22,23 +22,27 @@ public class PlaneRotate : MonoBehaviour
 
   public void OnClick() {
     if (isRotate) return;
-    clickCount++;
+    //clickCount++;
     Debug.Log(clickCount);
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
     isRotate = true;
 
     if (puzzle1 == true) {
+      clickCount++;
       // Rotate puzzle1 90 degrees when clicked the button
       rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1).OnComplete(() => {
+        
         isRotate = false;
       });
     }
 
     if (puzzle2 == true) {
+      clickCount++;
+      
       // Rotate puzzle1 90 degrees when clicked the button
       target.transform.DOLocalRotate(new Vector3(clickCount * 90, 0, 0), 1).OnComplete(() => {
-
+        
         isRotate = false;
       });
     }
@@ -52,7 +56,9 @@ public class PlaneRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+      //if (clickCount == 4) {
+      //clickCount = 0;
+    //}
 
     
     }

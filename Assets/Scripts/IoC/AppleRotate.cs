@@ -98,14 +98,16 @@ public class AppleRotate : MonoBehaviour {
     firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
-      puzzle2.SetActive(true);
       puzzle1.SetActive(false);
+      puzzle1Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
         tree.SetActive(true);
         tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
         tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            puzzle2.SetActive(true);
+            puzzle2Control.SetActive(true);
             Camera.main.transform.DOMove(cameraPlayPos.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
               secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
