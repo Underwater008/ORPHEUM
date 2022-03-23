@@ -19,6 +19,7 @@ public class AppleRotate : MonoBehaviour {
   public GameObject puzzle1Control;
   //SecondStage
   public GameObject puzzle2;
+  public GameObject puzzle2Control;
   public GameObject puzzle3;
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;

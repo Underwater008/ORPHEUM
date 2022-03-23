@@ -9,18 +9,18 @@ public class RotateButton : MonoBehaviour
 
   public SoundManager soundManager;
 
-  private int clickCount = 0;
+  private int centerButtonclickCount = 0;
   private bool isRotate = false;
 
   public void OnClick() {
     if (isRotate) return;
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
-    clickCount++;
-    Debug.Log(clickCount);
+    centerButtonclickCount++;
+    Debug.Log(centerButtonclickCount);
     isRotate = true;
     // Rotate puzzle1 90 degrees when clicked the button
-    puzzle1.DORotate(new Vector3(0, 0, clickCount * 90), 1).OnComplete(() => {
+    puzzle1.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         isRotate = false;
     });
   }

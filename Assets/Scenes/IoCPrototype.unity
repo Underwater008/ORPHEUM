@@ -254,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appRotate: {fileID: 656777604}
   posAfterClick: {fileID: 1377077974}
+  soundManager: {fileID: 0}
 --- !u!114 &37273064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,6 +1365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 412262815}
   activeSwitch: {fileID: 356666432}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!1 &369953844
 GameObject:
@@ -2205,7 +2207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &625519660
 Transform:
   m_ObjectHideFlags: 0
@@ -2243,22 +2245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd95002eabc74f39909ecaf7a0d4b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switch0: {fileID: 0}
   switch1: {fileID: 2098619995}
-  switch2: {fileID: 356666432}
-  switch3: {fileID: 1871521329}
-  switch4: {fileID: 1893459131}
-  staticPipe1: {fileID: 1413951801}
-  staticPipe2: {fileID: 1818805538}
-  staticPipe3: {fileID: 1735069535}
-  staticPipe4: {fileID: 299905997}
-  openTube1: {fileID: 369953844}
-  openTube2: {fileID: 412262815}
-  bottomExit: {fileID: 2135272291}
   switch0Detect: {fileID: 2098619996}
   switch1Detect: {fileID: 356666435}
-  switch2Detect: {fileID: 1871521332}
-  switch3Detect: {fileID: 1893459134}
-  stageControl: {fileID: 1766538707}
+  switch1Cube: {fileID: 0}
+  stageControl: {fileID: 0}
   soundManager: {fileID: 1843089236}
 --- !u!43 &655255746
 Mesh:
@@ -2456,17 +2448,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  theGarden: {fileID: 0}
   cubeBase: {fileID: 1080810874}
   startUI: {fileID: 1642346710}
   puzzle1: {fileID: 81671935}
+  puzzle1Control: {fileID: 0}
   puzzle2: {fileID: 625519659}
+  puzzle2Control: {fileID: 0}
   puzzle3: {fileID: 1466815410}
   tree: {fileID: 1611711106}
   firstButton: {fileID: 451832274}
   startButtonEndMovePos: {fileID: 1013476777}
-  secondStageCameraPos: {fileID: 329793561}
-  cube4PosAfterClick: {fileID: 1393246520}
+  cameraPlayPos: {fileID: 0}
+  cameraOriginalPos: {fileID: 0}
+  firstDoor: {fileID: 0}
+  firstDoorOpenPos: {fileID: 0}
+  secondDoor: {fileID: 0}
   smallTreePos: {fileID: 1552185090}
+  UIs: []
   isStart: 0
 --- !u!95 &656777605
 Animator:
@@ -3172,6 +3171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 23689133}
   activeSwitch: {fileID: 847021075}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!65 &847021078
 BoxCollider:
@@ -5640,7 +5640,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1080810877}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398849882
 GameObject:
@@ -5688,6 +5688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 23689133}
   activeSwitch: {fileID: 1398849882}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!65 &1398849885
 BoxCollider:
@@ -5938,6 +5939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 1766609161}
   activeSwitch: {fileID: 1428765738}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!65 &1428765741
 BoxCollider:
@@ -7698,6 +7700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 1766609161}
   activeSwitch: {fileID: 1790532284}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!65 &1790532287
 BoxCollider:
@@ -8302,6 +8305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 412262815}
   activeSwitch: {fileID: 1871521329}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!1 &1880914944
 GameObject:
@@ -8443,6 +8447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 369953844}
   activeSwitch: {fileID: 1893459131}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!4 &1900785164 stripped
 Transform:
@@ -8968,6 +8973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openTube: {fileID: 369953844}
   activeSwitch: {fileID: 2098619995}
+  soundManager: {fileID: 0}
   detected: 0
 --- !u!65 &2098619997
 BoxCollider:
