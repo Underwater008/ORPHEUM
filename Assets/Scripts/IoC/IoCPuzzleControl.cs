@@ -14,7 +14,7 @@ public class IoCPuzzleControl : MonoBehaviour
   public GameObject switch1Cube;
 
   public AppleRotate stageControl;
-  private bool isChangeThirdStage = false;
+  //private bool isChangeThirdStage = false;
   public SoundManager soundManager;
 
   // Start is called before the first frame update
@@ -26,20 +26,12 @@ public class IoCPuzzleControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (switch0Detect.GetComponent<SwitchDetect>().detected == true) {
-        soundManager.PlayAudioWaterOk();
-        switch1Cube.SetActive(true);
-        switch1.SetActive(true);
-        }
-        else
-        switch1.SetActive(false);
-        //switch1Cube.SetActive(false);
 
-        if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch1Cube == true) {
-          if (!isChangeThirdStage) {
-            isChangeThirdStage = true;
+        if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true) {
+          //if (!isChangeThirdStage) {
+            //isChangeThirdStage = true;
             Pass1();
-          }
+          
         }
 
      
@@ -48,7 +40,7 @@ public class IoCPuzzleControl : MonoBehaviour
     public void Pass1() {
     //staticPipe4.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => 
     {
-      soundManager.PlayAudioWaterOk();
+      //soundManager.PlayAudioWaterOk();
       stageControl.StartTheSecondStage();
     }
 }
