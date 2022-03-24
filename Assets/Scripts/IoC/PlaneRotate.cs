@@ -15,6 +15,7 @@ public class PlaneRotate : MonoBehaviour
   public SoundManager soundManager;
 
   private int clickCount = 0;
+  private int puzzle2ClickCount = 0;
   private bool isRotate = false;
   public bool puzzle1;
   public bool puzzle2;
@@ -24,25 +25,26 @@ public class PlaneRotate : MonoBehaviour
     if (isRotate) return;
     //clickCount++;
     Debug.Log(clickCount);
+    Debug.Log(puzzle2ClickCount);
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
     isRotate = true;
 
     if (puzzle1 == true) {
-      clickCount++;
+      
       // Rotate puzzle1 90 degrees when clicked the button
-      rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1).OnComplete(() => {
-        
+      rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+        clickCount++;
         isRotate = false;
       });
     }
 
     if (puzzle2 == true) {
-      clickCount++;
+      
       
       // Rotate puzzle1 90 degrees when clicked the button
-      target.transform.DOLocalRotate(new Vector3(clickCount * 90, 0, 0), 1).OnComplete(() => {
-        
+      target.transform.DORotate(new Vector3( 0, 0, puzzle2ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+        puzzle2ClickCount++;
         isRotate = false;
       });
     }

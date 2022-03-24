@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class RotateButton : MonoBehaviour
 {
-  public Transform puzzle1;
+  public Transform puzzleAll;
 
   public SoundManager soundManager;
 
@@ -20,7 +20,7 @@ public class RotateButton : MonoBehaviour
     Debug.Log(centerButtonclickCount);
     isRotate = true;
     // Rotate puzzle1 90 degrees when clicked the button
-    puzzle1.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
+    puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         isRotate = false;
     });
   }
