@@ -3946,9 +3946,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1539638404}
-  - component: {fileID: 1539638407}
-  - component: {fileID: 1539638406}
-  - component: {fileID: 1539638405}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -3971,65 +3968,6 @@ Transform:
   m_Father: {fileID: 543051681}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1539638405
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539638403}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1539638406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539638403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52553d5e491fd43e4aa28e508ad30a43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateTarget: {fileID: 0}
-  target: {fileID: 1539638403}
-  soundManager: {fileID: 0}
-  puzzle1: 0
-  puzzle2: 1
-  puzzle3: 0
---- !u!114 &1539638407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539638403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c615c8e5021c3f749801960031d58ae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539638406}
-        m_TargetAssemblyTypeName: PlaneRotate, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  triggerOnlyOnce: 0
 --- !u!1 &1542780723
 GameObject:
   m_ObjectHideFlags: 0
@@ -22319,7 +22257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3653641241032072864}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52553d5e491fd43e4aa28e508ad30a43, type: 3}
   m_Name: 
@@ -22337,7 +22275,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3653641241032072864}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c615c8e5021c3f749801960031d58ae7, type: 3}
   m_Name: 
@@ -22367,10 +22305,10 @@ BoxCollider:
   m_GameObject: {fileID: 3653641241032072864}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.020000089, y: 0.020000009, z: 0.020000009}
-  m_Center: {x: -0.000000029802322, y: 0, z: 9.313226e-10}
+  m_Size: {x: 0.0746583, y: 0.020000009, z: 0.019999987}
+  m_Center: {x: -0.027329141, y: 4.274388e-18, z: 9.1669916e-10}
 --- !u!1 &3739508770830876116
 GameObject:
   m_ObjectHideFlags: 0
