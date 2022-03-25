@@ -12,15 +12,16 @@ public class SwitchDetect : MonoBehaviour
 
   private void OnTriggerStay(Collider other) {
     if (other.gameObject == openTube) {
-      detected = true;
       Debug.Log(detected);
+      detected = true;
     }
   }
 
   private void OnTriggerEnter(Collider other) {
-
+    
     if (other.gameObject == openTube) {
       soundManager.PlayAudioWaterOk();
+      //detected = true;
     }
   }
 
