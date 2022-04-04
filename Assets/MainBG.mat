@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: gradientBg
+  m_Name: MainBG
   m_Shader: {fileID: 4800000, guid: 154a9515b17aecf438c8191d41565efe, type: 3}
   m_ShaderKeywords: _SCREENSPACE_ON
   m_LightmapFlags: 4
