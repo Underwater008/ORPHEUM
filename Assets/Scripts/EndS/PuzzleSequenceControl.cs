@@ -74,9 +74,10 @@ public class PuzzleSequenceControl : MonoBehaviour {
     if (isEndingSeuence && CanShake) {
       startUI.SetActive(false);
       EndingUI.SetActive(false);
-      iOCCube.transform.DOMove(outsidePos.position, 2);
-      endCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
+      iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCCube.SetActive(false);
+      });
+      endCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(() => {
           //CameraShake.ins.Shake();
           ShowStartButton();
@@ -101,11 +102,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
     isRotate = false;
     //apple.SetActive(false);
     //puzzle1Control.SetActive(true);
-    puzzle1.SetActive(true);
     Camera.main.transform.DOMove(cameraPlayPos.position, 1).OnComplete(()=> {
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
       firstDoor.DOLocalMoveZ(-7f, 2).OnComplete(()=> {
+        puzzle1.SetActive(true);
         firstDoor.DOLocalMoveX(-10f, 2).OnComplete(() => {
           //UIs.SetActive(true);
         });
