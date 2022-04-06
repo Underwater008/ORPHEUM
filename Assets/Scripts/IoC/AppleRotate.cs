@@ -132,7 +132,7 @@ public class AppleRotate : MonoBehaviour {
         tree.SetActive(true);
         tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
         tree.transform.DOScale(0.5f, 1).OnComplete(() => {
-          theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
             puzzle3.SetActive(true);
             puzzle3Control.SetActive(true);
             Camera.main.transform.DOMove(cameraPlayPos.position, 1);
@@ -143,6 +143,25 @@ public class AppleRotate : MonoBehaviour {
         });  
       });
     });
+  }
+
+
+
+  public void StartTheFourthStage()
+  {
+    thirdDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle3");
+      puzzle3.SetActive(false);
+      puzzle3Control.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => { });
+        tree.transform.DOScale(1f, 1).OnComplete(() => {
+          ShowStartButton();
+        });
+        
+      });
   }
 
   public void StartGame() 
