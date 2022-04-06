@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GardenMainScene.unity
-    guid: be5b7d5a031c99746a94afd74dd822ff
+    path: Assets/Scenes/EndingPrototype.unity
+    guid: 94a88eba3d02e4e9397e88eff0a60794
   m_configObjects: {}
