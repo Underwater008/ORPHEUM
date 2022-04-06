@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class StartButtonControl : MonoBehaviour {
   public AppleRotate appRotate;
+  public PuzzleSequenceControl puzzleSeqControl;
   public Transform posAfterClick;
 
   public SoundManager soundManager;
@@ -19,11 +20,21 @@ public class StartButtonControl : MonoBehaviour {
   }
 
   public void OnClick() {
-    Debug.Log("pressed first button");
+    if (appRotate.GetComponent<AppleRotate>().isStart == true) { 
+      Debug.Log("pressed first button");
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
-    transform.DOMove(posAfterClick.position, 1).OnComplete(()=> {
+    transform.DOMove(posAfterClick.position, 1).OnComplete(() => {
       appRotate.StartTheFirstStage();
     });
+  }
+    else if (puzzleSeqControl.GetComponent<PuzzleSequenceControl>().isEndingSeuence == true) {
+      Debug.Log("pressed Ending first button");
+      soundManager.PlayAudioClick();
+      soundManager.PlayAudioRotate();
+      transform.DOMove(posAfterClick.position, 1).OnComplete(() => {
+      puzzleSeqControl.StartTheFirstStage();
+      });
+      }
   }
 }

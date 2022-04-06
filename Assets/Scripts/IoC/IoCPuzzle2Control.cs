@@ -9,9 +9,6 @@ public class IoCPuzzle2Control : MonoBehaviour {
   public SwitchDetect switch2Detect;
   public SwitchDetect switch3Detect;
 
-  public GameObject switch1Cube;
-  public GameObject switch2Cube;
-  public GameObject switch3Cube;
 
   public AppleRotate stageControl;
   public SoundManager soundManager;
