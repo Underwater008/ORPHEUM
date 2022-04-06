@@ -1219,7 +1219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460848622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.25, z: 0.12}
+  m_LocalPosition: {x: -0.02, y: 0.8, z: 0.12}
   m_LocalScale: {x: 0.84172004, y: 0.42086, z: 0.84172004}
   m_Children: []
   m_Father: {fileID: 627710553}
@@ -23009,6 +23009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5009360199732831611}
   - component: {fileID: 5009360199732831612}
+  - component: {fileID: 5009360199732831613}
   m_Layer: 0
   m_Name: Square 3
   m_TagString: Untagged
@@ -23043,8 +23044,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.2704666, z: 1.3000758}
+  m_Center: {x: 2.986147e-16, y: -0.059218388, z: 0.0065023676}
+--- !u!114 &5009360199732831613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009360199732831610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe23071984b1bf54db95eae3e4324f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  stepLength: 0.8
 --- !u!23 &5009360199800268522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23168,6 +23183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5009360199896965307}
   - component: {fileID: 5009360199896965308}
+  - component: {fileID: 5009360199896965309}
   m_Layer: 0
   m_Name: Sqaure 4
   m_TagString: Untagged
@@ -23202,8 +23218,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.3110698, z: 1.2877096}
+  m_Center: {x: -1.8634767e-16, y: -0.015647978, z: -0.004057741}
+--- !u!114 &5009360199896965309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009360199896965306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe23071984b1bf54db95eae3e4324f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  stepLength: 0.8
 --- !u!33 &5009360199946859970
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23716,6 +23746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5009360200859639299}
   - component: {fileID: 5009360200859639300}
+  - component: {fileID: 5009360200859639301}
   m_Layer: 0
   m_Name: Square 2
   m_TagString: Untagged
@@ -23750,8 +23781,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.3410285, z: 1.3125093}
+  m_Center: {x: 2.139656e-16, y: -0.026346114, z: 0.0046591247}
+--- !u!114 &5009360200859639301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009360200859639298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe23071984b1bf54db95eae3e4324f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  stepLength: 0.8
 --- !u!1 &5009360200963334034
 GameObject:
   m_ObjectHideFlags: 0
@@ -23762,6 +23807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5009360200963334035}
   - component: {fileID: 5009360200963334036}
+  - component: {fileID: 5009360200963334037}
   m_Layer: 0
   m_Name: Square 1
   m_TagString: Untagged
@@ -23798,6 +23844,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5009360200963334037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009360200963334034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe23071984b1bf54db95eae3e4324f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  stepLength: 0.8
 --- !u!4 &5009360201046969856
 Transform:
   m_ObjectHideFlags: 0
