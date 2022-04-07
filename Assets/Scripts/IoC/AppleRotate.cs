@@ -13,7 +13,8 @@ public class AppleRotate : MonoBehaviour {
   //public GameObject apple;
   public GameObject cubeBase;
   //public GameObject cubeParent;
-  public GameObject startUI;    
+  public GameObject startUI;
+  public GameObject EndUI;
   //FirstStage
   public GameObject puzzle1;
   public GameObject puzzle1Control;
@@ -58,6 +59,7 @@ public class AppleRotate : MonoBehaviour {
 
     if (isStart && CanShake) {
       startUI.SetActive(false);
+      EndUI.SetActive(false);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(()=>{
         //CameraShake.ins.Shake();
         ShowStartButton();
@@ -171,6 +173,8 @@ public class AppleRotate : MonoBehaviour {
 
   public void RestartGame() {
     SceneManager.LoadScene(0);
+    startUI.SetActive(true);
+    EndUI.SetActive(true);
   }
 }
 
