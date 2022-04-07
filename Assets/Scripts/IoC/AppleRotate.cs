@@ -21,6 +21,7 @@ public class AppleRotate : MonoBehaviour {
   public GameObject puzzle2;
   public GameObject puzzle2Control;
   public GameObject puzzle3;
+  public GameObject puzzle3Control;
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
   
@@ -33,6 +34,7 @@ public class AppleRotate : MonoBehaviour {
   public Transform firstDoor;
   public Transform firstDoorOpenPos;
   public Transform secondDoor;
+  public Transform thirdDoor;
   public Transform smallTreePos;
 
   public GameObject[] UIs;
@@ -120,9 +122,46 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    Debug.Log("puzzle3");
-    puzzle3.SetActive(true);
-    puzzle2.SetActive(false);
+    secondDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle3");
+      puzzle2.SetActive(false);
+      puzzle2Control.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
+        tree.SetActive(true);
+        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
+        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
+            puzzle3.SetActive(true);
+            puzzle3Control.SetActive(true);
+            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+              thirdDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+            });
+          });
+        });  
+      });
+    });
+  }
+
+
+
+  public void StartTheFourthStage()
+  {
+    thirdDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle3");
+      puzzle3.SetActive(false);
+      puzzle3Control.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => { });
+        tree.transform.DOScale(1f, 1).OnComplete(() => {
+          ShowStartButton();
+        });
+        
+      });
   }
 
   public void StartGame() 

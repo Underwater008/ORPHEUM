@@ -24,6 +24,7 @@ public class IoCPuzzle2Control : MonoBehaviour {
     if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch2Detect.GetComponent<SwitchDetect>().detected == true && switch3Detect.GetComponent<SwitchDetect>().detected == true) {
       //if (!isChangeThirdStage) {
       //isChangeThirdStage = true;
+      Debug.Log("passed");
       Pass();
 
     }
