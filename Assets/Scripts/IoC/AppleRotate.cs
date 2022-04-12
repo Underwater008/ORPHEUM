@@ -30,13 +30,15 @@ public class AppleRotate : MonoBehaviour {
   public GameObject tree;                 //the tree
   public Transform firstButton;           //the first button we press on the cube
   public Transform startButtonEndMovePos; //the position first button move to when activated
-  public Transform cameraPlayPos;         //the position camera move to look at the puzzle
+  public Transform cameraPlayPos;         //the position camera move to look at the puzzle top
   public Transform cameraOriginalPos;     //the position camera move to look at the cube
+  public Transform cameraPuzzleView;
   public Transform firstDoor;
   public Transform firstDoorOpenPos;
   public Transform secondDoor;
   public Transform thirdDoor;
   public Transform smallTreePos;
+
 
   public GameObject[] UIs;
 
@@ -57,10 +59,10 @@ public class AppleRotate : MonoBehaviour {
     }
 
 
-    if (isStart && CanShake) {
+    if (isStart) {
       startUI.SetActive(false);
       EndUI.SetActive(false);
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(()=>{
+      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(()=>{   //go closer to cube
         //CameraShake.ins.Shake();
         ShowStartButton();
       });
@@ -85,15 +87,18 @@ public class AppleRotate : MonoBehaviour {
     //apple.SetActive(false);
     puzzle1Control.SetActive(true);
     puzzle1.SetActive(true);
-    Camera.main.transform.DOMove(cameraPlayPos.position, 1).OnComplete(()=> {
+    Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(()=> { //move to look at puzzle
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
-      firstDoor.DOLocalMoveZ(-.8f, 2).OnComplete(()=> {
+      firstDoor.DOLocalMoveZ(-.8f, 2).OnComplete(()=> {             //open door
         //UIs.SetActive(true);
       });
     });
-    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(0, 0, 0), 1);
+/*    Camera.main.transform.DOMove(new Vector3(0, 0, -18f), 1).OnComplete(() => {
+      Camera.main.transform.DOMoveY(0, 1);
+    });*/
+    //Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+    transform.DORotate(new Vector3(0,0,0), 1);
   }
 
   //When we shou the second puzzle in IoC

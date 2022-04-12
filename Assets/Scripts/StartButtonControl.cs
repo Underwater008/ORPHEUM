@@ -25,6 +25,7 @@ public class StartButtonControl : MonoBehaviour {
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
     transform.DOMove(posAfterClick.position, 1).OnComplete(() => {
+      //appRotate.isStart = false;
       appRotate.StartTheFirstStage();
     });
   }
