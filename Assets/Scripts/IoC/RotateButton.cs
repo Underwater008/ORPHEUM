@@ -9,7 +9,9 @@ public class RotateButton : MonoBehaviour
 
   public SoundManager soundManager;
 
+  [SerializeField]
   private int centerButtonclickCount = 0;
+
   private bool isRotate = false;
 
   public void OnClick() {

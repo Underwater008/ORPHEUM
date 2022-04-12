@@ -36,7 +36,7 @@ public class SwitchDetect : MonoBehaviour
     {
 
 
-    detected = false;
+    //detected = false;
 
     }
 }

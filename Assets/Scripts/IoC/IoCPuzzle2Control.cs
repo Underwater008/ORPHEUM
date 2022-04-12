@@ -9,9 +9,6 @@ public class IoCPuzzle2Control : MonoBehaviour {
   public SwitchDetect switch2Detect;
   public SwitchDetect switch3Detect;
 
-  public GameObject switch1Cube;
-  public GameObject switch2Cube;
-  public GameObject switch3Cube;
 
   public AppleRotate stageControl;
   public SoundManager soundManager;
@@ -27,6 +24,7 @@ public class IoCPuzzle2Control : MonoBehaviour {
     if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch2Detect.GetComponent<SwitchDetect>().detected == true && switch3Detect.GetComponent<SwitchDetect>().detected == true) {
       //if (!isChangeThirdStage) {
       //isChangeThirdStage = true;
+      Debug.Log("passed");
       Pass();
 
     }
