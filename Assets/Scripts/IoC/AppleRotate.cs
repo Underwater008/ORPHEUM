@@ -89,6 +89,8 @@ public class AppleRotate : MonoBehaviour {
     puzzle1Control.SetActive(true);
     puzzle1.SetActive(true);
 
+    Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
+
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> { //move to look at puzzle
       firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
         Debug.Log("look at puzzle");
@@ -101,7 +103,7 @@ public class AppleRotate : MonoBehaviour {
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() 
   {
-    firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+    firstDoor.DOMoveZ(0, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
