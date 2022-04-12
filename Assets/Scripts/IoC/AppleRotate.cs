@@ -47,8 +47,18 @@ public class AppleRotate : MonoBehaviour {
   private bool isRotate = true;
   public bool isStart = false;
   // Start is called before the first frame update
-  void Start() {
-
+  void TestStart() {
+    if (isStart) {
+      startUI.SetActive(false);
+      EndUI.SetActive(false);
+      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {   //go closer to cube
+                                                                                   //CameraShake.ins.Shake();
+        //isStart = false;
+        ShowStartButton();
+      });
+      CanShake = false;
+      //cubeBase.GetComponent<showStartButton>().appRotate = this;
+    }
   }
 
 
@@ -58,17 +68,6 @@ public class AppleRotate : MonoBehaviour {
       transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
 
-
-    if (isStart) {
-      startUI.SetActive(false);
-      EndUI.SetActive(false);
-      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(()=>{   //go closer to cube
-        //CameraShake.ins.Shake();
-        ShowStartButton();
-      });
-      CanShake = false;
-      //cubeBase.GetComponent<showStartButton>().appRotate = this;
-    }
   }
 
   public void ShowStartButton() {
@@ -82,23 +81,21 @@ public class AppleRotate : MonoBehaviour {
   //}
 
   //When we show the first puzzle in IoC
-  public void StartTheFirstStage() {   
+  public void StartTheFirstStage() {
+    Debug.Log("3");
     isRotate = false;
+    isStart = false;
     //apple.SetActive(false);
     puzzle1Control.SetActive(true);
     puzzle1.SetActive(true);
-    Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(()=> { //move to look at puzzle
-      //Animator anitor = cubeBase.GetComponent<Animator>();
-      //Destroy(anitor)
-      firstDoor.DOLocalMoveZ(-.8f, 2).OnComplete(()=> {             //open door
-        //UIs.SetActive(true);
+
+    Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> { //move to look at puzzle
+      firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
+        Debug.Log("look at puzzle");
       });
     });
-/*    Camera.main.transform.DOMove(new Vector3(0, 0, -18f), 1).OnComplete(() => {
-      Camera.main.transform.DOMoveY(0, 1);
-    });*/
-    //Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(0,0,0), 1);
+
+    transform.DORotate(new Vector3(0,0,0), 1); //put cube at 0
   }
 
   //When we shou the second puzzle in IoC
@@ -173,7 +170,9 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartGame() 
   {
+    Debug.Log("1");
     isStart = true;
+    TestStart();
   }
 
   public void RestartGame() {
