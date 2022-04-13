@@ -20,12 +20,15 @@ public class StartButtonControl : MonoBehaviour {
   }
 
   public void OnClick() {
+    if (appRotate == null) { Debug.Log("app rotate null"); return; }
+
     if (appRotate.GetComponent<AppleRotate>().isStart == true) { 
       Debug.Log("pressed first button");
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
     transform.DOMove(posAfterClick.position, 1).OnComplete(() => {
       //appRotate.isStart = false;
+      Debug.Log("2");
       appRotate.StartTheFirstStage();
     });
   }
