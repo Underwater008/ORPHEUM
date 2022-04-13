@@ -6134,7 +6134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appRotate: {fileID: 130042480}
-  puzzleSeqControl: {fileID: 0}
+  puzzleSeqControl: {fileID: 919132148335495079}
   posAfterClick: {fileID: 345068291}
   soundManager: {fileID: 1201539280}
 --- !u!23 &1125503227
