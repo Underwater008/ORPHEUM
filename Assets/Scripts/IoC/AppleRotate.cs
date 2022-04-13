@@ -35,13 +35,18 @@ public class AppleRotate : MonoBehaviour {
   public Transform cameraPuzzleView;
   public Transform firstDoor;
   public Transform firstDoorOpenPos;
+  public Transform firstDoorOGPos;
   public Transform secondDoor;
+  public Transform secondDoorOpenPos;
+  public Transform secondDoorOGPos;
   public Transform thirdDoor;
+  public Transform thirdDoorOpenPos;
+  public Transform thirdDoorOGPos;
   public Transform smallTreePos;
 
+  public float treeScale;
 
   public GameObject[] UIs;
-
 
   private bool CanShake = true;
   private bool isRotate = true;
@@ -61,13 +66,11 @@ public class AppleRotate : MonoBehaviour {
     }
   }
 
-
   // Update is called once per frame
   void Update() {
     if (isRotate) {
       transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
-
   }
 
   public void ShowStartButton() {
@@ -76,11 +79,6 @@ public class AppleRotate : MonoBehaviour {
     //ShowTree();
   }
 
-  //public void ShowTree() {
-    
-  //}
-
-  //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
     Debug.Log("3");
     isRotate = false;
@@ -101,9 +99,8 @@ public class AppleRotate : MonoBehaviour {
   }
 
   //When we shou the second puzzle in IoC
-  public void StartTheSecondStage() 
-  {
-    firstDoor.DOMoveZ(0, 2).OnComplete(() => {
+  public void StartTheSecondStage() {
+    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
@@ -111,24 +108,24 @@ public class AppleRotate : MonoBehaviour {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
         tree.SetActive(true);
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
-        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+        //tree.transform.DOMove(smallTreePos.localPosition, 1).OnComplete(() => {});   tree.transform.DOScale(treeScale, 1).OnComplete(() => {
+        tree.transform.DOMove(smallTreePos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            Debug.Log("puzzle 2 start");
             puzzle2.SetActive(true);
             puzzle2Control.SetActive(true);
-            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+              secondDoor.transform.DOMove(secondDoorOpenPos.position, 2f); //open second door
             });
           });
         });  
       });
     });
-
   }
 
   public void StartTheThirdStage() {
-    secondDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle3");
       puzzle2.SetActive(false);
@@ -150,8 +147,6 @@ public class AppleRotate : MonoBehaviour {
       });
     });
   }
-
-
 
   public void StartTheFourthStage()
   {

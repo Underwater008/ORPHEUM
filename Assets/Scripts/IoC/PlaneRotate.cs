@@ -15,7 +15,7 @@ public class PlaneRotate : MonoBehaviour
   public SoundManager soundManager;
 
   private int clickCount = 1;
-  private int puzzle2ClickCount = 0;
+  private int puzzle2ClickCount = 1;
   private bool isRotate = false;
   public bool puzzle1;
   public bool puzzle2;

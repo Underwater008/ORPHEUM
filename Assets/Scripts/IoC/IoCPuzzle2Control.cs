@@ -26,10 +26,7 @@ public class IoCPuzzle2Control : MonoBehaviour {
       //isChangeThirdStage = true;
       Debug.Log("passed");
       Pass();
-
     }
-
-
   }
 
   public void Pass() {
