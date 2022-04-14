@@ -116,7 +116,7 @@ public class AppleRotate : MonoBehaviour {
             puzzle2Control.SetActive(true);
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.transform.DOMove(secondDoorOpenPos.position, 2f); //open second door
+              secondDoor.DOMove(secondDoorOpenPos.position, 2f); //open second door
             });
           });
         });  
@@ -125,25 +125,22 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
-      // Hide the first puzzle and show the second puzzle
+    secondDoor.DOMove(new Vector3(0,0,0), 2).OnComplete(() => {
       Debug.Log("puzzle3");
       puzzle2.SetActive(false);
       puzzle2Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
         tree.SetActive(true);
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
-        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
-          theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
-            puzzle3.SetActive(true);
-            puzzle3Control.SetActive(true);
-            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
-            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              thirdDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
-            });
+        theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
+          Debug.Log("look at puzzle 3");
+          puzzle3.SetActive(true);
+          puzzle3Control.SetActive(true);
+          Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
+          Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+            thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
           });
-        });  
+        });
       });
     });
   }
