@@ -48,7 +48,7 @@ public class AppleRotate : MonoBehaviour {
 
   public GameObject[] UIs;
 
-  private bool CanShake = true;
+  //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
   // Start is called before the first frame update
@@ -61,7 +61,7 @@ public class AppleRotate : MonoBehaviour {
         //isStart = false;
         ShowStartButton();
       });
-      CanShake = false;
+      //CanShake = false;
       //cubeBase.GetComponent<showStartButton>().appRotate = this;
     }
   }
