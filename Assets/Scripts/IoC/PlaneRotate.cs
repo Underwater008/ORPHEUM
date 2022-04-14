@@ -14,8 +14,9 @@ public class PlaneRotate : MonoBehaviour
 
   public SoundManager soundManager;
 
-  private int clickCount = 0;
-  private int puzzle2ClickCount = 0;
+  private int clickCount = 1;
+  private int puzzle2ClickCount = 1;
+  private int puzzle3ClickCount = 1;
   private bool isRotate = false;
   public bool puzzle1;
   public bool puzzle2;
@@ -26,6 +27,7 @@ public class PlaneRotate : MonoBehaviour
     //clickCount++;
     Debug.Log(clickCount);
     Debug.Log(puzzle2ClickCount);
+    Debug.Log(puzzle3ClickCount);
     soundManager.PlayAudioClick();
     soundManager.PlayAudioRotate();
     isRotate = true;
@@ -37,6 +39,10 @@ public class PlaneRotate : MonoBehaviour
         clickCount++;
         isRotate = false;
       });
+
+      if (clickCount > 4) {
+        clickCount = 0;
+      }
     }
 
     if (puzzle2 == true) {
@@ -48,7 +54,19 @@ public class PlaneRotate : MonoBehaviour
         isRotate = false;
       });
     }
+   
+    if (puzzle3 == true) {
+
+
+      // Rotate puzzle1 90 degrees when clicked the button
+      target.transform.DORotate(new Vector3(0, 0, puzzle3ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+        puzzle2ClickCount++;
+        isRotate = false;
+      });
+    }
   }
+
+
   // Start is called before the first frame update
   void Start()
     {
