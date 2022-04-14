@@ -40,9 +40,7 @@ public class PlaneRotate : MonoBehaviour
         isRotate = false;
       });
 
-      if (clickCount > 4) {
-        clickCount = 0;
-      }
+
     }
 
     if (puzzle2 == true) {
@@ -63,6 +61,7 @@ public class PlaneRotate : MonoBehaviour
         puzzle2ClickCount++;
         isRotate = false;
       });
+
     }
   }
 
