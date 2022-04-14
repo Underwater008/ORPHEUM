@@ -38,13 +38,19 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public Transform cameraPuzzleView;
   public Transform firstDoor;
   public Transform firstDoorOpenPos;
+  public Transform firstDoorOGPos;
   public Transform secondDoor;
+  public Transform secondDoorOpenPos;
+  public Transform secondDoorOGPos;
+  public Transform thirdDoor;
+  public Transform thirdDoorOpenPos;
+  public Transform thirdDoorOGPos;
   public Transform smallTreePos;
 
   //public GameObject[] UIs;
 
 
-  private bool CanShake = true;
+  //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
   public bool isEndingSeuence = false;
@@ -86,8 +92,8 @@ public class PuzzleSequenceControl : MonoBehaviour {
         });
       });
     });
-    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(0, 0, 0), 1);
+    //Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+    //transform.DORotate(new Vector3(0, 0, 0), 1);
   }
 
   //When we shou the second puzzle in IoC
