@@ -82,7 +82,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     isRotate = false;
     //apple.SetActive(false);
     //puzzle1Control.SetActive(true);
-    Camera.main.transform.DOMove(cameraPlayPos.position, 1).OnComplete(()=> {
+    Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(()=> {
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
       firstDoor.DOLocalMoveZ(-7f, 2).OnComplete(()=> {
@@ -92,8 +92,8 @@ public class PuzzleSequenceControl : MonoBehaviour {
         });
       });
     });
-    //Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    //transform.DORotate(new Vector3(0, 0, 0), 1);
+    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+    transform.DORotate(new Vector3(-90, 0, 90), 1);
   }
 
   //When we shou the second puzzle in IoC
