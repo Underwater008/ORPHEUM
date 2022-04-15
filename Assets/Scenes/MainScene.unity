@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1125bc92c2e82ee4299297c8399e7b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   theGarden: {fileID: 130042478}
   cubeBase: {fileID: 7209493641162678443}
   startUI: {fileID: 61162932}
