@@ -12,6 +12,9 @@ public class PlaneRotate : MonoBehaviour
   public Transform rotateTarget;
   public GameObject target;
 
+  public float lerpDuration = 0.5f;
+  public bool rotating;
+
   public SoundManager soundManager;
 
   private int clickCount = 1;
@@ -22,7 +25,15 @@ public class PlaneRotate : MonoBehaviour
   public bool puzzle2;
   public bool puzzle3;
 
+  public void FixedUpdate() {
+    if (puzzle2ClickCount > 4) {
+      puzzle2ClickCount = 1;
+    }
+  }
+
   public void OnClick() {
+    Quaternion targetRotation = target.transform.rotation;
+
     if (isRotate) return;
     //clickCount++;
     Debug.Log(clickCount);
@@ -44,20 +55,34 @@ public class PlaneRotate : MonoBehaviour
     }
 
     if (puzzle2 == true) {
-      
-      
+      StartCoroutine(Rotate90());
+      //target.transform.Rotate(new Vector3(target.transform.rotation.x, target.transform.rotation.y, target.transform.rotation.z+90));
       // Rotate puzzle1 90 degrees when clicked the button
-      target.transform.DORotate(new Vector3( 0, 0, puzzle2ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
-        puzzle2ClickCount++;
+      //target.transform.DORotate(new Vector3(target.transform.rotation.x, target.transform.rotation.y, puzzle2ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+      puzzle2ClickCount++;
         isRotate = false;
-      });
+      //});
     }
-   
+
+    IEnumerator Rotate90() {
+      rotating = true;
+      float timeElapsed = 0;
+      Quaternion startRotation = target.transform.rotation;
+      Quaternion targetRotation = target.transform.rotation * Quaternion.Euler(1, 1, 90);
+      while (timeElapsed < lerpDuration) {
+        target.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, timeElapsed / lerpDuration);
+        timeElapsed += Time.deltaTime;
+        yield return null;
+      }
+      target.transform.rotation = targetRotation;
+      rotating = false;
+    }
+
     if (puzzle3 == true) {
-
-
+      print(targetRotation);
+      //transform.Rotate(new Vector3(0, objectRotation.y+90, 0) * Time.deltaTime);
       // Rotate puzzle1 90 degrees when clicked the button
-      target.transform.DORotate(new Vector3(0, 0, puzzle3ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+       target.transform.DORotate(new Vector3(targetRotation.x, targetRotation.y + 90, targetRotation.z), 1, RotateMode.Fast).OnComplete(() => {
         puzzle2ClickCount++;
         isRotate = false;
       });
