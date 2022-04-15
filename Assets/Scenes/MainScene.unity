@@ -554,7 +554,7 @@ MonoBehaviour:
   cubeBase: {fileID: 7209493641162678443}
   startUI: {fileID: 61162932}
   EndUI: {fileID: 984312774}
-  titleUI: {fileID: 0}
+  titleUI: {fileID: 1081031275}
   puzzle1: {fileID: 6522285749639184408}
   puzzle1Control: {fileID: 1607029859}
   puzzle2: {fileID: 1282734244}
@@ -12810,7 +12810,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 2012129785}
   target: {fileID: 2012129784}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -12892,7 +12891,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 214814970}
   target: {fileID: 214814969}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -13002,7 +13000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 242020834}
   target: {fileID: 242020833}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -13084,7 +13081,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 2051788886}
   target: {fileID: 2051788885}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -13235,7 +13231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 1349181019}
   target: {fileID: 919132148343733914}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 1
@@ -13374,7 +13369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 1122110577}
   target: {fileID: 1122110576}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -13456,7 +13450,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 1855512965}
   target: {fileID: 1855512964}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -13556,7 +13549,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 238560274}
   target: {fileID: 238560273}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -13664,7 +13656,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 1240092156}
   target: {fileID: 919132149342478361}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 1
@@ -13805,7 +13796,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateTarget: {fileID: 83952201}
   target: {fileID: 83952200}
-  lerpDuration: 0.5
   rotating: 0
   soundManager: {fileID: 1201539280}
   puzzle1: 0
@@ -16942,7 +16932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleAll: {fileID: 1282734245}
   soundManager: {fileID: 1201539280}
-  centerButtonclickCount: 1
+  centerButtonclickCount: 2
 --- !u!114 &3964085632784593731
 MonoBehaviour:
   m_ObjectHideFlags: 0

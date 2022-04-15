@@ -24,6 +24,7 @@ public class RotateButton : MonoBehaviour
       Debug.Log(centerButtonclickCount);
       isRotate = true;
       // Rotate puzzle1 90 degrees when clicked the button
+      
       puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         centerButtonclickCount++;
         isRotate = false;
