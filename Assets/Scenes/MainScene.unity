@@ -900,7 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleAll: {fileID: 5892961184887757474}
   soundManager: {fileID: 1201539280}
-  centerButtonclickCount: 0
+  centerButtonclickCount: 1
 --- !u!114 &173079179
 MonoBehaviour:
   m_ObjectHideFlags: 0
