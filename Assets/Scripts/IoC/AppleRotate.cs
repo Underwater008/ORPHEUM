@@ -132,14 +132,16 @@ public class AppleRotate : MonoBehaviour {
       puzzle2Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
-        tree.SetActive(true);
-        theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
-          Debug.Log("look at puzzle 3");
-          puzzle3.SetActive(true);
-          puzzle3Control.SetActive(true);
-          Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
-          Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-            thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+        flower.SetActive(true);
+        flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
+            Debug.Log("look at puzzle 3");
+            puzzle3.SetActive(true);
+            puzzle3Control.SetActive(true);
+            Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
+            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+              thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+            });
           });
         });
       });
