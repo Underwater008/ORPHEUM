@@ -32,6 +32,8 @@ public class PlaneRotate : MonoBehaviour
   }
 
   public void OnClick() {
+    Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     Quaternion targetRotation = target.transform.rotation;
 
     if (isRotate) return;
@@ -49,6 +51,8 @@ public class PlaneRotate : MonoBehaviour
       rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
         clickCount++;
         isRotate = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
       });
 
 
@@ -61,6 +65,8 @@ public class PlaneRotate : MonoBehaviour
       //target.transform.DORotate(new Vector3(target.transform.rotation.x, target.transform.rotation.y, puzzle2ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
       puzzle2ClickCount++;
         isRotate = false;
+      Cursor.lockState = CursorLockMode.None;
+      Cursor.visible = true;
       //});
     }
 
@@ -85,6 +91,8 @@ public class PlaneRotate : MonoBehaviour
       //target.transform.DORotate(new Vector3(targetRotation.x, targetRotation.y + 90, targetRotation.z), 1, RotateMode.Fast).OnComplete(() => {
         puzzle3ClickCount++;
         isRotate = false;
+      Cursor.lockState = CursorLockMode.None;
+      Cursor.visible = true;
       //});
 
     }
