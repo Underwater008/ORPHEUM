@@ -79,13 +79,13 @@ public class PlaneRotate : MonoBehaviour
     }
 
     if (puzzle3 == true) {
-      print(targetRotation);
+      StartCoroutine(Rotate90());
       //transform.Rotate(new Vector3(0, objectRotation.y+90, 0) * Time.deltaTime);
       // Rotate puzzle1 90 degrees when clicked the button
-       target.transform.DORotate(new Vector3(targetRotation.x, targetRotation.y + 90, targetRotation.z), 1, RotateMode.Fast).OnComplete(() => {
-        puzzle2ClickCount++;
+      //target.transform.DORotate(new Vector3(targetRotation.x, targetRotation.y + 90, targetRotation.z), 1, RotateMode.Fast).OnComplete(() => {
+        puzzle3ClickCount++;
         isRotate = false;
-      });
+      //});
 
     }
   }
