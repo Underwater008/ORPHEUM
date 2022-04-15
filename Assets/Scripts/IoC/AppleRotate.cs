@@ -28,6 +28,8 @@ public class AppleRotate : MonoBehaviour {
   
 
   public GameObject tree;                 //the tree
+  public GameObject grass;
+  public GameObject flower;
   public Transform firstButton;           //the first button we press on the cube
   public Transform startButtonEndMovePos; //the position first button move to when activated
   public Transform cameraPlayPos;         //the position camera move to look at the puzzle top
@@ -42,7 +44,7 @@ public class AppleRotate : MonoBehaviour {
   public Transform thirdDoor;
   public Transform thirdDoorOpenPos;
   public Transform thirdDoorOGPos;
-  public Transform smallTreePos;
+  public Transform grassSpawnPos;
 
   public float treeScale;
 
@@ -107,9 +109,8 @@ public class AppleRotate : MonoBehaviour {
       puzzle1Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
-        tree.SetActive(true);
-        //tree.transform.DOMove(smallTreePos.localPosition, 1).OnComplete(() => {});   tree.transform.DOScale(treeScale, 1).OnComplete(() => {
-        tree.transform.DOMove(smallTreePos.position, 1).OnComplete(() => {
+        grass.SetActive(true);
+        grass.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
             Debug.Log("puzzle 2 start");
             puzzle2.SetActive(true);
@@ -154,7 +155,7 @@ public class AppleRotate : MonoBehaviour {
       puzzle3Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => { });
+        tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
         tree.transform.DOScale(1f, 1).OnComplete(() => {
           ShowStartButton();
         });

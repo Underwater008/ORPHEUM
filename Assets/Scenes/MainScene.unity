@@ -561,6 +561,8 @@ MonoBehaviour:
   puzzle3: {fileID: 1862632414}
   puzzle3Control: {fileID: 1103017587}
   tree: {fileID: 710572943}
+  grass: {fileID: 953177090}
+  flower: {fileID: 1296172803}
   firstButton: {fileID: 1684765056}
   startButtonEndMovePos: {fileID: 565838947}
   cameraPlayPos: {fileID: 543363573}
@@ -575,7 +577,7 @@ MonoBehaviour:
   thirdDoor: {fileID: 618695974}
   thirdDoorOpenPos: {fileID: 1338569178}
   thirdDoorOGPos: {fileID: 390339294}
-  smallTreePos: {fileID: 447847161}
+  grassSpawnPos: {fileID: 447847161}
   treeScale: 0.005
   UIs: []
   isStart: 0
@@ -2696,7 +2698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447847161}
   m_Layer: 0
-  m_Name: smallTree
+  m_Name: GrassSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2710,8 +2712,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447847160}
   m_LocalRotation: {x: 0.49999848, y: -0.50000143, z: -0.5000014, w: 0.49999875}
-  m_LocalPosition: {x: -0.024424488, y: -0.030756276, z: 0.048775516}
-  m_LocalScale: {x: 0.0067735375, y: 0.024441376, z: 0.0064598382}
+  m_LocalPosition: {x: 0, y: 0, z: 0.05038465}
+  m_LocalScale: {x: 2.105553, y: 2.1055524, z: 2.1055524}
   m_Children: []
   m_Father: {fileID: 8018259912767322641}
   m_RootOrder: 9
@@ -4938,6 +4940,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39005905, y: 0.39005908, z: 0.39005905}
   m_Center: {x: 0.000000016161481, y: 0.30497292, z: 0.000000061227645}
+--- !u!1 &953177090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6688703465276863734, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
+  m_PrefabInstance: {fileID: 6688703466816797049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &976484944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7596,6 +7603,11 @@ Transform:
   m_Father: {fileID: 130042479}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
+--- !u!1 &1296172803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3968172074247487514, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
+  m_PrefabInstance: {fileID: 3968172075610977138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1316700670
 GameObject:
   m_ObjectHideFlags: 0
@@ -16570,15 +16582,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2953242042628108675, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0000000031990175
       objectReference: {fileID: 0}
     - target: {fileID: 2953242042628108675, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.000000004656613
       objectReference: {fileID: 0}
     - target: {fileID: 2953242042628108675, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05038465
+      value: 0.03505019
       objectReference: {fileID: 0}
     - target: {fileID: 2953242042628108675, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16611,6 +16623,10 @@ PrefabInstance:
     - target: {fileID: 3968172074247487514, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_Name
       value: Flower Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968172074247487514, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
@@ -19156,15 +19172,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6688703465276863721, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000000006924306
       objectReference: {fileID: 0}
     - target: {fileID: 6688703465276863721, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.000000004656613
       objectReference: {fileID: 0}
     - target: {fileID: 6688703465276863721, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05038465
+      value: 0.03505019
       objectReference: {fileID: 0}
     - target: {fileID: 6688703465276863721, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19197,6 +19213,10 @@ PrefabInstance:
     - target: {fileID: 6688703465276863734, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_Name
       value: Grass Prefab IOC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688703465276863734, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
