@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class AppleRotate : MonoBehaviour {
   public float speed = 30;
@@ -46,6 +47,11 @@ public class AppleRotate : MonoBehaviour {
   public Transform thirdDoorOGPos;
   public Transform grassSpawnPos;
 
+  public GameObject VFXObj;
+  public VisualEffect puzzle1VFX;
+  public VisualEffect puzzle2VFX;
+  public VisualEffect puzzle3VFX;
+
   public float treeScale;
 
   public GameObject[] UIs;
@@ -82,6 +88,9 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
+    puzzle1VFX.Stop();
+    puzzle2VFX.Stop();
+    puzzle3VFX.Stop();
     Debug.Log("3");
     isRotate = false;
     isStart = false;
@@ -102,6 +111,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1VFX.Play();
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
@@ -109,6 +119,7 @@ public class AppleRotate : MonoBehaviour {
       puzzle1Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
+
         grass.SetActive(true);
         grass.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
@@ -126,7 +137,8 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    secondDoor.DOMove(new Vector3(0,0,0), 2).OnComplete(() => {
+    puzzle2VFX.Play();
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       Debug.Log("puzzle3");
       puzzle2.SetActive(false);
       puzzle2Control.SetActive(false);
@@ -148,9 +160,9 @@ public class AppleRotate : MonoBehaviour {
     });
   }
 
-  public void StartTheFourthStage()
-  {
-    thirdDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+  public void StartTheFourthStage(){
+    puzzle3VFX.Play();
+    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle3");
       puzzle3.SetActive(false);
