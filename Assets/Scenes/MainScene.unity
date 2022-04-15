@@ -12917,6 +12917,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 5311271865296412795}
 --- !u!65 &919132147482576579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13001,6 +13002,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 5311271865296412795}
 --- !u!65 &919132147482705640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13113,6 +13115,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 5311271865296412795}
 --- !u!65 &919132147602760286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13197,6 +13200,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 5311271865296412795}
 --- !u!65 &919132147632653123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13350,6 +13354,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 173079174}
 --- !u!65 &919132148343733916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13491,6 +13496,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 512859854}
 --- !u!1 &919132148942554017
 GameObject:
   m_ObjectHideFlags: 0
@@ -13575,6 +13581,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 512859854}
 --- !u!1 &919132149041684617
 GameObject:
   m_ObjectHideFlags: 0
@@ -13677,6 +13684,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 512859854}
 --- !u!1 &919132149216170321
 GameObject:
   m_ObjectHideFlags: 0
@@ -13787,6 +13795,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 173079174}
 --- !u!65 &919132149342478363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13930,6 +13939,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 1410164297}
   puzzle2Control: {fileID: 503755435}
   puzzle3Control: {fileID: 1503151566}
+  centerButton: {fileID: 512859854}
 --- !u!33 &967239231349272144
 MeshFilter:
   m_ObjectHideFlags: 0
