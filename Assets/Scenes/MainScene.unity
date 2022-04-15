@@ -12560,7 +12560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149619082397}
   m_LocalRotation: {x: -0.5000007, y: -0.49999934, z: -0.5000007, w: 0.49999934}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 363677203}
@@ -12914,6 +12914,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 1
   puzzle3: 0
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!65 &919132147482576579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12995,6 +12998,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 1
   puzzle3: 0
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!65 &919132147482705640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13104,6 +13110,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 1
   puzzle3: 0
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!65 &919132147602760286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13185,6 +13194,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 1
   puzzle3: 0
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!65 &919132147632653123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13335,6 +13347,9 @@ MonoBehaviour:
   puzzle1: 1
   puzzle2: 0
   puzzle3: 0
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!65 &919132148343733916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13473,6 +13488,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 0
   puzzle3: 1
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!1 &919132148942554017
 GameObject:
   m_ObjectHideFlags: 0
@@ -13554,6 +13572,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 0
   puzzle3: 1
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!1 &919132149041684617
 GameObject:
   m_ObjectHideFlags: 0
@@ -13653,6 +13674,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 0
   puzzle3: 1
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!1 &919132149216170321
 GameObject:
   m_ObjectHideFlags: 0
@@ -13760,6 +13784,9 @@ MonoBehaviour:
   puzzle1: 1
   puzzle2: 0
   puzzle3: 0
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!65 &919132149342478363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13900,6 +13927,9 @@ MonoBehaviour:
   puzzle1: 0
   puzzle2: 0
   puzzle3: 1
+  puzzle1Control: {fileID: 1410164297}
+  puzzle2Control: {fileID: 503755435}
+  puzzle3Control: {fileID: 1503151566}
 --- !u!33 &967239231349272144
 MeshFilter:
   m_ObjectHideFlags: 0
