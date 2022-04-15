@@ -8,6 +8,9 @@ public class RotateButton : MonoBehaviour
   public Transform puzzleAll;
 
   public SoundManager soundManager;
+  public GameObject puzzle1Control;
+  public GameObject puzzle2Control;
+  public GameObject puzzle3Control;
 
   [SerializeField]
   private int centerButtonclickCount = 1;
@@ -19,17 +22,26 @@ public class RotateButton : MonoBehaviour
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
       if (isRotate) return;
+      puzzle1Control.SetActive(false);
+      puzzle2Control.SetActive(false);
+      puzzle3Control.SetActive(false);
       soundManager.PlayAudioClick();
       soundManager.PlayAudioRotate();
       Debug.Log(centerButtonclickCount);
       isRotate = true;
       // Rotate puzzle1 90 degrees when clicked the button
-      
-      puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
+      puzzleAll.DOMoveZ(puzzleAll.position.z - 1.5f, 1).OnComplete(() => {
+        puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         centerButtonclickCount++;
         isRotate = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        puzzleAll.DOMoveZ(puzzleAll.position.z + 1.5f, 1).OnComplete(() => {
+          Cursor.lockState = CursorLockMode.None;
+          Cursor.visible = true;
+          puzzle1Control.SetActive(true);
+          puzzle2Control.SetActive(true);
+          puzzle3Control.SetActive(true);
+        });
+        });
       });
     }
   }
@@ -46,3 +58,8 @@ public class RotateButton : MonoBehaviour
         
     }
 }
+/*Vector3 puzzleAllScale = puzzleAll.localScale;
+  puzzleAll.DOScale(new Vector3(puzzleAllScale.x * 0.6f, puzzleAllScale.y * 0.6f, puzzleAllScale.z), 0.5f).OnComplete(() => {
+  Vector3 puzzleAllScale = puzzleAll.localScale;
+  puzzleAll.DOScale(new Vector3(puzzleAllScale.x / 0.6f, puzzleAllScale.y / 0.6f, puzzleAllScale.z), 0.5f);
+});*/
