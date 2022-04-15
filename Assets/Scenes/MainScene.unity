@@ -3106,7 +3106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleAll: {fileID: 1862632415}
   soundManager: {fileID: 1201539280}
-  centerButtonclickCount: 0
+  centerButtonclickCount: 1
 --- !u!136 &512859857
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16806,7 +16806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleAll: {fileID: 1282734245}
   soundManager: {fileID: 1201539280}
-  centerButtonclickCount: 0
+  centerButtonclickCount: 1
 --- !u!114 &3964085632784593731
 MonoBehaviour:
   m_ObjectHideFlags: 0
