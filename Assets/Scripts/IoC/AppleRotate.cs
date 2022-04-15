@@ -64,6 +64,8 @@ public class AppleRotate : MonoBehaviour {
     if (isStart) {
       startUI.SetActive(false);
       EndUI.SetActive(false);
+
+      Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
       Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {   //go closer to cube
                                                                                    //CameraShake.ins.Shake();
         //isStart = false;
