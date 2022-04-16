@@ -31,6 +31,8 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public Transform outsidePos;
   public Transform endCube;
 
+
+  public GameObject iOCFirstButton;
   public Transform firstButton;           //the first button we press on the cube
   public Transform startButtonEndMovePos; //the position first button move to when activated
   public Transform cameraPlayPos;         //the position camera move to look at the puzzle top
@@ -149,10 +151,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
       startUI.SetActive(false);
       EndingUI.SetActive(false);
       iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
-        iOCCube.SetActive(false);
+        iOCFirstButton.SetActive(false);
       });
       endCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
+         
           //CameraShake.ins.Shake();
           ShowStartButton();
         });

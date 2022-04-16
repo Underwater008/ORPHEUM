@@ -30,11 +30,11 @@ public class RotateButton : MonoBehaviour
       Debug.Log(centerButtonclickCount);
       isRotate = true;
       // Rotate puzzle1 90 degrees when clicked the button
-      puzzleAll.DOMoveZ(puzzleAll.position.z - 1.5f, 1).OnComplete(() => {
+      puzzleAll.DOMoveZ(puzzleAll.position.z - 1.5f, 0.8f).OnComplete(() => {
         puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         centerButtonclickCount++;
         isRotate = false;
-        puzzleAll.DOMoveZ(puzzleAll.position.z + 1.5f, 1).OnComplete(() => {
+        puzzleAll.DOMoveZ(puzzleAll.position.z + 1.5f, 0.3f).OnComplete(() => {
           Cursor.lockState = CursorLockMode.None;
           Cursor.visible = true;
           puzzle1Control.SetActive(true);

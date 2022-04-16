@@ -53,9 +53,13 @@ public class AppleRotate : MonoBehaviour {
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
 
+  public ParticleSystem rockDebris;
+
   public float treeScale;
 
-  public GameObject[] UIs;
+  public PuzzleSequenceControl puzzleSequenceControl;
+
+  //public GameObject[] UIs;
 
   //private bool CanShake = true;
   private bool isRotate = true;
@@ -92,9 +96,6 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
-    puzzle1VFX.Stop();
-    puzzle2VFX.Stop();
-    puzzle3VFX.Stop();
     Debug.Log("3");
     isRotate = false;
     isStart = false;
@@ -104,9 +105,16 @@ public class AppleRotate : MonoBehaviour {
 
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
 
-    Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> { //move to look at puzzle
-      firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
-        Debug.Log("look at puzzle");
+    Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> {    //move to look at puzzle
+      rockDebris.Play();
+      firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
+      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
+        puzzle1Control.SetActive(true);
+        puzzle1.SetActive(true);
+        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
+          rockDebris.Stop();
+          Debug.Log("look at puzzle");
+      });
       });
     });
 
@@ -121,29 +129,35 @@ public class AppleRotate : MonoBehaviour {
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
       puzzle1Control.SetActive(false);
+      firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
+      firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
-
         grass.SetActive(true);
         grass.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
-            Debug.Log("puzzle 2 start");
-            puzzle2.SetActive(true);
-            puzzle2Control.SetActive(true);
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.DOMove(secondDoorOpenPos.position, 2f); //open second door
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                Debug.Log("puzzle 2 start");
+                puzzle2.SetActive(true);
+                puzzle2Control.SetActive(true);
+                secondDoor.DOMove(secondDoorOpenPos.position, 2f); //open second door
             });
           });
         });  
       });
     });
+    });
+    });
   }
 
   public void StartTheThirdStage() {
     puzzle2VFX.Play();
-    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
-      Debug.Log("puzzle3");
+    firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
+      secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+        secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
+          Debug.Log("puzzle3");
       puzzle2.SetActive(false);
       puzzle2Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
@@ -162,6 +176,7 @@ public class AppleRotate : MonoBehaviour {
         });
       });
     });
+    });
   }
 
   public void StartTheFourthStage(){
@@ -175,7 +190,8 @@ public class AppleRotate : MonoBehaviour {
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
         tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
         tree.transform.DOScale(1f, 1).OnComplete(() => {
-          ShowStartButton();
+          //ShowStartButton();
+          puzzleSequenceControl.StartEndingSequence();
         });
         
       });
@@ -192,6 +208,14 @@ public class AppleRotate : MonoBehaviour {
     SceneManager.LoadScene(0);
     startUI.SetActive(true);
     EndUI.SetActive(true);
+  }
+
+  private void Start() {
+    puzzle1Control.SetActive(false);
+    puzzle1.SetActive(false);
+    puzzle1VFX.Stop();
+    puzzle2VFX.Stop();
+    puzzle3VFX.Stop();
   }
 }
 
