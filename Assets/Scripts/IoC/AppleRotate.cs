@@ -57,7 +57,9 @@ public class AppleRotate : MonoBehaviour {
 
   public float treeScale;
 
-  public GameObject[] UIs;
+  public PuzzleSequenceControl puzzleSequenceControl;
+
+  //public GameObject[] UIs;
 
   //private bool CanShake = true;
   private bool isRotate = true;
@@ -188,7 +190,8 @@ public class AppleRotate : MonoBehaviour {
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
         tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
         tree.transform.DOScale(1f, 1).OnComplete(() => {
-          ShowStartButton();
+          //ShowStartButton();
+          puzzleSequenceControl.StartEndingSequence();
         });
         
       });
