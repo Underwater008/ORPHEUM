@@ -53,6 +53,8 @@ public class AppleRotate : MonoBehaviour {
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
 
+  public ParticleSystem rockDebris;
+
   public float treeScale;
 
   public GameObject[] UIs;
@@ -105,7 +107,9 @@ public class AppleRotate : MonoBehaviour {
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
 
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> { //move to look at puzzle
+      rockDebris.Play();
       firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
+        rockDebris.Stop();
         Debug.Log("look at puzzle");
       });
     });
