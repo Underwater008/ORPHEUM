@@ -123,6 +123,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1Control.SetActive(false);
     puzzle1VFX.Play();
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
@@ -136,14 +137,18 @@ public class AppleRotate : MonoBehaviour {
         grass.SetActive(true);
         grass.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
-                Debug.Log("puzzle 2 start");
+              rockDebris.Play();
+              secondDoor.DOMoveZ(secondDoor.position.z - 1f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
-                secondDoor.DOMove(secondDoorOpenPos.position, 2f); //open second door
-            });
+                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  rockDebris.Stop();
+                  Debug.Log("puzzle 2 start");
+                });
+              });
           });
         });  
       });
@@ -154,9 +159,9 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheThirdStage() {
     puzzle2VFX.Play();
-    firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
-      secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
         secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
+          secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
           Debug.Log("puzzle3");
       puzzle2.SetActive(false);
       puzzle2Control.SetActive(false);
@@ -170,7 +175,10 @@ public class AppleRotate : MonoBehaviour {
             puzzle3Control.SetActive(true);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+              thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+                thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
+                thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+            });
             });
           });
         });
@@ -181,9 +189,11 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheFourthStage(){
     puzzle3VFX.Play();
-    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
-      // Hide the first puzzle and show the second puzzle
-      Debug.Log("puzzle3");
+    thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
+      thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+        thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+          // Hide the first puzzle and show the second puzzle
+          Debug.Log("puzzle3");
       puzzle3.SetActive(false);
       puzzle3Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
@@ -194,6 +204,8 @@ public class AppleRotate : MonoBehaviour {
           puzzleSequenceControl.StartEndingSequence();
         });
         
+      });
+      });
       });
   }
 
