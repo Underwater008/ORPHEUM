@@ -104,12 +104,14 @@ public class AppleRotate : MonoBehaviour {
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
 
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> {    //move to look at puzzle
+      rockDebris.Play();
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
-        Debug.Log("look at puzzle");
+          rockDebris.Stop();
+          Debug.Log("look at puzzle");
       });
       });
     });
