@@ -12,43 +12,131 @@ public class PlaneRotate : MonoBehaviour
   public Transform rotateTarget;
   public GameObject target;
 
+  private float lerpDuration = 0.7f;
+  public bool rotating;
+
   public SoundManager soundManager;
 
-  private int clickCount = 0;
-  private int puzzle2ClickCount = 0;
+  private int clickCount = 1;
+  private int puzzle2ClickCount = 1;
+  private int puzzle3ClickCount = 1;
   private bool isRotate = false;
   public bool puzzle1;
   public bool puzzle2;
   public bool puzzle3;
 
-  public void OnClick() {
-    if (isRotate) return;
-    //clickCount++;
-    Debug.Log(clickCount);
-    Debug.Log(puzzle2ClickCount);
-    soundManager.PlayAudioClick();
-    soundManager.PlayAudioRotate();
-    isRotate = true;
+  public GameObject puzzle1Control;
+  public GameObject puzzle2Control;
+  public GameObject puzzle3Control;
+  public Transform centerButton;
 
-    if (puzzle1 == true) {
-      
-      // Rotate puzzle1 90 degrees when clicked the button
-      rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
-        clickCount++;
-        isRotate = false;
-      });
-    }
-
-    if (puzzle2 == true) {
-      
-      
-      // Rotate puzzle1 90 degrees when clicked the button
-      target.transform.DORotate(new Vector3( 0, 0, puzzle2ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
-        puzzle2ClickCount++;
-        isRotate = false;
-      });
+  public void FixedUpdate() {
+    if (puzzle2ClickCount > 4) {
+      puzzle2ClickCount = 1;
     }
   }
+
+  public void OnClick() {
+    if (Cursor.visible) {
+      puzzle1Control.SetActive(false);
+      puzzle2Control.SetActive(false);
+      puzzle3Control.SetActive(false);
+      //Do stuffCursor.lockState = CursorLockMode.Confined;
+      Cursor.visible = false;
+      Quaternion targetRotation = target.transform.rotation;
+
+      if (isRotate) return;
+      //clickCount++;
+      Debug.Log(clickCount);
+      Debug.Log(puzzle2ClickCount);
+      Debug.Log(puzzle3ClickCount);
+      soundManager.PlayAudioClick();
+      soundManager.PlayAudioRotate();
+      isRotate = true;
+
+      if (puzzle1 == true) {
+        centerButton.DOMoveZ(rotateTarget.position.z - 1.5f, 1);
+        rotateTarget.DOMoveZ(rotateTarget.position.z - 1.5f, 1).OnComplete(() => {
+          // Rotate puzzle1 90 degrees when clicked the button
+          rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+            centerButton.DOMoveZ(centerButton.position.z + 1.5f, 1);
+            rotateTarget.DOMoveZ(rotateTarget.position.z + 1.5f, 1).OnComplete(() => {
+              clickCount++;
+              isRotate = false;
+              Cursor.lockState = CursorLockMode.None;
+              Cursor.visible = true;
+              puzzle1Control.SetActive(true);
+              puzzle2Control.SetActive(true);
+              puzzle3Control.SetActive(true);
+            });
+          });
+        });
+
+
+      }
+
+      if (puzzle2 == true) {
+        centerButton.DOMoveZ(centerButton.position.z - 1.5f, 1);
+        target.transform.DOMoveZ(target.transform.position.z - 1.5f, 1).OnComplete(() => {
+          // Rotate puzzle1 90 degrees when clicked the button
+          StartCoroutine(Rotate90()); 
+        });
+
+        //target.transform.Rotate(new Vector3(target.transform.rotation.x, target.transform.rotation.y, target.transform.rotation.z+90));
+        // Rotate puzzle1 90 degrees when clicked the button
+        //target.transform.DORotate(new Vector3(target.transform.rotation.x, target.transform.rotation.y, puzzle2ClickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
+        puzzle2ClickCount++;
+        isRotate = false;
+        //});
+      }
+
+      if (puzzle3 == true) {
+        centerButton.DOMoveZ(centerButton.position.z - 1.5f, 1);
+        target.transform.DOMoveZ(target.transform.position.z - 1.5f, 1).OnComplete(() => {
+          // Rotate puzzle1 90 degrees when clicked the button
+          StartCoroutine(Rotate90());
+        });
+        //transform.Rotate(new Vector3(0, objectRotation.y+90, 0) * Time.deltaTime);
+        // Rotate puzzle1 90 degrees when clicked the button
+        //target.transform.DORotate(new Vector3(targetRotation.x, targetRotation.y + 90, targetRotation.z), 1, RotateMode.Fast).OnComplete(() => {
+        puzzle3ClickCount++;
+        isRotate = false;
+        //});
+
+      }
+    }
+
+     IEnumerator Rotate90() {
+      rotating = true;
+      float timeElapsed = 0;
+      Quaternion startRotation = target.transform.rotation;
+      Quaternion targetRotation = target.transform.rotation * Quaternion.Euler(1, 1, 90);
+      while (timeElapsed < lerpDuration) {
+        target.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, timeElapsed / lerpDuration);
+        timeElapsed += Time.deltaTime;
+        yield return null;
+      }
+      target.transform.rotation = targetRotation;
+      rotating = false;
+      yield return StartCoroutine(DropDownTile());
+    }
+
+    IEnumerator DropDownTile() {
+      centerButton.DOMoveZ(centerButton.position.z + 1.5f, 1);
+      rotateTarget.DOMoveZ(rotateTarget.position.z + 1.5f, 1).OnComplete(() => {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        puzzle1Control.SetActive(true);
+        puzzle2Control.SetActive(true);
+        puzzle3Control.SetActive(true);
+      });
+      yield return null;
+    }
+  }
+
+
+
+
   // Start is called before the first frame update
   void Start()
     {

@@ -34,8 +34,6 @@ public class IoCPuzzleControl : MonoBehaviour
             Pass1();
           
         }
-
-     
     }
 
     public void Pass1() {

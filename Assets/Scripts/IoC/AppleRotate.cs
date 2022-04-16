@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class AppleRotate : MonoBehaviour {
   public float speed = 30;
@@ -13,7 +14,9 @@ public class AppleRotate : MonoBehaviour {
   //public GameObject apple;
   public GameObject cubeBase;
   //public GameObject cubeParent;
-  public GameObject startUI;    
+  public GameObject startUI;
+  public GameObject EndUI;
+  public GameObject titleUI;
   //FirstStage
   public GameObject puzzle1;
   public GameObject puzzle1Control;
@@ -21,47 +24,64 @@ public class AppleRotate : MonoBehaviour {
   public GameObject puzzle2;
   public GameObject puzzle2Control;
   public GameObject puzzle3;
+  public GameObject puzzle3Control;
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
   
 
   public GameObject tree;                 //the tree
+  public GameObject grass;
+  public GameObject flower;
   public Transform firstButton;           //the first button we press on the cube
   public Transform startButtonEndMovePos; //the position first button move to when activated
-  public Transform cameraPlayPos;         //the position camera move to look at the puzzle
+  public Transform cameraPlayPos;         //the position camera move to look at the puzzle top
   public Transform cameraOriginalPos;     //the position camera move to look at the cube
+  public Transform cameraPuzzleView;
   public Transform firstDoor;
   public Transform firstDoorOpenPos;
+  public Transform firstDoorOGPos;
   public Transform secondDoor;
-  public Transform smallTreePos;
+  public Transform secondDoorOpenPos;
+  public Transform secondDoorOGPos;
+  public Transform thirdDoor;
+  public Transform thirdDoorOpenPos;
+  public Transform thirdDoorOGPos;
+  public Transform grassSpawnPos;
+
+  public GameObject VFXObj;
+  public VisualEffect puzzle1VFX;
+  public VisualEffect puzzle2VFX;
+  public VisualEffect puzzle3VFX;
+
+  public float treeScale;
 
   public GameObject[] UIs;
 
-
-  private bool CanShake = true;
+  //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
   // Start is called before the first frame update
-  void Start() {
+  void TestStart() {
+    if (isStart) {
+      startUI.SetActive(false);
+      EndUI.SetActive(false);
+      titleUI.SetActive(false);
 
+      Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
+      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {   //go closer to cube
+                                                                                   //CameraShake.ins.Shake();
+        //isStart = false;
+        ShowStartButton();
+      });
+      //CanShake = false;
+      //cubeBase.GetComponent<showStartButton>().appRotate = this;
+    }
   }
-
 
   // Update is called once per frame
   void Update() {
     if (isRotate) {
       transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
-    }
-
-
-    if (isStart && CanShake) {
-      startUI.SetActive(false);
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(()=>{
-        //CameraShake.ins.Shake();
-        ShowStartButton();
-      });
-      CanShake = false;
-      //cubeBase.GetComponent<showStartButton>().appRotate = this;
     }
   }
 
@@ -71,67 +91,107 @@ public class AppleRotate : MonoBehaviour {
     //ShowTree();
   }
 
-  //public void ShowTree() {
-    
-  //}
-
-  //When we show the first puzzle in IoC
-  public void StartTheFirstStage() {   
+  public void StartTheFirstStage() {
+    puzzle1VFX.Stop();
+    puzzle2VFX.Stop();
+    puzzle3VFX.Stop();
+    Debug.Log("3");
     isRotate = false;
+    isStart = false;
     //apple.SetActive(false);
     puzzle1Control.SetActive(true);
     puzzle1.SetActive(true);
-    Camera.main.transform.DOMove(cameraPlayPos.position, 1).OnComplete(()=> {
-      //Animator anitor = cubeBase.GetComponent<Animator>();
-      //Destroy(anitor)
-      firstDoor.DOLocalMoveZ(-.8f, 2).OnComplete(()=> {
-        //UIs.SetActive(true);
+
+    Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
+
+    Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> { //move to look at puzzle
+      firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
+        Debug.Log("look at puzzle");
       });
     });
-    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(0, 0, 0), 1);
+
+    transform.DORotate(new Vector3(0,0,0), 1); //put cube at 0
   }
 
   //When we shou the second puzzle in IoC
-  public void StartTheSecondStage() 
-  {
-    firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+  public void StartTheSecondStage() {
+    puzzle1VFX.Play();
+    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
       puzzle1Control.SetActive(false);
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
-        tree.SetActive(true);
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
-        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+
+        grass.SetActive(true);
+        grass.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            Debug.Log("puzzle 2 start");
             puzzle2.SetActive(true);
             puzzle2Control.SetActive(true);
-            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+              secondDoor.DOMove(secondDoorOpenPos.position, 2f); //open second door
             });
           });
         });  
       });
     });
-
   }
 
   public void StartTheThirdStage() {
-    Debug.Log("puzzle3");
-    puzzle3.SetActive(true);
-    puzzle2.SetActive(false);
+    puzzle2VFX.Play();
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+      Debug.Log("puzzle3");
+      puzzle2.SetActive(false);
+      puzzle2Control.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
+        flower.SetActive(true);
+        flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
+            Debug.Log("look at puzzle 3");
+            puzzle3.SetActive(true);
+            puzzle3Control.SetActive(true);
+            Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
+            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+              thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+            });
+          });
+        });
+      });
+    });
+  }
+
+  public void StartTheFourthStage(){
+    puzzle3VFX.Play();
+    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle3");
+      puzzle3.SetActive(false);
+      puzzle3Control.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+        tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
+        tree.transform.DOScale(1f, 1).OnComplete(() => {
+          ShowStartButton();
+        });
+        
+      });
   }
 
   public void StartGame() 
   {
+    Debug.Log("1");
     isStart = true;
+    TestStart();
   }
 
   public void RestartGame() {
     SceneManager.LoadScene(0);
+    startUI.SetActive(true);
+    EndUI.SetActive(true);
   }
 }
 
