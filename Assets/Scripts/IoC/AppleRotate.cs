@@ -160,22 +160,22 @@ public class AppleRotate : MonoBehaviour {
   public void StartTheThirdStage() {
     puzzle2VFX.Play();
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
-        secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
-          secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
-          Debug.Log("puzzle3");
       puzzle2.SetActive(false);
       puzzle2Control.SetActive(false);
+      secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
+      secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
+          Debug.Log("puzzle3");
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
         flower.SetActive(true);
         flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
             Debug.Log("look at puzzle 3");
-            puzzle3.SetActive(true);
-            puzzle3Control.SetActive(true);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+                puzzle3.SetActive(true);
+                puzzle3Control.SetActive(true);
                 thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
             });
