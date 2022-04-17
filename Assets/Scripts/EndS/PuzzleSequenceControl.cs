@@ -15,6 +15,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   //public GameObject cubeParent;
   public GameObject startUI;
   public GameObject EndingUI;
+  public GameObject titleUI;
   //FirstStage
   public GameObject puzzle1;
   public GameObject puzzle1Control;
@@ -137,6 +138,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     if (isStart) {
       startUI.SetActive(false);
       EndingUI.SetActive(false);
+      titleUI.SetActive(false);
       Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(()=>{
         //CameraShake.ins.Shake();
         ShowStartButton();
