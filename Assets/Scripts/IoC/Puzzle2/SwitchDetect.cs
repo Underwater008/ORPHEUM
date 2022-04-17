@@ -20,7 +20,7 @@ public class SwitchDetect : MonoBehaviour
   private void OnTriggerEnter(Collider other) {
     
     if (other.gameObject == openTube) {
-      soundManager.PlayAudioWaterOk();
+      //soundManager.PlayAudioWaterOk();
       //detected = true;
     }
   }
