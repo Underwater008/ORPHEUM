@@ -7,7 +7,7 @@ public class DragthisCube : MonoBehaviour {
 
   public float distance;
   public float movespeed = 4f;
-  public int stepLength;
+  public float stepLength;
 
   bool canMove = false;
   [SerializeField]

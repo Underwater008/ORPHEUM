@@ -152,6 +152,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     if (isEndingSeuence) {
       startUI.SetActive(false);
       EndingUI.SetActive(false);
+      titleUI.SetActive(false);
       iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCFirstButton.SetActive(false);
       });
