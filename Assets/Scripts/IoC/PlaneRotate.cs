@@ -91,8 +91,8 @@ public class PlaneRotate : MonoBehaviour
       }
 
       if (puzzle3 == true) {
-        centerButton.DOMoveZ(centerButton.position.z - 1.5f, 1);
-        target.transform.DOMoveZ(target.transform.position.z - 1.5f, 1).OnComplete(() => {
+        centerButton.DOMoveZ(centerButton.position.z - 1.5f, 0.3f);
+        target.transform.DOMoveZ(target.transform.position.z - 1.5f, 0.3f).OnComplete(() => {
           // Rotate puzzle1 90 degrees when clicked the button
           StartCoroutine(Rotate90());
         });
@@ -122,8 +122,8 @@ public class PlaneRotate : MonoBehaviour
     }
 
     IEnumerator DropDownTile() {
-      centerButton.DOMoveZ(centerButton.position.z + 1.5f, 1);
-      rotateTarget.DOMoveZ(rotateTarget.position.z + 1.5f, 1).OnComplete(() => {
+      centerButton.DOMoveZ(centerButton.position.z + 1.5f, 0.3f);
+      rotateTarget.DOMoveZ(rotateTarget.position.z + 1.5f, 0.3f).OnComplete(() => {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         puzzle1Control.SetActive(true);
