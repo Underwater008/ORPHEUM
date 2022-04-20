@@ -191,8 +191,8 @@ public class AppleRotate : MonoBehaviour {
   public void StartTheFourthStage(){
     puzzle3VFX.Play();
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
-      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2, 0);
-      thirdDoor.DOMoveZ(thirdDoor.position.z, 1).OnComplete(() => {
+      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 1);
+      thirdDoor.DOMoveZ(thirdDoor.position.z + 1f, 1).OnComplete(() => {
           // Hide the first puzzle and show the second puzzle
           Debug.Log("puzzle3");
         puzzle3.SetActive(false);

@@ -11,24 +11,30 @@ public class SwitchDetect : MonoBehaviour
   public bool detected;
 
   private void OnTriggerStay(Collider other) {
-    if (other.gameObject == openTube) {
-      Debug.Log(detected);
-      detected = true;
-    }
+ 
   }
 
   private void OnTriggerEnter(Collider other) {
     
     if (other.gameObject == openTube) {
-      //soundManager.PlayAudioWaterOk();
-      //detected = true;
+      if (other.gameObject == openTube) {
+        Debug.Log(detected);
+        detected = true;
+      }
+    }
+  }
+
+  private void OnTriggerExit(Collider other) {
+    if (other.gameObject == openTube) {
+      detected = false;
     }
   }
 
   // Start is called before the first frame update
   void Start()
     {
-        detected = false;
+      Debug.Log(detected);
+      detected = false;
     }
 
     // Update is called once per frame
@@ -36,7 +42,7 @@ public class SwitchDetect : MonoBehaviour
     {
 
 
-    //detected = false;
+    detected = false;
 
     }
 }

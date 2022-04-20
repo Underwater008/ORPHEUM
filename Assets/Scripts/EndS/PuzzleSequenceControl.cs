@@ -52,7 +52,6 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //public GameObject[] UIs;
 
-
   //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
