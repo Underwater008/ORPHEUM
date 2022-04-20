@@ -47,6 +47,7 @@ public class AppleRotate : MonoBehaviour {
   public Transform thirdDoorOpenPos;
   public Transform thirdDoorOGPos;
   public Transform grassSpawnPos;
+  public Transform treeSpawnPos;
 
   public GameObject VFXObj;
   public VisualEffect puzzle1VFX;
@@ -176,8 +177,8 @@ public class AppleRotate : MonoBehaviour {
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
-                thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
-                thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+                thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 1f, 1);
+                thirdDoor.DOMove(thirdDoorOpenPos.position, 2);
             });
             });
           });
@@ -189,23 +190,23 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheFourthStage(){
     puzzle3VFX.Play();
-    thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
-      thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
-        thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 1);
+      thirdDoor.DOMoveZ(thirdDoor.position.z + 1f, 1).OnComplete(() => {
           // Hide the first puzzle and show the second puzzle
           Debug.Log("puzzle3");
-      puzzle3.SetActive(false);
-      puzzle3Control.SetActive(false);
-      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-        tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
-        tree.transform.DOScale(1f, 1).OnComplete(() => {
-          //ShowStartButton();
-          puzzleSequenceControl.StartEndingSequence();
+        puzzle3.SetActive(false);
+        puzzle3Control.SetActive(false);
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+          tree.SetActive(true);
+          tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => { });
+            Debug.Log("spawn tree");
+          tree.transform.DOScale(treeScale, 1).OnComplete(() => {
+            //ShowStartButton();
+            //puzzleSequenceControl.StartEndingSequence();
+          });
         });
-        
-      });
-      });
       });
   }
 

@@ -52,7 +52,6 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //public GameObject[] UIs;
 
-
   //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
@@ -152,6 +151,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     if (isEndingSeuence) {
       startUI.SetActive(false);
       EndingUI.SetActive(false);
+      titleUI.SetActive(false);
       iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCFirstButton.SetActive(false);
       });

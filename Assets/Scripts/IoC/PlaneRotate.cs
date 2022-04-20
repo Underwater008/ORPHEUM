@@ -55,12 +55,12 @@ public class PlaneRotate : MonoBehaviour
       isRotate = true;
 
       if (puzzle1 == true) {
-        centerButton.DOMoveZ(rotateTarget.position.z - 1.5f, 0.8f);
-        rotateTarget.DOMoveZ(rotateTarget.position.z - 1.5f, 0.8f).OnComplete(() => {
+        centerButton.DOMoveZ(rotateTarget.position.z - 2f, 0.5f);
+        rotateTarget.DOMoveZ(rotateTarget.position.z - 2f, 0.5f).OnComplete(() => {
           // Rotate puzzle1 90 degrees when clicked the button
           rotateTarget.DOLocalRotate(new Vector3(0, 0, clickCount * 90), 1, RotateMode.Fast).OnComplete(() => {
-            centerButton.DOMoveZ(centerButton.position.z + 1.5f, 0.3f);
-            rotateTarget.DOMoveZ(rotateTarget.position.z + 1.5f, 0.3f).OnComplete(() => {
+            centerButton.DOMoveZ(centerButton.position.z + 2f, 0.5f);
+            rotateTarget.DOMoveZ(rotateTarget.position.z + 2f, 0.5f).OnComplete(() => {
               clickCount++;
               isRotate = false;
               Cursor.lockState = CursorLockMode.None;
@@ -76,8 +76,8 @@ public class PlaneRotate : MonoBehaviour
       }
 
       if (puzzle2 == true) {
-        centerButton.DOMoveZ(centerButton.position.z - 1.5f, 1);
-        target.transform.DOMoveZ(target.transform.position.z - 1.5f, 1).OnComplete(() => {
+        centerButton.DOMoveZ(centerButton.position.z - 2f, 1);
+        target.transform.DOMoveZ(target.transform.position.z - 2f, 0.5f).OnComplete(() => {
           // Rotate puzzle1 90 degrees when clicked the button
           StartCoroutine(Rotate90()); 
         });
@@ -91,8 +91,8 @@ public class PlaneRotate : MonoBehaviour
       }
 
       if (puzzle3 == true) {
-        centerButton.DOMoveZ(centerButton.position.z - 1.5f, 1);
-        target.transform.DOMoveZ(target.transform.position.z - 1.5f, 1).OnComplete(() => {
+        centerButton.DOMoveZ(centerButton.position.z - 2f, 0.5f);
+        target.transform.DOMoveZ(target.transform.position.z - 2f, 0.5f).OnComplete(() => {
           // Rotate puzzle1 90 degrees when clicked the button
           StartCoroutine(Rotate90());
         });
@@ -122,8 +122,8 @@ public class PlaneRotate : MonoBehaviour
     }
 
     IEnumerator DropDownTile() {
-      centerButton.DOMoveZ(centerButton.position.z + 1.5f, 1);
-      rotateTarget.DOMoveZ(rotateTarget.position.z + 1.5f, 1).OnComplete(() => {
+      centerButton.DOMoveZ(centerButton.position.z + 2f, 0.5f);
+      rotateTarget.DOMoveZ(rotateTarget.position.z + 2f, 0.5f).OnComplete(() => {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         puzzle1Control.SetActive(true);
