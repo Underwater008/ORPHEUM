@@ -156,7 +156,7 @@ public class DecayPuzzleControl : MonoBehaviour {
       iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCFirstButton.SetActive(false);
       });
-      DecayCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
+      DecayCube.DOMove(new Vector3(-90f, 0f, -90f), 4f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
 
           //CameraShake.ins.Shake();
