@@ -6,6 +6,7 @@ using DG.Tweening;
 public class StartButtonControl : MonoBehaviour {
   public AppleRotate appRotate;
   public PuzzleSequenceControl puzzleSeqControl;
+  public DecayPuzzleControl decayPuzzleControl;
   public Transform posAfterClick;
 
   public SoundManager soundManager;
@@ -40,5 +41,13 @@ public class StartButtonControl : MonoBehaviour {
       puzzleSeqControl.StartTheFirstStage();
       });
       }
+    else if (decayPuzzleControl.GetComponent<DecayPuzzleControl>().isDecay == true) {
+      Debug.Log("pressed Decay first button");
+      soundManager.PlayAudioClick();
+      soundManager.PlayAudioRotate();
+      transform.DOMove(posAfterClick.position, 1).OnComplete(() => {
+        decayPuzzleControl.StartTheFirstStage();
+      });
+    }
   }
 }
