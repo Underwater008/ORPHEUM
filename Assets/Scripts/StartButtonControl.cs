@@ -21,7 +21,7 @@ public class StartButtonControl : MonoBehaviour {
   }
 
   public void OnClick() {
-    if (appRotate == null) { Debug.Log("app rotate null"); return; }
+    //if (appRotate == null) { Debug.Log("app rotate null"); return; }
 
     if (appRotate.GetComponent<AppleRotate>().isStart == true) { 
       Debug.Log("pressed first button");

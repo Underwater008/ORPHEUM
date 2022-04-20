@@ -30,11 +30,13 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   public GameObject tree;                 //the tree
   public GameObject iOCCube;
+  public GameObject endFirstBUtton;
   public Transform outsidePos;
   public Transform DecayCube;
 
 
   public GameObject iOCFirstButton;
+  public GameObject firstBUtton;
   public Transform firstButton;           //the first button we press on the cube
   public Transform startButtonEndMovePos; //the position first button move to when activated
   public Transform cameraPlayPos;         //the position camera move to look at the puzzle top
@@ -85,19 +87,17 @@ public class DecayPuzzleControl : MonoBehaviour {
   public void StartTheFirstStage() {
     isRotate = false;
     //apple.SetActive(false);
-    //puzzle1Control.SetActive(true);
+    //puzzle1Control.SetActive(true)
     Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(() => {
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
-      firstDoor.DOLocalMoveZ(-7f, 2).OnComplete(() => {
+      firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
+        firstBUtton.SetActive(true);
         puzzle1.SetActive(true);
-        firstDoor.DOLocalMoveX(-10f, 2).OnComplete(() => {
-          //UIs.SetActive(true);
-        });
       });
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(0, 0, 0), 1);
+    transform.DORotate(new Vector3(-90, 0, 90), 1);
   }
 
   //When we shou the second puzzle in IoC
@@ -155,8 +155,10 @@ public class DecayPuzzleControl : MonoBehaviour {
       DecayUI.SetActive(false);
       iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCFirstButton.SetActive(false);
+        endFirstBUtton.SetActive(false);
+
       });
-      DecayCube.DOMove(new Vector3(-90f, 0f, -90f), 4f).OnComplete(() => {
+      DecayCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
 
           //CameraShake.ins.Shake();
