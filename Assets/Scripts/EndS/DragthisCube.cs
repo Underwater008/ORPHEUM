@@ -25,7 +25,7 @@ public class DragthisCube : MonoBehaviour {
 
   private void Update() {
     float cubePos = GetComponent<Transform>().position.z;
-    distance = Mathf.Abs(_camera.position.z - cubePos);
+    distance = Mathf.Abs(cubePos - _camera.position.z);
   }
 
   private void OnMouseDrag() {
