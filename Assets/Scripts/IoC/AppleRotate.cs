@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class AppleRotate : MonoBehaviour {
+
+  //music
+  public AudioManager audioM;
+
+
   public float speed = 30;
   //public Animator warpAnimator;
   public GameObject theGarden;
@@ -100,6 +105,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
+
     Debug.Log("3");
     isRotate = false;
     isStart = false;
@@ -215,12 +221,16 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartGame() 
   {
+    //music
+    audioM.index = 1;
     Debug.Log("1");
     isStart = true;
     TestStart();
   }
 
   public void RestartGame() {
+    //music
+    audioM.index = 0;
     SceneManager.LoadScene(0);
     startUI.SetActive(true);
     EndUI.SetActive(true);

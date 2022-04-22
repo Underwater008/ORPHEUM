@@ -6,6 +6,10 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class DecayPuzzleControl : MonoBehaviour {
+
+  //music
+  public AudioManager audioM;
+
   public float speed = 30;
   //public Animator warpAnimator;
   public GameObject theGarden;
@@ -147,6 +151,9 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartDecay() {
+    //music
+    audioM.index = 2;
+
     isDecay = true;
     if (isDecay) {
       startUI.SetActive(false);

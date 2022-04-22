@@ -10,9 +10,9 @@ public class StartButtonControl : MonoBehaviour {
   public Transform posAfterClick;
 
   public SoundManager soundManager;
+
   // Start is called before the first frame update
   void Start() {
-
   }
 
   // Update is called once per frame
