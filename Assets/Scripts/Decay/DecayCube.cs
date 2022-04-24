@@ -43,15 +43,15 @@ public class DecayCube : MonoBehaviour
       int originIndex = curPos.GetComponent<DecayCubePart>().startIndex;
       Transform nearestOne = Camera.main.transform;
       float nearest = Mathf.Pow(curPos.position.x-nearestOne.position.x,2)+ Mathf.Pow(curPos.position.y - nearestOne.position.y, 2);
-      Debug.Log(nearest);
       int nearindex = 0; 
       for (int i =0; i < allchildren.Length;i++) {
-      Debug.Log(i+"         :"+ Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2));
+
       if (Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2) < nearest) {
               nearestOne = allchildren[i];
               nearindex = i;
               nearest = Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2);
-          }   
+          }
+      allchildren[i].GetComponent<DecayCubePart>().hasbeenLocked = true;
       }
     if (locked) 
     {
@@ -72,6 +72,7 @@ public class DecayCube : MonoBehaviour
   }
 
     IEnumerator SmoothChangePos(Transform trans1,Vector3 targetPos1, Transform trans2, Vector3 targetPos2) {
+      Cursor.visible = false;
       while (Vector3.Distance(trans1.position,targetPos1)>0.01f) {
       trans1.position = Vector3.Lerp(trans1.position, targetPos1, Time.fixedDeltaTime * movespeed);
       trans2.position = Vector3.Lerp(trans2.position, targetPos2, Time.fixedDeltaTime * movespeed);
@@ -81,5 +82,9 @@ public class DecayCube : MonoBehaviour
       trans2.position = targetPos2;
       SaveChildrenPositions();
       locked = false;
+      Cursor.visible = true;
+    for (int i = 0; i < allchildren.Length; i++) {
+      allchildren[i].GetComponent<DecayCubePart>().hasbeenLocked = false;
+    }
   }
 }
