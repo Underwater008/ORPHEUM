@@ -83,6 +83,10 @@ public class DecayCube : MonoBehaviour
       SaveChildrenPositions();
       locked = false;
       Cursor.visible = true;
+      EnableAllChildren();
+  }
+
+  public void EnableAllChildren() {
     for (int i = 0; i < allchildren.Length; i++) {
       allchildren[i].GetComponent<DecayCubePart>().hasbeenLocked = false;
     }

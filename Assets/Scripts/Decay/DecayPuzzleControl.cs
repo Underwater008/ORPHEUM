@@ -99,6 +99,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         firstBUtton.SetActive(true);
         puzzle1.SetActive(true);
         puzzle1.GetComponent<DecayCube>().SaveChildrenPositions();
+        puzzle1.GetComponent<DecayCube>().EnableAllChildren();
         Debug.Log("finish 1");
       });
     });
@@ -124,7 +125,14 @@ public class DecayPuzzleControl : MonoBehaviour {
             puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
             Camera.main.transform.DOMove(cameraPlayPos.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
-              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f).OnComplete(() => {
+    
+                puzzle2.SetActive(true);
+                puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
+                puzzle2.GetComponent<DecayCube>().EnableAllChildren();
+                Debug.Log("finish 2");
+              });
+
             });
           });
         });
