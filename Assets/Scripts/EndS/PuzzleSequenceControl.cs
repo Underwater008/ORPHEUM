@@ -6,6 +6,11 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PuzzleSequenceControl : MonoBehaviour {
+
+  //music
+
+  public AudioManager audioM;
+
   public float speed = 30;
   //public Animator warpAnimator;
   public GameObject theGarden;
@@ -135,6 +140,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   {
     isStart = true;
     if (isStart) {
+
       startUI.SetActive(false);
       EndingUI.SetActive(false);
       titleUI.SetActive(false);
@@ -148,7 +154,10 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   public void StartEndingSequence() {
     isEndingSeuence = true;
+    //music
+    audioM.index = 3;
     if (isEndingSeuence) {
+
       startUI.SetActive(false);
       EndingUI.SetActive(false);
       titleUI.SetActive(false);
@@ -166,6 +175,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void RestartGame() {
+
     SceneManager.LoadScene(0);
   }
 }
