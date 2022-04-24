@@ -94,6 +94,8 @@ public class DecayPuzzleControl : MonoBehaviour {
       firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
         firstBUtton.SetActive(true);
         puzzle1.SetActive(true);
+        puzzle1.GetComponent<DecayCube>().SaveChildrenPositions();
+        Debug.Log("finish 1");
       });
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
@@ -115,6 +117,7 @@ public class DecayPuzzleControl : MonoBehaviour {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
             puzzle2.SetActive(true);
             puzzle2Control.SetActive(true);
+            puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
             Camera.main.transform.DOMove(cameraPlayPos.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
               secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);

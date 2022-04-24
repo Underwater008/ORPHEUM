@@ -9,13 +9,14 @@ public class DecayCube : MonoBehaviour
     private Vector3[] childrenPlaces;
 
     public bool locked = false;
+
     [SerializeField]
     float leftEdge, rightEdge, topEdge, downEdge;
 
     public float movespeed;
     private void Start() {
       childrenPlaces = new Vector3[allchildren.Length];
-      SaveChildrenPositions();
+      //SaveChildrenPositions();
     }
     public void SaveChildrenPositions() {
 
@@ -42,15 +43,16 @@ public class DecayCube : MonoBehaviour
       int originIndex = curPos.GetComponent<DecayCubePart>().startIndex;
       Transform nearestOne = Camera.main.transform;
       float nearest = Mathf.Pow(curPos.position.x-nearestOne.position.x,2)+ Mathf.Pow(curPos.position.y - nearestOne.position.y, 2);
+      Debug.Log(nearest);
       int nearindex = 0; 
       for (int i =0; i < allchildren.Length;i++) {
-          if (Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2) < nearest) {
+      Debug.Log(i+"         :"+ Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2));
+      if (Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2) < nearest) {
               nearestOne = allchildren[i];
               nearindex = i;
               nearest = Mathf.Pow(curPos.position.x - childrenPlaces[i].x, 2) + Mathf.Pow(curPos.position.y - childrenPlaces[i].y, 2);
           }   
       }
-
     if (locked) 
     {
         curPos.position= childrenPlaces[originIndex];

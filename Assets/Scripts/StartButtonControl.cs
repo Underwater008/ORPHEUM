@@ -47,6 +47,7 @@ public class StartButtonControl : MonoBehaviour {
       soundManager.PlayAudioRotate();
       transform.DOMove(posAfterClick.position, 1).OnComplete(() => {
         decayPuzzleControl.StartTheFirstStage();
+        
       });
     }
   }
