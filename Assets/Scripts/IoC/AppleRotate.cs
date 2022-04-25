@@ -133,6 +133,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1.SetActive(true);
     puzzle1Control.SetActive(false);
     puzzle1VFX.Play();
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {

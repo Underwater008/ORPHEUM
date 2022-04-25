@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class DecayPuzzleControl : MonoBehaviour {
 
@@ -28,6 +29,8 @@ public class DecayPuzzleControl : MonoBehaviour {
   public GameObject puzzle2;
   public GameObject puzzle2Control;
   public GameObject puzzle3;
+  public GameObject puzzle3Control;
+
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
 
@@ -119,11 +122,11 @@ public class DecayPuzzleControl : MonoBehaviour {
         tree.SetActive(true);
         tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => { });
         tree.transform.DOScale(0.5f, 1).OnComplete(() => {
-          theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(-90, 0, 180f), 2f).OnComplete(() => {
             puzzle2.SetActive(true);
             puzzle2Control.SetActive(true);
             puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
-            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
               secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f).OnComplete(() => {
     
@@ -142,9 +145,32 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    Debug.Log("puzzle3");
-    puzzle3.SetActive(true);
-    puzzle2.SetActive(false);
+    //puzzle2VFX.Play();
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+      //puzzle2.SetActive(false);
+      puzzle2Control.SetActive(false);
+      secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
+      secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
+        Debug.Log("puzzle3");
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => { //look at cube
+          //flower.SetActive(true);
+          //flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
+            theGarden.transform.DORotate(new Vector3(-90, 0, 270), 2f).OnComplete(() => {
+              Debug.Log("look at puzzle 3");
+              Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
+              Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+                thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+                  puzzle3.SetActive(true);
+                  puzzle3Control.SetActive(true);
+                  thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
+                  thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+                });
+              });
+            });
+          });
+        });
+      });
   }
 
   public void StartGame() {
