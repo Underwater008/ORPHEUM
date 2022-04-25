@@ -5,23 +5,23 @@ using UnityEngine;
 public class SwitchDetect : MonoBehaviour
 {
   public GameObject openTube;
-  public GameObject activeSwitch;
+  //public GameObject activeSwitch;
   public SoundManager soundManager;
 
   public bool detected;
 
   private void OnTriggerStay(Collider other) {
- 
+    if (other.gameObject == openTube) {
+      Debug.Log(detected);
+      detected = true;
+    }
   }
 
   private void OnTriggerEnter(Collider other) {
-    
-    if (other.gameObject == openTube) {
-      if (other.gameObject == openTube) {
+       if (other.gameObject == openTube) {
         Debug.Log(detected);
         detected = true;
       }
-    }
   }
 
   private void OnTriggerExit(Collider other) {
@@ -42,7 +42,7 @@ public class SwitchDetect : MonoBehaviour
     {
 
 
-    detected = false;
+    //detected = false;
 
     }
 }

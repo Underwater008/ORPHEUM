@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class AppleRotate : MonoBehaviour {
+
+  //music
+  public AudioManager audioM;
+
+
   public float speed = 30;
   //public Animator warpAnimator;
   public GameObject theGarden;
@@ -17,6 +22,8 @@ public class AppleRotate : MonoBehaviour {
   public GameObject startUI;
   public GameObject EndUI;
   public GameObject titleUI;
+  public GameObject DecayUI;
+  public GameObject IOCPuzzle3UI;
   //FirstStage
   public GameObject puzzle1;
   public GameObject puzzle1Control;
@@ -47,7 +54,6 @@ public class AppleRotate : MonoBehaviour {
   public Transform thirdDoorOpenPos;
   public Transform thirdDoorOGPos;
   public Transform grassSpawnPos;
-  public Transform treeSpawnPos;
 
   public GameObject VFXObj;
   public VisualEffect puzzle1VFX;
@@ -71,6 +77,8 @@ public class AppleRotate : MonoBehaviour {
       startUI.SetActive(false);
       EndUI.SetActive(false);
       titleUI.SetActive(false);
+      DecayUI.SetActive(false);
+      IOCPuzzle3UI.SetActive(true);
 
       Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
       Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {   //go closer to cube
@@ -97,6 +105,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
+
     Debug.Log("3");
     isRotate = false;
     isStart = false;
@@ -124,6 +133,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1.SetActive(true);
     puzzle1Control.SetActive(false);
     puzzle1VFX.Play();
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
@@ -177,8 +187,8 @@ public class AppleRotate : MonoBehaviour {
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
-                thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 1f, 1);
-                thirdDoor.DOMove(thirdDoorOpenPos.position, 2);
+                thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
+                thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
             });
             });
           });
@@ -190,34 +200,38 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheFourthStage(){
     puzzle3VFX.Play();
-    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
-      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 1);
-      thirdDoor.DOMoveZ(thirdDoor.position.z + 1f, 1).OnComplete(() => {
+    thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
+      thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+        thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
           // Hide the first puzzle and show the second puzzle
           Debug.Log("puzzle3");
-        puzzle3.SetActive(false);
-        puzzle3Control.SetActive(false);
-        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
-        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-          tree.SetActive(true);
-          tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => { });
-            Debug.Log("spawn tree");
-          tree.transform.DOScale(treeScale, 1).OnComplete(() => {
-            //ShowStartButton();
-            //puzzleSequenceControl.StartEndingSequence();
-          });
+      puzzle3.SetActive(false);
+      puzzle3Control.SetActive(false);
+      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
+      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+        tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
+        tree.transform.DOScale(1f, 1).OnComplete(() => {
+          //ShowStartButton();
+          puzzleSequenceControl.StartEndingSequence();
         });
+        
+      });
+      });
       });
   }
 
   public void StartGame() 
   {
+    //music
+    audioM.index = 1;
     Debug.Log("1");
     isStart = true;
     TestStart();
   }
 
   public void RestartGame() {
+    //music
+    audioM.index = 0;
     SceneManager.LoadScene(0);
     startUI.SetActive(true);
     EndUI.SetActive(true);

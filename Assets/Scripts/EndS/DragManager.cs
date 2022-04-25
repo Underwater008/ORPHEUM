@@ -20,9 +20,9 @@ public class DragManager : MonoBehaviour {
   void Start() {
     cellArray = new int[,]
     {
-       {0,1,1},
-       {0,1,1},
-       {1,1,1}
+       {1,0,1},
+       {1,0,1},
+       {0,1,1}
     };
   }
 
