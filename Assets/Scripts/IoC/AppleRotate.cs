@@ -10,6 +10,7 @@ public class AppleRotate : MonoBehaviour {
 
   //music
   public AudioManager audioM;
+  public SoundManager soundM;
 
 
   public float speed = 30;
@@ -54,6 +55,7 @@ public class AppleRotate : MonoBehaviour {
   public Transform thirdDoorOpenPos;
   public Transform thirdDoorOGPos;
   public Transform grassSpawnPos;
+  public Transform treeSpawnPos;
 
   public GameObject VFXObj;
   public VisualEffect puzzle1VFX;
@@ -136,6 +138,7 @@ public class AppleRotate : MonoBehaviour {
     puzzle1.SetActive(true);
     puzzle1Control.SetActive(false);
     puzzle1VFX.Play();
+    soundM.PlayPuzzleCompleteDrop();
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
@@ -184,10 +187,11 @@ public class AppleRotate : MonoBehaviour {
             Debug.Log("look at puzzle 3");
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              puzzle3.SetActive(true);
-              puzzle3Control.SetActive(true);
+
               thirdDoorOGPos.DOMoveZ(thirdDoor.position.z - 2f, 2);
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
+                puzzle3.SetActive(true);
+                puzzle3Control.SetActive(true);
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
               });
             });
@@ -202,22 +206,19 @@ public class AppleRotate : MonoBehaviour {
     puzzle3VFX.Play();
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
-        thirdDoor.DOMoveZ(thirdDoor.position.z - 1f, 2).OnComplete(() => {
-          // Hide the first puzzle and show the second puzzle
-          Debug.Log("puzzle3");
-          puzzle3.SetActive(false);
-          puzzle3Control.SetActive(false);
-      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);});
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-        tree.transform.DOLocalMove(grassSpawnPos.localPosition, 1).OnComplete(() => { });
-        tree.transform.DOScale(1f, 1).OnComplete(() => {
-          //ShowStartButton();
-          puzzleSequenceControl.StartEndingSequence();
-        });
-        
-      });
-      });
+        puzzle3.SetActive(false);
+        puzzle3Control.SetActive(false);
+        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
+          Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+          Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+            tree.SetActive(true);
+            tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
+              puzzleSequenceControl.StartEndingSequence();
+         });
+       });
+     });
     });
+   });
   }
 
   public void StartGame() 
