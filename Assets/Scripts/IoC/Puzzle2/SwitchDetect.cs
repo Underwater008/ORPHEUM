@@ -12,18 +12,18 @@ public class SwitchDetect : MonoBehaviour
 
   private void OnTriggerStay(Collider other) {
     if (other.gameObject == openTube) {
-      Debug.Log(detected);
+      //Debug.Log(detected);
       detected = true;
     }
   }
 
   private void OnTriggerEnter(Collider other) {
        if (other.gameObject == openTube) {
-        Debug.Log(detected);
+        //Debug.Log(detected);
         detected = true;
       }
   }
-
+  
   private void OnTriggerExit(Collider other) {
     if (other.gameObject == openTube) {
       detected = false;
@@ -33,7 +33,7 @@ public class SwitchDetect : MonoBehaviour
   // Start is called before the first frame update
   void Start()
     {
-      Debug.Log(detected);
+      //Debug.Log(detected);
       detected = false;
     }
 
@@ -42,7 +42,7 @@ public class SwitchDetect : MonoBehaviour
     {
 
 
-    //detected = false;
+    detected = false;
 
     }
 }

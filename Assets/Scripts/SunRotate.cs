@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SunRotate : MonoBehaviour
 {
-  [SerializeField]
-  private float sunRot;
+  public float sunRot;
 
     // Start is called before the first frame update
     void Start()

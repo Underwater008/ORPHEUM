@@ -9,7 +9,7 @@ public class blendScript : MonoBehaviour
     public GameObject tree;
     public Material material1;
     public Material material2;
-    float duration = 2f;
+    //float duration = 2f;
     public Renderer rend;
 
     void Start() {
