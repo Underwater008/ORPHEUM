@@ -30,7 +30,7 @@ public class DragManager : MonoBehaviour {
     {
        {1,0,1},
        {1,0,1},
-       {0,1,1}
+       {1,1,1}
     };
 
 
