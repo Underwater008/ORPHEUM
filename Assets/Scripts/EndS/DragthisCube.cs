@@ -40,11 +40,11 @@ public class DragthisCube : MonoBehaviour {
 
   private void OnMouseDrag() {
 
-    if (DragManager._drag.CurrentDragCube != this) {
-      return;
-    }
+    //if (DragManager._drag.CurrentDragCube != this) {
+    //return;
+    //}
     // Debug.Log("drag" + this.transform.gameObject.name);
-    if (canMove != false) { return; }
+    //if (canMove != false) { return; }
 
     if (DragManager._drag.isDraging == true) {
       return;
