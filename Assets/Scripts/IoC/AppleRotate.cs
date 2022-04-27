@@ -211,11 +211,11 @@ public class AppleRotate : MonoBehaviour {
     puzzle3Control.SetActive(false);
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
-
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
             tree.SetActive(true);
+            tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
               puzzleSequenceControl.StartEndingSequence();
