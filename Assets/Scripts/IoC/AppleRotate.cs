@@ -138,7 +138,7 @@ public class AppleRotate : MonoBehaviour {
     puzzle1.SetActive(true);
     puzzle1Control.SetActive(false);
     puzzle1VFX.Play();
-    soundM.PlayPuzzleCompleteDrop();
+    soundM.PlayPuzzleCompleteChime();
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");

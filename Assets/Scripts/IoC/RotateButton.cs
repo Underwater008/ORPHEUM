@@ -34,7 +34,7 @@ public class RotateButton : MonoBehaviour
         puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         centerButtonclickCount++;
         isRotate = false;
-          soundManager.PlayPuzzleCompleteDrop();
+          soundManager.PlayPuzzleHeavyDrop();
           puzzleAll.DOMoveZ(puzzleAll.position.z + 1.5f, 0.3f).OnComplete(() => {
           Cursor.lockState = CursorLockMode.None;
           Cursor.visible = true;

@@ -6,11 +6,12 @@ public class SoundManager : MonoBehaviour {
   public AudioSource audioSourceClick;
   public AudioSource audioSourceRotate;
   public AudioSource audioSourceWaterOk;
-  public AudioSource puzzleCompleteDrop;
+  public AudioSource puzzleHeavyDrop;
   public AudioSource tileDrop;
   public AudioSource longtileDrag;
   public AudioSource medtileDrag;
   public AudioSource shorttileDrag;
+  public AudioSource puzzleCompleteChime;
 
   public void PlayAudioClick()
     {
@@ -28,11 +29,17 @@ public class SoundManager : MonoBehaviour {
       audioSourceWaterOk.Stop();
     audioSourceWaterOk.Play();
   }
-  public void PlayPuzzleCompleteDrop() {
-    if (puzzleCompleteDrop.isPlaying)
-      puzzleCompleteDrop.Stop();
-    puzzleCompleteDrop.Play();
+  public void PlayPuzzleHeavyDrop() {
+    if (puzzleHeavyDrop.isPlaying)
+      puzzleHeavyDrop.Stop();
+    puzzleHeavyDrop.Play();
   }
+  public void PlayPuzzleCompleteChime() {
+    if (puzzleCompleteChime.isPlaying)
+      puzzleCompleteChime.Stop();
+    puzzleCompleteChime.Play();
+  }
+
   public void playTileDrop() {
     if (tileDrop.isPlaying)
       tileDrop.Stop();
