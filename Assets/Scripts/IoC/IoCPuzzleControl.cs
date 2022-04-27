@@ -39,7 +39,7 @@ public class IoCPuzzleControl : MonoBehaviour
     public void Pass1() {
     //staticPipe4.GetComponent<Renderer>().material.DOColor(new Color(0.86f, 0.2f, 0.73f), 1).OnComplete(() => 
     {
-      soundManager.PlayAudioWaterOk();
+      //soundManager.PlayAudioWaterOk();
       stageControl.StartTheSecondStage();
     }
 }

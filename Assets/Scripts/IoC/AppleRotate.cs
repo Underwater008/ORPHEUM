@@ -149,6 +149,7 @@ public class AppleRotate : MonoBehaviour {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
         grass.SetActive(true);
+        soundM.PlayAudioWaterOk();
         grass.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);

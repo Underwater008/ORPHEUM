@@ -31,6 +31,7 @@ public class RotateButton : MonoBehaviour
       isRotate = true;
       // Rotate puzzle1 90 degrees when clicked the button
       puzzleAll.DOMoveZ(puzzleAll.position.z - 1.5f, 0.8f).OnComplete(() => {
+        soundManager.playMedTileDrag();
         puzzleAll.DORotate(new Vector3(0, 0, centerButtonclickCount * 90), 1).OnComplete(() => {
         centerButtonclickCount++;
         isRotate = false;
