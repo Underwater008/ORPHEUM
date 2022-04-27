@@ -33,7 +33,7 @@ public class SwitchDetect : MonoBehaviour
   // Start is called before the first frame update
   void Start()
     {
-      Debug.Log(detected);
+      //Debug.Log(detected);
       detected = false;
     }
 
