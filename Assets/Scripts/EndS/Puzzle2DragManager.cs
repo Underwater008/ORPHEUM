@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragManager : MonoBehaviour {
+public class Puzzle2DragManager : MonoBehaviour {
   public Vector3 CubeOrigin;
 
   public int cubeNum = 9;
@@ -11,7 +11,7 @@ public class DragManager : MonoBehaviour {
 
   public int[,] cellArray;
 
-  public static DragManager _drag;
+  public static Puzzle2DragManager _drag;
 
   public bool isDraging = false;
 
@@ -28,9 +28,9 @@ public class DragManager : MonoBehaviour {
   void Start() {
     cellArray = new int[,]
     {
-       {1,0,1},
-       {1,0,1},
-       {1,1,1}
+       {1,1,1},
+       {1,1,1},
+       {1,0,1}
     };
 
 
