@@ -135,15 +135,13 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
-    puzzle1.SetActive(true);
-    puzzle1Control.SetActive(false);
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
+    puzzle1.SetActive(false);
+    puzzle1Control.SetActive(false);
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
-      puzzle1.SetActive(false);
-      puzzle1Control.SetActive(false);
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
@@ -174,15 +172,18 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheThirdStage() {
     puzzle2VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    puzzle2.SetActive(false);
+    puzzle2Control.SetActive(false);
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
-      puzzle2.SetActive(false);
-      puzzle2Control.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
-          Debug.Log("puzzle3");
-      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
+         Debug.Log("puzzle3");
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
         flower.SetActive(true);
+        Debug.Log("hi");
+        soundM.PlayAudioWaterOk();
         flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
             Debug.Log("look at puzzle 3");
@@ -205,14 +206,17 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheFourthStage(){
     puzzle3VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    puzzle3.SetActive(false);
+    puzzle3Control.SetActive(false);
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
-        puzzle3.SetActive(false);
-        puzzle3Control.SetActive(false);
+
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
             tree.SetActive(true);
+            soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
               puzzleSequenceControl.StartEndingSequence();
          });

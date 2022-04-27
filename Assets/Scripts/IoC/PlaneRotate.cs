@@ -81,6 +81,7 @@ public class PlaneRotate : MonoBehaviour
         centerButton.DOMoveZ(centerButton.position.z - 2f, 0.5f);
         target.transform.DOMoveZ(target.transform.position.z - 2f, 0.5f).OnComplete(() => {
           // Rotate puzzle1 90 degrees when clicked the button
+          soundManager.playShortTileDrag();
           StartCoroutine(Rotate90()); 
         });
 
@@ -96,6 +97,7 @@ public class PlaneRotate : MonoBehaviour
         centerButton.DOMoveZ(centerButton.position.z - 2f, 0.5f);
         target.transform.DOMoveZ(target.transform.position.z - 2f, 0.5f).OnComplete(() => {
           // Rotate puzzle1 90 degrees when clicked the button
+          soundManager.playShortTileDrag();
           StartCoroutine(Rotate90());
         });
         //transform.Rotate(new Vector3(0, objectRotation.y+90, 0) * Time.deltaTime);
@@ -124,6 +126,7 @@ public class PlaneRotate : MonoBehaviour
     }
 
     IEnumerator DropDownTile() {
+      soundManager.playTileDrop();
       centerButton.DOMoveZ(centerButton.position.z + 2f, 0.5f);
       rotateTarget.DOMoveZ(rotateTarget.position.z + 2f, 0.5f).OnComplete(() => {
         Cursor.lockState = CursorLockMode.None;
