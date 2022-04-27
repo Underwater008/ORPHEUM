@@ -10932,16 +10932,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1014883547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dba84899cbfa91499865f059aff20ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 639b5b4f5fed3434698ff18505ee26e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
   _camera: {fileID: 1709898576}
   movespeed: 4
   stepLength: 1
+  canMove: 0
   direction: {x: 0, y: 0, z: 0}
-  curx: 0
-  curY: 1
+  lastCubePostion: {x: 0, y: 0, z: 0}
+  curx: 1
+  curY: 0
 --- !u!65 &1014883550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15129,16 +15131,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366605865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dba84899cbfa91499865f059aff20ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 639b5b4f5fed3434698ff18505ee26e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
   _camera: {fileID: 1709898576}
   movespeed: 4
   stepLength: 1
+  canMove: 0
   direction: {x: 0, y: 0, z: 0}
-  curx: 2
-  curY: 0
+  lastCubePostion: {x: 0, y: 0, z: 0}
+  curx: 0
+  curY: 2
 --- !u!65 &1366605868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18465,14 +18469,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618791391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dba84899cbfa91499865f059aff20ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 639b5b4f5fed3434698ff18505ee26e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
   _camera: {fileID: 1709898576}
   movespeed: 4
   stepLength: 1
+  canMove: 0
   direction: {x: 0, y: 0, z: 0}
+  lastCubePostion: {x: 0, y: 0, z: 0}
   curx: 0
   curY: 0
 --- !u!65 &1618791394
@@ -19781,12 +19787,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709898575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21cb5b892a6a0d4596e827c9c855d08, type: 3}
+  m_Script: {fileID: 11500000, guid: 16f46b9e1e8ba4fad94d08985a41dd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CubeOrigin: {x: 0, y: 0, z: 0}
   cubeNum: 9
   eachCellSize: 1
+  isDraging: 0
+  CurrentDragCube: {fileID: 0}
 --- !u!1 &1711386905
 GameObject:
   m_ObjectHideFlags: 0
@@ -28635,16 +28643,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2063638616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dba84899cbfa91499865f059aff20ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 639b5b4f5fed3434698ff18505ee26e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
   _camera: {fileID: 1709898576}
   movespeed: 4
   stepLength: 1
+  canMove: 0
   direction: {x: 0, y: 0, z: 0}
-  curx: 2
-  curY: 1
+  lastCubePostion: {x: 0, y: 0, z: 0}
+  curx: 1
+  curY: 2
 --- !u!65 &2063638619
 BoxCollider:
   m_ObjectHideFlags: 0
