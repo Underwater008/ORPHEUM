@@ -1219,7 +1219,6 @@ GameObject:
   - component: {fileID: 298912845}
   - component: {fileID: 298912844}
   - component: {fileID: 298912843}
-  - component: {fileID: 298912846}
   m_Layer: 0
   m_Name: aliveTree (1)
   m_TagString: Untagged
@@ -1305,22 +1304,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298912841}
   m_Mesh: {fileID: -2432090755550338912, guid: a5b50ef921309a74ca781271a0e94e43, type: 3}
---- !u!114 &298912846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298912841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fc8c4d3999ef1448eaf49a1b684ffb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tree: {fileID: 298912841}
-  material1: {fileID: 0}
-  material2: {fileID: 0}
-  rend: {fileID: 298912844}
 --- !u!1001 &299439240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15309,9 +15292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fc8c4d3999ef1448eaf49a1b684ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 0}
-  material1: {fileID: 0}
-  material2: {fileID: 0}
+  tree: {fileID: 6605549960924356706}
+  material1: {fileID: 2100000, guid: 6a0a5e5521c411540bfeea02f50ce5c2, type: 2}
+  material2: {fileID: 2100000, guid: 33b30a3e2b1bf33408360a654968b503, type: 2}
   rend: {fileID: 4390757514566889095}
 --- !u!4 &6614996720000470705
 Transform:
