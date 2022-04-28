@@ -86,7 +86,14 @@ public class DecayCube : MonoBehaviour
       EnableAllChildren();
   }
 
-  public void EnableAllChildren() {
+  public void DisableAllChildren() {
+    for (int i = 0; i < allchildren.Length; i++) {
+      allchildren[i].GetComponent<DecayCubePart>().hasbeenLocked = true;
+    }
+  }
+
+
+public void EnableAllChildren() {
     for (int i = 0; i < allchildren.Length; i++) {
       allchildren[i].GetComponent<DecayCubePart>().hasbeenLocked = false;
     }

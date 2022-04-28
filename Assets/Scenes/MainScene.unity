@@ -1383,7 +1383,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 3
+  startIndex: 2
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -4654,7 +4654,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7333,7 +7333,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 4
+  startIndex: 3
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -11639,7 +11639,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 2
+  startIndex: 1
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -15108,7 +15108,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 1
+  startIndex: 0
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -16851,8 +16851,8 @@ Transform:
   m_Children:
   - {fileID: 1090916768}
   - {fileID: 17590639}
-  - {fileID: 1815128107}
   - {fileID: 393806981}
+  - {fileID: 1815128107}
   - {fileID: 1674896500}
   - {fileID: 96569440}
   - {fileID: 1550418628}
@@ -20962,7 +20962,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_LocalScale.x

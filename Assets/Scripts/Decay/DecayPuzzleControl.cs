@@ -146,7 +146,6 @@ public class DecayPuzzleControl : MonoBehaviour {
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
               secondDoor.transform.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {
-
                   //Cursor.lockState = CursorLockMode.None;
                   Cursor.visible = true;
                   Debug.Log("finish 2");
@@ -163,7 +162,7 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    Cursor.lockState = CursorLockMode.Confined;
+    //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     //puzzle2VFX.Play();
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
@@ -185,6 +184,8 @@ public class DecayPuzzleControl : MonoBehaviour {
                   Cursor.visible = true;
                   puzzle3.SetActive(true);
                   puzzle3Control.SetActive(true);
+                  puzzle3.GetComponent<DecayCube>().SaveChildrenPositions();
+                  puzzle3.GetComponent<DecayCube>().EnableAllChildren();
                   thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
                   thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
                 });
