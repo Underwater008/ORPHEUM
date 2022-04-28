@@ -1247,13 +1247,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298912841}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95f86f82abda4bdabc8bcc0e0184524, type: 3}
+  m_Script: {fileID: 11500000, guid: 99fc8c4d3999ef1448eaf49a1b684ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tree: {fileID: 298912841}
   material1: {fileID: 2100000, guid: 6a0a5e5521c411540bfeea02f50ce5c2, type: 2}
   material2: {fileID: 2100000, guid: 33b30a3e2b1bf33408360a654968b503, type: 2}
+  rend: {fileID: 298912844}
 --- !u!23 &298912844
 MeshRenderer:
   m_ObjectHideFlags: 0
