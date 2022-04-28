@@ -41,7 +41,6 @@ public class DecayPuzzleControl : MonoBehaviour {
   public Transform outsidePos;
   public Transform DecayCube;
 
-
   public GameObject iOCFirstButton;
   public GameObject firstBUtton;
   public Transform firstButton;           //the first button we press on the cube
@@ -120,46 +119,40 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
-    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
+    firstDoor.DOMove(firstDoorOGPos.position, 2f).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
-      puzzle1Control.SetActive(false);
-        firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
-      firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
+      firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0f);
+      firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1f).OnComplete(() => {
         Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
-      Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-        tree.SetActive(true);
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => { });
-        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+          tree.SetActive(true);
+          tree.transform.DOLocalMove(smallTreePos.localPosition, 1);
+          tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(-90, 0, 180f), 2f).OnComplete(() => {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
-            //puzzle2.SetActive(true);
-            puzzle2Control.SetActive(true);
-            puzzle2.SetActive(true);
-            puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
-            puzzle2.GetComponent<DecayCube>().EnableAllChildren();
-            //puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
-            Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
+            Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
-              secondDoor.transform.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {
-                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {
-                  //Cursor.lockState = CursorLockMode.None;
-                  Cursor.visible = true;
-                  Debug.Log("finish 2");
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                puzzle2.SetActive(true);
+                puzzle2Control.SetActive(true);
+                puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
+                puzzle2.GetComponent<DecayCube>().EnableAllChildren();
+                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  Debug.Log("puzzle 2 start");
+                });
               });
-
             });
+          });
           });
         });
       });
     });
-    });
-    });
-
-  }
+}
 
   public void StartTheThirdStage() {
     //Cursor.lockState = CursorLockMode.Confined;
