@@ -92,48 +92,64 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
+    //Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     isRotate = false;
     //apple.SetActive(false);
     //puzzle1Control.SetActive(true)
     Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(() => {
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
-      firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
-        firstBUtton.SetActive(true);
+      firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
+      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
+        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
+          //Cursor.lockState = CursorLockMode.None;
+          Cursor.visible = true;
+          firstBUtton.SetActive(true);
         puzzle1.SetActive(true);
         puzzle1.GetComponent<DecayCube>().SaveChildrenPositions();
         puzzle1.GetComponent<DecayCube>().EnableAllChildren();
         Debug.Log("finish 1");
       });
+      });
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
     transform.DORotate(new Vector3(-90, 0, 90), 1);
+
   }
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
-    firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+    //Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
+    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
       puzzle1Control.SetActive(false);
-      Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+        firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
+      firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
         tree.SetActive(true);
         tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => { });
         tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(-90, 0, 180f), 2f).OnComplete(() => {
-            puzzle2.SetActive(true);
+            secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
+            //puzzle2.SetActive(true);
             puzzle2Control.SetActive(true);
+            puzzle2.SetActive(true);
             puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
+            puzzle2.GetComponent<DecayCube>().EnableAllChildren();
+            //puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
             Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
-              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f).OnComplete(() => {
-    
-                puzzle2.SetActive(true);
-                puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
-                puzzle2.GetComponent<DecayCube>().EnableAllChildren();
-                Debug.Log("finish 2");
+              secondDoor.transform.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {
+                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {
+
+                  //Cursor.lockState = CursorLockMode.None;
+                  Cursor.visible = true;
+                  Debug.Log("finish 2");
               });
 
             });
@@ -141,10 +157,14 @@ public class DecayPuzzleControl : MonoBehaviour {
         });
       });
     });
+    });
+    });
 
   }
 
   public void StartTheThirdStage() {
+    Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     //puzzle2VFX.Play();
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       //puzzle2.SetActive(false);
@@ -161,6 +181,8 @@ public class DecayPuzzleControl : MonoBehaviour {
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
                 thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+                  Cursor.lockState = CursorLockMode.None;
+                  Cursor.visible = true;
                   puzzle3.SetActive(true);
                   puzzle3Control.SetActive(true);
                   thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);

@@ -107,7 +107,8 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
-
+    Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     Debug.Log("3");
     isRotate = false;
     isStart = false;

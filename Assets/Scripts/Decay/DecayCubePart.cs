@@ -16,7 +16,8 @@ public class DecayCubePart : MonoBehaviour
     originpos = transform.position;
   }
   private void OnMouseDrag() {
-    puzzle1Control.SetActive(false);
+    if (Cursor.visible) {
+      puzzle1Control.SetActive(false);
     puzzle2Control.SetActive(false);
     puzzle3Control.SetActive(false);
     if (hasbeenLocked) { return; }
@@ -24,9 +25,11 @@ public class DecayCubePart : MonoBehaviour
     Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
     transform.position = objectPosition;
   }
+  }
 
   private void OnMouseUp() {
-    puzzle1Control.SetActive(true);
+
+      puzzle1Control.SetActive(true);
     puzzle2Control.SetActive(true);
     puzzle3Control.SetActive(true);
     if (hasbeenLocked) { return; }
