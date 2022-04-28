@@ -24,6 +24,7 @@ public class SoundManager : MonoBehaviour {
       audioSourceRotate.Stop();
     audioSourceRotate.Play();
   }
+
   public void PlayAudioWaterOk() {
     if (audioSourceWaterOk.isPlaying)
       audioSourceWaterOk.Stop();
