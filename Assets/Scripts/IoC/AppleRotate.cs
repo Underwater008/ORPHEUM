@@ -65,7 +65,6 @@ public class AppleRotate : MonoBehaviour {
 
   public float treeScale;
 
-  public PuzzleSequenceControl puzzleSequenceControl;
   public DecayPuzzleControl DecayPuzzleControl;
 
   //public GameObject[] UIs;

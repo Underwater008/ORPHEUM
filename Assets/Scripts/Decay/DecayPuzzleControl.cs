@@ -70,6 +70,8 @@ public class DecayPuzzleControl : MonoBehaviour {
   private bool isRotate = true;
   public bool isStart = false;
   public bool isDecay = false;
+
+  public PuzzleSequenceControl puzzleSequenceControl;
   // Start is called before the first frame update
   void Start() {
 
@@ -202,7 +204,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-
+            puzzleSequenceControl.StartEndingSequence();
           });
         });
       });
