@@ -1535,8 +1535,7 @@ MonoBehaviour:
   puzzle3VFX: {fileID: 1513191108}
   rockDebris: {fileID: 1978902498}
   treeScale: 0.005
-  puzzleSequenceControl: {fileID: 0}
-  DecayPuzzleControl: {fileID: 0}
+  DecayPuzzleControl: {fileID: 583883290}
   isStart: 0
 --- !u!1 &146700962
 GameObject:
@@ -6494,6 +6493,7 @@ MonoBehaviour:
   smallTreePos: {fileID: 310863176}
   isStart: 0
   isDecay: 0
+  puzzleSequenceControl: {fileID: 1791687142}
 --- !u!1 &589547729
 GameObject:
   m_ObjectHideFlags: 0
