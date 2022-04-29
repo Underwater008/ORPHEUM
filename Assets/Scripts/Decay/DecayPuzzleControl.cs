@@ -31,6 +31,10 @@ public class DecayPuzzleControl : MonoBehaviour {
   public GameObject puzzle3;
   public GameObject puzzle3Control;
 
+  public VisualEffect puzzle1VFX;
+  public VisualEffect puzzle2VFX;
+  public VisualEffect puzzle3VFX;
+
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
 
@@ -155,12 +159,12 @@ public class DecayPuzzleControl : MonoBehaviour {
 }
 
   public void StartTheThirdStage() {
+    puzzle2Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     //puzzle2VFX.Play();
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       //puzzle2.SetActive(false);
-      puzzle2Control.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
         Debug.Log("puzzle3");
@@ -187,6 +191,22 @@ public class DecayPuzzleControl : MonoBehaviour {
           });
         });
       });
+  }
+
+  public void StartTheForthStage() {
+    puzzle3VFX.Play();
+    puzzle3.SetActive(false);
+    puzzle3Control.SetActive(false);
+    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
+        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
+          Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+          Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+
+          });
+        });
+      });
+    });
   }
 
   public void StartGame() {

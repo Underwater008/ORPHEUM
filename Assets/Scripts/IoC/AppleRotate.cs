@@ -57,7 +57,6 @@ public class AppleRotate : MonoBehaviour {
   public Transform grassSpawnPos;
   public Transform treeSpawnPos;
 
-  public GameObject VFXObj;
   public VisualEffect puzzle1VFX;
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
@@ -67,6 +66,7 @@ public class AppleRotate : MonoBehaviour {
   public float treeScale;
 
   public PuzzleSequenceControl puzzleSequenceControl;
+  public DecayPuzzleControl DecayPuzzleControl;
 
   //public GameObject[] UIs;
 
@@ -219,7 +219,7 @@ public class AppleRotate : MonoBehaviour {
             tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
-              puzzleSequenceControl.StartEndingSequence();
+              DecayPuzzleControl.StartDecay();
          });
        });
      });
