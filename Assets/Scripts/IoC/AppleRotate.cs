@@ -218,6 +218,7 @@ public class AppleRotate : MonoBehaviour {
             tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
+             isRotate = true;
               DecayPuzzleControl.StartDecay();
          });
        });

@@ -330,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &24792524
 Transform:
   m_ObjectHideFlags: 0
@@ -1728,6 +1728,36 @@ Transform:
   - {fileID: 13251566}
   m_Father: {fileID: 583883289}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &162618410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162618411}
+  m_Layer: 0
+  m_Name: IOCOutsidePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &162618411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162618410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.49, y: -28.1, z: 69.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165267667
 GameObject:
@@ -4220,7 +4250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &354117355
 Transform:
   m_ObjectHideFlags: 0
@@ -6425,9 +6455,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583883286}
-  m_LocalRotation: {x: 0.5000004, y: -0.49999958, z: -0.4999994, w: -0.50000066}
-  m_LocalPosition: {x: 34.813053, y: 4.57, z: 65.581474}
-  m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
+  m_LocalRotation: {x: 0.5000005, y: -0.49999952, z: -0.49999934, w: -0.50000066}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 114.122116, y: 114.122116, z: 114.1221}
   m_Children:
   - {fileID: 541079951}
   - {fileID: 568104464}
@@ -6438,9 +6468,9 @@ Transform:
   - {fileID: 158442728}
   - {fileID: 1943968132}
   - {fileID: 847507277}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
+  m_Father: {fileID: 798876402}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &583883290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6455,7 +6485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioM: {fileID: 2056982741}
   speed: 30
-  theGarden: {fileID: 583883286}
+  theGarden: {fileID: 798876401}
   startUI: {fileID: 61162932}
   EndingUI: {fileID: 984312774}
   titleUI: {fileID: 1081031275}
@@ -6473,7 +6503,7 @@ MonoBehaviour:
   iOCCube: {fileID: 1161138354}
   endFirstBUtton: {fileID: 43173528}
   outsidePos: {fileID: 1757827335}
-  DecayCube: {fileID: 583883289}
+  DecayCube: {fileID: 798876402}
   iOCFirstButton: {fileID: 1031992550}
   firstBUtton: {fileID: 158442727}
   firstButton: {fileID: 745637871}
@@ -13834,6 +13864,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
   m_PrefabInstance: {fileID: 796500075}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &798876401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798876402}
+  m_Layer: 0
+  m_Name: Decay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798876402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798876401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.813053, y: 4.57, z: 65.581474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 583883289}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802957441
 GameObject:
   m_ObjectHideFlags: 0
@@ -14395,7 +14456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &818375302
 Transform:
   m_ObjectHideFlags: 0
@@ -17424,7 +17485,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_LocalScale.x
@@ -19632,9 +19693,9 @@ Transform:
   - {fileID: 1366605866}
   - {fileID: 1014883548}
   - {fileID: 2063638617}
-  - {fileID: 1121266807}
-  - {fileID: 1269227686}
   - {fileID: 1653345503}
+  - {fileID: 1269227686}
+  - {fileID: 1121266807}
   m_Father: {fileID: 1791687141}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20056,7 +20117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1345637071
 Transform:
   m_ObjectHideFlags: 0
@@ -20405,7 +20466,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366605865}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 639b5b4f5fed3434698ff18505ee26e5, type: 3}
   m_Name: 
@@ -20428,7 +20489,7 @@ BoxCollider:
   m_GameObject: {fileID: 1366605865}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.023718884, y: 0.023626717, z: 0.0073465505}
   m_Center: {x: -0.000046329078, y: -0.000021275944, z: -0.0023552198}
@@ -24097,7 +24158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1651836505
 Transform:
   m_ObjectHideFlags: 0
@@ -24183,7 +24244,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6d46dbde6010e1428d575bf7bb7a8d0, type: 3}
       propertyPath: m_LocalScale.x
@@ -25820,7 +25881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1740077274
 Transform:
   m_ObjectHideFlags: 0
@@ -26292,19 +26353,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d386f197216c6444980d4182c59401be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzle1DragManager: {fileID: 1709898581}
+  puzzle2DragManager: {fileID: 1709898582}
   audioM: {fileID: 2056982741}
   speed: 30
   theGarden: {fileID: 1791687140}
   startUI: {fileID: 61162932}
   EndingUI: {fileID: 984312774}
   titleUI: {fileID: 1081031275}
+  DecayUI: {fileID: 1250388669}
   puzzle1: {fileID: 1307435413}
   puzzle1Control: {fileID: 1262476456}
   puzzle2: {fileID: 128892097}
   puzzle2Control: {fileID: 0}
   puzzle3: {fileID: 228340268}
   tree: {fileID: 0}
-  iOCCube: {fileID: 1161138354}
+  DecayCube: {fileID: 798876401}
+  IOCCube: {fileID: 1161138354}
+  IOCOutsidePos: {fileID: 162618411}
   outsidePos: {fileID: 1757827335}
   endCube: {fileID: 1791687141}
   iOCFirstButton: {fileID: 1031992550}
@@ -26314,8 +26380,8 @@ MonoBehaviour:
   cameraOriginalPos: {fileID: 67329421}
   cameraPuzzleView: {fileID: 1977123670}
   firstDoor: {fileID: 229250179}
-  firstDoorOpenPos: {fileID: 0}
-  firstDoorOGPos: {fileID: 0}
+  firstDoorOpenPos: {fileID: 1676250203}
+  firstDoorOGPos: {fileID: 2072453258}
   secondDoor: {fileID: 0}
   secondDoorOpenPos: {fileID: 0}
   secondDoorOGPos: {fileID: 0}
@@ -36270,19 +36336,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d386f197216c6444980d4182c59401be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzle1DragManager: {fileID: 0}
+  puzzle2DragManager: {fileID: 0}
   audioM: {fileID: 0}
   speed: 30
   theGarden: {fileID: 919132148335495078}
   startUI: {fileID: 61162932}
   EndingUI: {fileID: 984312774}
   titleUI: {fileID: 1081031275}
+  DecayUI: {fileID: 0}
   puzzle1: {fileID: 0}
   puzzle1Control: {fileID: 0}
   puzzle2: {fileID: 128892097}
   puzzle2Control: {fileID: 0}
   puzzle3: {fileID: 228340268}
   tree: {fileID: 0}
-  iOCCube: {fileID: 1161138354}
+  DecayCube: {fileID: 0}
+  IOCCube: {fileID: 0}
+  IOCOutsidePos: {fileID: 0}
   outsidePos: {fileID: 1757827335}
   endCube: {fileID: 543450652271811868}
   iOCFirstButton: {fileID: 1031992550}

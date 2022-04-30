@@ -81,7 +81,7 @@ public class DecayPuzzleControl : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     if (isRotate) {
-      transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
+      theGarden.transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
   }
 
@@ -119,7 +119,7 @@ public class DecayPuzzleControl : MonoBehaviour {
       });
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(-90, 0, 90), 1);
+    theGarden.transform.DORotate(new Vector3(0, 0, 0), 1);
 
   }
 
@@ -139,7 +139,7 @@ public class DecayPuzzleControl : MonoBehaviour {
           tree.SetActive(true);
           tree.transform.DOLocalMove(smallTreePos.localPosition, 1);
           tree.transform.DOScale(0.5f, 1).OnComplete(() => {
-          theGarden.transform.DORotate(new Vector3(-90, 0, 180f), 2f).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
@@ -174,7 +174,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => { //look at cube
           //flower.SetActive(true);
           //flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
-            theGarden.transform.DORotate(new Vector3(-90, 0, 270), 2f).OnComplete(() => {
+            theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f, RotateMode.Fast).OnComplete(() => {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
@@ -196,12 +196,12 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
-    puzzle3VFX.Play();
-    puzzle3.SetActive(false);
     puzzle3Control.SetActive(false);
+    //puzzle3VFX.Play();
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
-      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
-        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
+      puzzle3.SetActive(false);
+      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
+        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
             puzzleSequenceControl.StartEndingSequence();

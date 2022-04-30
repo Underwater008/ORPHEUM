@@ -30,7 +30,7 @@ public class DecayPuzzle3Control : MonoBehaviour {
   }
 
   public void Pass() {
-    //stageControl.StartTheThirdStage();
+    stageControl.StartTheForthStage();
     Debug.Log("DecayPassed");
   }
 }
