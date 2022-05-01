@@ -1383,7 +1383,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 3
+  startIndex: 2
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -7333,7 +7333,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 4
+  startIndex: 3
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -11639,7 +11639,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 2
+  startIndex: 1
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
@@ -15108,7 +15108,7 @@ MonoBehaviour:
   puzzle1Control: {fileID: 631280765}
   puzzle2Control: {fileID: 631280765}
   puzzle3Control: {fileID: 631280765}
-  startIndex: 1
+  startIndex: 0
   originpos: {x: 0, y: 0, z: 0}
   distance: 13.5
   manager: {fileID: 1520911030}
