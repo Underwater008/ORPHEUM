@@ -57,7 +57,6 @@ public class AppleRotate : MonoBehaviour {
   public Transform grassSpawnPos;
   public Transform treeSpawnPos;
 
-  public GameObject VFXObj;
   public VisualEffect puzzle1VFX;
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
@@ -66,7 +65,7 @@ public class AppleRotate : MonoBehaviour {
 
   public float treeScale;
 
-  public PuzzleSequenceControl puzzleSequenceControl;
+  public DecayPuzzleControl DecayPuzzleControl;
 
   //public GameObject[] UIs;
 
@@ -155,7 +154,7 @@ public class AppleRotate : MonoBehaviour {
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
               rockDebris.Play();
-              secondDoor.DOMoveZ(secondDoor.position.z - 1f, 1).OnComplete(() => {
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
@@ -219,7 +218,8 @@ public class AppleRotate : MonoBehaviour {
             tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
-              puzzleSequenceControl.StartEndingSequence();
+             isRotate = true;
+              DecayPuzzleControl.StartDecay();
          });
        });
      });
