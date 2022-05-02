@@ -7,7 +7,7 @@ public class EndingPuzzle1Control : MonoBehaviour {
   public SwitchDetect switch0Detect;
   public SwitchDetect switch1Detect;
   public SwitchDetect switch2Detect;
-  public SwitchDetect switch3Detect;
+  //public SwitchDetect switch3Detect;
 
 
   public PuzzleSequenceControl stageControl;
@@ -21,7 +21,7 @@ public class EndingPuzzle1Control : MonoBehaviour {
   // Update is called once per frame
   void Update() {
 
-    if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch2Detect.GetComponent<SwitchDetect>().detected == true && switch3Detect.GetComponent<SwitchDetect>().detected == true) {
+    if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch2Detect.GetComponent<SwitchDetect>().detected == true) {
       //if (!isChangeThirdStage) {
       //isChangeThirdStage = true;
       Debug.Log("passed");
