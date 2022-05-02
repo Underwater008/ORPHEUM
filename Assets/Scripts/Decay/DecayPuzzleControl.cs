@@ -31,6 +31,10 @@ public class DecayPuzzleControl : MonoBehaviour {
   public GameObject puzzle3;
   public GameObject puzzle3Control;
 
+  public VisualEffect puzzle1VFX;
+  public VisualEffect puzzle2VFX;
+  public VisualEffect puzzle3VFX;
+
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
 
@@ -66,6 +70,8 @@ public class DecayPuzzleControl : MonoBehaviour {
   private bool isRotate = true;
   public bool isStart = false;
   public bool isDecay = false;
+
+  public PuzzleSequenceControl puzzleSequenceControl;
   // Start is called before the first frame update
   void Start() {
 
@@ -75,7 +81,7 @@ public class DecayPuzzleControl : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     if (isRotate) {
-      transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
+      theGarden.transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
   }
 
@@ -113,7 +119,7 @@ public class DecayPuzzleControl : MonoBehaviour {
       });
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(-90, 0, 90), 1);
+    theGarden.transform.DORotate(new Vector3(0, 0, 0), 1);
 
   }
 
@@ -133,11 +139,12 @@ public class DecayPuzzleControl : MonoBehaviour {
           tree.SetActive(true);
           tree.transform.DOLocalMove(smallTreePos.localPosition, 1);
           tree.transform.DOScale(0.5f, 1).OnComplete(() => {
-          theGarden.transform.DORotate(new Vector3(-90, 0, 180f), 2f).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                Cursor.visible = true;
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
@@ -155,12 +162,12 @@ public class DecayPuzzleControl : MonoBehaviour {
 }
 
   public void StartTheThirdStage() {
+    puzzle2Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     //puzzle2VFX.Play();
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       //puzzle2.SetActive(false);
-      puzzle2Control.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
         Debug.Log("puzzle3");
@@ -168,7 +175,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => { //look at cube
           //flower.SetActive(true);
           //flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
-            theGarden.transform.DORotate(new Vector3(-90, 0, 270), 2f).OnComplete(() => {
+            theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f, RotateMode.Fast).OnComplete(() => {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
@@ -187,6 +194,23 @@ public class DecayPuzzleControl : MonoBehaviour {
           });
         });
       });
+  }
+
+  public void StartTheForthStage() {
+    puzzle3Control.SetActive(false);
+    //puzzle3VFX.Play();
+    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+      puzzle3.SetActive(false);
+      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
+        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
+          Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+          Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+            Cursor.visible = true;
+            puzzleSequenceControl.StartEndingSequence();
+          });
+        });
+      });
+    });
   }
 
   public void StartGame() {
