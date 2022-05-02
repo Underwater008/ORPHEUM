@@ -125,20 +125,24 @@ public class PuzzleSequenceControl : MonoBehaviour {
     firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
-      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
+      firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
-        tree.SetActive(true);
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
-        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+        //tree.SetActive(true);
+        //tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
-            Cursor.visible = true;
-            puzzle2.SetActive(true);
-            puzzle2DragManager.enabled = true;
-            puzzle2Control.SetActive(true);
-            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
+            Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                puzzle2.SetActive(true);
+                puzzle2DragManager.enabled = true;
+                puzzle2Control.SetActive(true);
+                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  Cursor.visible = true;
+                  Debug.Log("puzzle 2 start");
+                //});
+              });
             });
           });
         });  
