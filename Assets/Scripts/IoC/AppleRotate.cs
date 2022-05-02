@@ -114,9 +114,7 @@ public class AppleRotate : MonoBehaviour {
     //apple.SetActive(false);
     puzzle1Control.SetActive(true);
     puzzle1.SetActive(true);
-
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
-
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> {    //move to look at puzzle
       rockDebris.Play();
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
@@ -124,7 +122,8 @@ public class AppleRotate : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
-          rockDebris.Stop();
+          Cursor.lockState = CursorLockMode.None;
+          Cursor.visible = true;
           Debug.Log("look at puzzle");
       });
       });
@@ -137,7 +136,7 @@ public class AppleRotate : MonoBehaviour {
   public void StartTheSecondStage() {
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
-    puzzle1.SetActive(false);
+    //puzzle1.SetActive(false);
     puzzle1Control.SetActive(false);
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle

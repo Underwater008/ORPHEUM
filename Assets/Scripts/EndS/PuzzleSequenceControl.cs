@@ -105,8 +105,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         puzzle1DragManager.enabled = true;
-        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {             //open door
-          //rockDebris.Stop();
+        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {             //open door                                                                      //rockDebris.Stop();
+          Cursor.lockState = CursorLockMode.None;
+          Cursor.visible = true;
           Debug.Log("look at puzzle");
         });
       });
