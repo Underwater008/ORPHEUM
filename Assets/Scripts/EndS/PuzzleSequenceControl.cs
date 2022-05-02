@@ -121,11 +121,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
     Cursor.visible = false;
     puzzle1Control.SetActive(false);
     puzzle1DragManager.enabled = false;
-    firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
+    firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
-      puzzle1.SetActive(false);
-      puzzle1Control.SetActive(false);
+      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
         tree.SetActive(true);
@@ -144,7 +144,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
         });  
       });
     });
-
+    });
   }
 
   public void StartTheThirdStage() {
