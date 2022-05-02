@@ -144,6 +144,7 @@ public class DecayPuzzleControl : MonoBehaviour {
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                Cursor.visible = true;
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
@@ -204,6 +205,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+            Cursor.visible = true;
             puzzleSequenceControl.StartEndingSequence();
           });
         });

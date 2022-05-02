@@ -91,7 +91,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
-    Cursor.lockState = CursorLockMode.Confined;
+    //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     Debug.Log("3");
     isRotate = false;
@@ -106,6 +106,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
         puzzle1.SetActive(true);
         puzzle1DragManager.enabled = true;
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {             //open door
+          Cursor.visible = true;
           //rockDebris.Stop();
           Debug.Log("look at puzzle");
         });
@@ -117,6 +118,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    Cursor.visible = false;
     puzzle1Control.SetActive(false);
     puzzle1DragManager.enabled = false;
     firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
@@ -130,7 +132,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
         tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
         tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            Cursor.visible = true;
             puzzle2.SetActive(true);
+            puzzle2DragManager.enabled = true;
             puzzle2Control.SetActive(true);
             Camera.main.transform.DOMove(cameraPlayPos.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
