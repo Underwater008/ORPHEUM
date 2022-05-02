@@ -41,7 +41,8 @@ public class PlaneRotate : MonoBehaviour
       puzzle1Control.SetActive(false);
       puzzle2Control.SetActive(false);
       puzzle3Control.SetActive(false);
-      //Do stuffCursor.lockState = CursorLockMode.Confined;
+      //Do stuff
+      Cursor.lockState = CursorLockMode.Confined;
       Cursor.visible = false;
       Quaternion targetRotation = target.transform.rotation;
 

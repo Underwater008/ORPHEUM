@@ -28,9 +28,9 @@ public class Puzzle2DragManager : MonoBehaviour {
   void Start() {
     cellArray = new int[,]
     {
-       {1,1,1},
-       {1,1,1},
-       {1,0,1}
+       {1,1,0},
+       {1,1,0},
+       {1,1,1}
     };
 
 

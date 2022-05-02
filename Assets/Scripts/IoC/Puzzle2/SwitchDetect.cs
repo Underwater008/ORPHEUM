@@ -17,12 +17,6 @@ public class SwitchDetect : MonoBehaviour
     }
   }
 
-  private void OnTriggerEnter(Collider other) {
-       if (other.gameObject == openTube) {
-        //Debug.Log(detected);
-        detected = true;
-      }
-  }
   
   private void OnTriggerExit(Collider other) {
     if (other.gameObject == openTube) {
@@ -42,7 +36,7 @@ public class SwitchDetect : MonoBehaviour
     {
 
 
-    detected = false;
+    //detected = false;
 
     }
 }

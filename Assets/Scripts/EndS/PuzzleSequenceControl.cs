@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleSequenceControl : MonoBehaviour {
 
-  //music
+  public DragManager puzzle1DragManager;
+  public Puzzle2DragManager puzzle2DragManager;
 
+  //music
   public AudioManager audioM;
 
   public float speed = 30;
@@ -21,6 +23,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public GameObject startUI;
   public GameObject EndingUI;
   public GameObject titleUI;
+  public GameObject DecayUI;
   //FirstStage
   public GameObject puzzle1;
   public GameObject puzzle1Control;
@@ -33,7 +36,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
   
 
   public GameObject tree;                 //the tree
-  public GameObject iOCCube;
+  public GameObject DecayCube;
+  public GameObject IOCCube;
+  public Transform IOCOutsidePos;
   public Transform outsidePos;
   public Transform endCube;
 
@@ -85,39 +90,51 @@ public class PuzzleSequenceControl : MonoBehaviour {
   //}
 
   //When we show the first puzzle in IoC
-  public void StartTheFirstStage() {   
+  public void StartTheFirstStage() {
+    //Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
+    Debug.Log("3");
     isRotate = false;
+    isStart = false;
     //apple.SetActive(false);
-    //puzzle1Control.SetActive(true);
-    Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(()=> {
-      //Animator anitor = cubeBase.GetComponent<Animator>();
-      //Destroy(anitor)
-      firstDoor.DOLocalMoveZ(-7f, 2).OnComplete(()=> {
+    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+    Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1).OnComplete(() => {    //move to look at puzzle
+      //rockDebris.Play();
+      firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
+      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
+        puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
-        firstDoor.DOLocalMoveX(-10f, 2).OnComplete(() => {
-          //UIs.SetActive(true);
+        puzzle1DragManager.enabled = true;
+        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {             //open door
+          Cursor.visible = true;
+          //rockDebris.Stop();
+          Debug.Log("look at puzzle");
         });
       });
     });
-    Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
-    transform.DORotate(new Vector3(0, 0, 0), 1);
+
+    transform.DORotate(new Vector3(0, 0, 0), 1); //put cube at 0
   }
 
   //When we shou the second puzzle in IoC
-  public void StartTheSecondStage() 
-  {
-    firstDoor.DOLocalMoveZ(.46f, 2).OnComplete(() => {
+  public void StartTheSecondStage() {
+    Cursor.visible = false;
+    puzzle1Control.SetActive(false);
+    puzzle1DragManager.enabled = false;
+    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
+    firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
-      puzzle1.SetActive(false);
-      puzzle1Control.SetActive(false);
+      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
         tree.SetActive(true);
         tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
         tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            Cursor.visible = true;
             puzzle2.SetActive(true);
+            puzzle2DragManager.enabled = true;
             puzzle2Control.SetActive(true);
             Camera.main.transform.DOMove(cameraPlayPos.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
@@ -127,7 +144,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
         });  
       });
     });
-
+    });
   }
 
   public void StartTheThirdStage() {
@@ -160,9 +177,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
       startUI.SetActive(false);
       EndingUI.SetActive(false);
+      DecayUI.SetActive(false);
       titleUI.SetActive(false);
-      iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
-        iOCFirstButton.SetActive(false);
+      IOCCube.transform.DOMove(IOCOutsidePos.position, 2);
+      DecayCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
+        //DecayCube.SetActive(false);
       });
       endCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {

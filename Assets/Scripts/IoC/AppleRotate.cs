@@ -57,7 +57,6 @@ public class AppleRotate : MonoBehaviour {
   public Transform grassSpawnPos;
   public Transform treeSpawnPos;
 
-  public GameObject VFXObj;
   public VisualEffect puzzle1VFX;
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
@@ -66,7 +65,7 @@ public class AppleRotate : MonoBehaviour {
 
   public float treeScale;
 
-  public PuzzleSequenceControl puzzleSequenceControl;
+  public DecayPuzzleControl DecayPuzzleControl;
 
   //public GameObject[] UIs;
 
@@ -107,7 +106,8 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
-
+    //Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     Debug.Log("3");
     isRotate = false;
     isStart = false;
@@ -124,6 +124,7 @@ public class AppleRotate : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
+          Cursor.visible = true;
           rockDebris.Stop();
           Debug.Log("look at puzzle");
       });
@@ -135,6 +136,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    Cursor.visible = false;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     puzzle1.SetActive(false);
@@ -154,10 +156,11 @@ public class AppleRotate : MonoBehaviour {
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
               rockDebris.Play();
-              secondDoor.DOMoveZ(secondDoor.position.z - 1f, 1).OnComplete(() => {
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  Cursor.visible = true;
                   rockDebris.Stop();
                   Debug.Log("puzzle 2 start");
                 });
@@ -171,6 +174,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    Cursor.visible = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     puzzle2.SetActive(false);
@@ -192,6 +196,7 @@ public class AppleRotate : MonoBehaviour {
 
               thirdDoorOGPos.DOMoveZ(thirdDoor.position.z - 2f, 2);
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
+                Cursor.visible = true;
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
@@ -205,11 +210,13 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFourthStage(){
+    Cursor.visible = false;
     puzzle3VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     puzzle3.SetActive(false);
     puzzle3Control.SetActive(false);
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+      Cursor.visible = true;
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
@@ -218,7 +225,8 @@ public class AppleRotate : MonoBehaviour {
             tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
-              puzzleSequenceControl.StartEndingSequence();
+             isRotate = true;
+              DecayPuzzleControl.StartDecay();
          });
        });
      });
