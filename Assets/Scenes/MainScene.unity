@@ -2189,9 +2189,9 @@ MonoBehaviour:
   speed: 15
   theGarden: {fileID: 130042478}
   cubeBase: {fileID: 7209493641162678443}
-  startUI: {fileID: 61162932}
-  EndUI: {fileID: 984312774}
-  titleUI: {fileID: 1081031275}
+  startUI: {fileID: 1375069781}
+  EndUI: {fileID: 1666123743}
+  titleUI: {fileID: 1166332764}
   DecayUI: {fileID: 1250388669}
   IOCPuzzle3UI: {fileID: 1434380183}
   puzzle1: {fileID: 6522285749639184408}
@@ -8778,7 +8778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39.170044, y: -34.349976}
+  m_AnchoredPosition: {x: -39.16992, y: -34.349976}
   m_SizeDelta: {x: 32.66, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &506540190
