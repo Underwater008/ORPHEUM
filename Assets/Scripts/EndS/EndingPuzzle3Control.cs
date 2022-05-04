@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class EndingPuzzle2Control : MonoBehaviour {
+public class EndingPuzzle3Control : MonoBehaviour {
   public SwitchDetect switch0Detect;
   public SwitchDetect switch1Detect;
   public SwitchDetect switch2Detect;
   public SwitchDetect switch3Detect;
+  public SwitchDetect switch4Detect;
   //public SwitchDetect switch3Detect;
 
 
@@ -22,7 +23,7 @@ public class EndingPuzzle2Control : MonoBehaviour {
   // Update is called once per frame
   void Update() {
 
-    if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch2Detect.GetComponent<SwitchDetect>().detected == true && switch3Detect.GetComponent<SwitchDetect>().detected == true) {
+    if (switch1Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true && switch2Detect.GetComponent<SwitchDetect>().detected == true && switch3Detect.GetComponent<SwitchDetect>().detected == true && switch4Detect.GetComponent<SwitchDetect>().detected == true && switch0Detect.GetComponent<SwitchDetect>().detected == true) {
       //if (!isChangeThirdStage) {
       //isChangeThirdStage = true;
       Debug.Log("passed");

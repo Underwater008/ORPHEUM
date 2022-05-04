@@ -9,6 +9,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   public DragManager puzzle1DragManager;
   public Puzzle2DragManager puzzle2DragManager;
+  public Puzzle3DragManager puzzle3DragManager;
 
   //music
   public AudioManager audioM;
@@ -31,6 +32,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public GameObject puzzle2;
   public GameObject puzzle2Control;
   public GameObject puzzle3;
+  public GameObject puzzle3Control;
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
   
@@ -152,9 +154,41 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    Debug.Log("puzzle3");
-    puzzle3.SetActive(true);
-    puzzle2.SetActive(false);
+    Cursor.visible = false;
+    puzzle2Control.SetActive(false);
+    puzzle2DragManager.enabled = false;
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+      secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle2");
+      secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+          //tree.SetActive(true);
+          //tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
+            secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
+            Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
+            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                puzzle3.SetActive(true);
+                puzzle3DragManager.enabled = true;
+                puzzle3Control.SetActive(true);
+                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  Cursor.visible = true;
+                  Debug.Log("puzzle 2 start");
+                  //});
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+
+  public void StartTheForthStage() {
+
   }
 
   public void StartGame() 

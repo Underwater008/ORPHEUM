@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Puzzle2DragManager : MonoBehaviour {
+public class Puzzle3DragManager : MonoBehaviour {
   public Vector3 CubeOrigin;
 
   public int cubeNum = 9;
@@ -11,13 +11,13 @@ public class Puzzle2DragManager : MonoBehaviour {
 
   public int[,] cellArray;
 
-  public static Puzzle2DragManager _drag;
+  public static Puzzle3DragManager _drag;
 
   public bool isDraging = false;
 
 
 
-  public DragthisCubeP2 CurrentDragCube = null;
+  public DragthisCubeP3 CurrentDragCube = null;
 
   // public static DragManager Instance { private set; get; }
   // Start is called before the first frame update
