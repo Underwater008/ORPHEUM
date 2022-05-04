@@ -62,6 +62,8 @@ public class AppleRotate : MonoBehaviour {
   public VisualEffect puzzle3VFX;
 
   public ParticleSystem rockDebris;
+  public ParticleSystem rockDebris2;
+  public ParticleSystem rockDebris3;
 
   public float treeScale;
 
@@ -155,13 +157,13 @@ public class AppleRotate : MonoBehaviour {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              rockDebris.Play();
+              rockDebris2.Play();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
                   Cursor.visible = true;
-                  rockDebris.Stop();
+                  rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
               });
@@ -193,10 +195,11 @@ public class AppleRotate : MonoBehaviour {
             Debug.Log("look at puzzle 3");
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-
+              rockDebris3.Play();
               thirdDoorOGPos.DOMoveZ(thirdDoor.position.z - 2f, 2);
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
                 Cursor.visible = true;
+                rockDebris3.Stop();
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
