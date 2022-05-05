@@ -9,6 +9,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   public DragManager puzzle1DragManager;
   public Puzzle2DragManager puzzle2DragManager;
+  public Puzzle3DragManager puzzle3DragManager;
 
   //music
   public AudioManager audioM;
@@ -31,6 +32,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public GameObject puzzle2;
   public GameObject puzzle2Control;
   public GameObject puzzle3;
+  public GameObject puzzle3Control;
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
   
@@ -125,20 +127,24 @@ public class PuzzleSequenceControl : MonoBehaviour {
     firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
-      firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
+      firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
       Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> {
-        tree.SetActive(true);
-        tree.transform.DOLocalMove(smallTreePos.localPosition, 1).OnComplete(() => {});
-        tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+        //tree.SetActive(true);
+        //tree.transform.DOScale(0.5f, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 90f, 0), 2f).OnComplete(() => {
-            Cursor.visible = true;
-            puzzle2.SetActive(true);
-            puzzle2DragManager.enabled = true;
-            puzzle2Control.SetActive(true);
-            Camera.main.transform.DOMove(cameraPlayPos.position, 1);
+            secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
+            Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
-              secondDoor.transform.DOLocalMove(new Vector3(0.5f, 0, -0.5f), 2f);
+              secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
+                puzzle2.SetActive(true);
+                puzzle2DragManager.enabled = true;
+                puzzle2Control.SetActive(true);
+                secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  Cursor.visible = true;
+                  Debug.Log("puzzle 2 start");
+                //});
+              });
             });
           });
         });  
@@ -148,9 +154,41 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
-    Debug.Log("puzzle3");
-    puzzle3.SetActive(true);
-    puzzle2.SetActive(false);
+    Cursor.visible = false;
+    puzzle2Control.SetActive(false);
+    puzzle2DragManager.enabled = false;
+    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+      secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
+      // Hide the first puzzle and show the second puzzle
+      Debug.Log("puzzle3");
+      secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+          //tree.SetActive(true);
+          //tree.transform.DOScale(0.5f, 1).OnComplete(() => {
+          theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
+            thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
+            Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
+            Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+              thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
+                puzzle3.SetActive(true);
+                puzzle3DragManager.enabled = true;
+                puzzle3Control.SetActive(true);
+                thirdDoor.DOMove(thirdDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  Cursor.visible = true;
+                  Debug.Log("puzzle 3 start");
+                  //});
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+
+  public void StartTheForthStage() {
+
   }
 
   public void StartGame() 
