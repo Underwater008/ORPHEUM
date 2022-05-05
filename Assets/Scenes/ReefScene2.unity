@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: e8318b2280661e1409774b9fe509b845, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1410340021}
-  m_IndirectSpecularColor: {r: 0.6694813, g: 0.8280153, b: 0.6070995, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1022,7 +1022,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 19.829, y: 0, z: 0}
 --- !u!1 &83952200
 GameObject:
@@ -1479,6 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioM: {fileID: 2056982741}
+  soundM: {fileID: 0}
   speed: 15
   theGarden: {fileID: 130042478}
   cubeBase: {fileID: 7209493641162678443}
@@ -1511,13 +1512,13 @@ MonoBehaviour:
   thirdDoorOpenPos: {fileID: 1338569178}
   thirdDoorOGPos: {fileID: 390339294}
   grassSpawnPos: {fileID: 447847161}
-  VFXObj: {fileID: 1171515183}
+  treeSpawnPos: {fileID: 0}
   puzzle1VFX: {fileID: 1171515186}
   puzzle2VFX: {fileID: 409475520}
   puzzle3VFX: {fileID: 1513191108}
   rockDebris: {fileID: 1978902498}
   treeScale: 0.005
-  puzzleSequenceControl: {fileID: 0}
+  DecayPuzzleControl: {fileID: 0}
   isStart: 0
 --- !u!1 &146700962
 GameObject:
@@ -1932,7 +1933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &173079173
 GameObject:
@@ -5848,7 +5849,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 30.675, y: 0, z: 0}
 --- !u!1 &565838946
 GameObject:
@@ -6061,7 +6062,7 @@ Transform:
   - {fileID: 158442728}
   - {fileID: 1943968132}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!114 &583883290
 MonoBehaviour:
@@ -6088,6 +6089,9 @@ MonoBehaviour:
   puzzle2Control: {fileID: 1589077076}
   puzzle3: {fileID: 1520911028}
   puzzle3Control: {fileID: 631280765}
+  puzzle1VFX: {fileID: 0}
+  puzzle2VFX: {fileID: 0}
+  puzzle3VFX: {fileID: 0}
   tree: {fileID: 1048954347}
   iOCCube: {fileID: 1161138354}
   endFirstBUtton: {fileID: 43173528}
@@ -6112,6 +6116,7 @@ MonoBehaviour:
   smallTreePos: {fileID: 310863176}
   isStart: 0
   isDecay: 0
+  puzzleSequenceControl: {fileID: 0}
 --- !u!1 &589547729
 GameObject:
   m_ObjectHideFlags: 0
@@ -9039,6 +9044,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bd2ee3c40f7c8d94286e56e102e9fdd5, type: 3}
   m_PrefabInstance: {fileID: 877023899}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &892510930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4012573422193612919, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_Name
+      value: Froot lowpoly (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.994072
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.75957274
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.87302494
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.42139962
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.4213996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.56782246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5678225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
 --- !u!1 &893218927
 GameObject:
   m_ObjectHideFlags: 0
@@ -9555,7 +9617,7 @@ RectTransform:
   - {fileID: 1434380184}
   - {fileID: 1495637151}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9923,6 +9985,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d2821924b86cff5439f12b0289585dbf, type: 3}
   m_PrefabInstance: {fileID: 934500620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &946186240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 946186243}
+  - component: {fileID: 946186242}
+  - component: {fileID: 946186241}
+  m_Layer: 0
+  m_Name: EndingDissolve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!73398921 &946186241
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946186240}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &946186242
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946186240}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 7080cc566e3930445820438ddea62b6b, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array: []
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
+--- !u!4 &946186243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946186240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.47, y: -4.24, z: 16.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &953177090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6688703465276863734, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
@@ -10692,7 +10862,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031992550
 GameObject:
@@ -12264,7 +12434,7 @@ Transform:
   - {fileID: 130042479}
   - {fileID: 1891131411}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165486866
 GameObject:
@@ -12692,6 +12862,12 @@ MonoBehaviour:
   audioSourceClick: {fileID: 1144112888}
   audioSourceRotate: {fileID: 1192003357}
   audioSourceWaterOk: {fileID: 385610970}
+  puzzleHeavyDrop: {fileID: 0}
+  tileDrop: {fileID: 0}
+  longtileDrag: {fileID: 0}
+  medtileDrag: {fileID: 0}
+  shorttileDrag: {fileID: 0}
+  puzzleCompleteChime: {fileID: 0}
 --- !u!4 &1201539281
 Transform:
   m_ObjectHideFlags: 0
@@ -12707,7 +12883,7 @@ Transform:
   - {fileID: 1192003356}
   - {fileID: 385610969}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205418691
 GameObject:
@@ -14822,7 +14998,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 36.51, y: -19.201, z: 19.633}
 --- !u!114 &1410340023
 MonoBehaviour:
@@ -19021,7 +19197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 19.829, y: 0, z: 0}
 --- !u!114 &1709898577
 MonoBehaviour:
@@ -19793,7 +19969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1763596163
 GameObject:
@@ -20012,7 +20188,7 @@ Transform:
   - {fileID: 354117355}
   - {fileID: 543450652271811868}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1791687142
 MonoBehaviour:
@@ -20026,19 +20202,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d386f197216c6444980d4182c59401be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzle1DragManager: {fileID: 0}
+  puzzle2DragManager: {fileID: 0}
   audioM: {fileID: 2056982741}
   speed: 30
   theGarden: {fileID: 1791687140}
   startUI: {fileID: 61162932}
   EndingUI: {fileID: 984312774}
   titleUI: {fileID: 1081031275}
+  DecayUI: {fileID: 0}
   puzzle1: {fileID: 1307435413}
   puzzle1Control: {fileID: 1262476456}
   puzzle2: {fileID: 128892097}
   puzzle2Control: {fileID: 0}
   puzzle3: {fileID: 228340268}
   tree: {fileID: 0}
-  iOCCube: {fileID: 1161138354}
+  DecayCube: {fileID: 0}
+  IOCCube: {fileID: 0}
+  IOCOutsidePos: {fileID: 0}
   outsidePos: {fileID: 1757827335}
   endCube: {fileID: 1791687141}
   iOCFirstButton: {fileID: 1031992550}
@@ -22220,7 +22401,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1978902496
 GameObject:
@@ -27719,7 +27900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2056982745
 AudioSource:
@@ -28711,7 +28892,7 @@ Transform:
   - {fileID: 1926084829}
   - {fileID: 1316700671}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123292037
 GameObject:
@@ -29057,7 +29238,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450651908708858
 Transform:
@@ -29127,7 +29308,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652180387026
 Transform:
@@ -29173,7 +29354,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652271811868
 Transform:
@@ -29201,7 +29382,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652599983784
 Transform:
@@ -29276,7 +29457,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653270187559
 Transform:
@@ -29305,7 +29486,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653442470755
 Transform:
@@ -29363,7 +29544,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653576675585
 Transform:
@@ -29377,7 +29558,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653589390351
 Transform:
@@ -29391,7 +29572,7 @@ Transform:
   m_LocalScale: {x: 114.12207, y: 114.12207, z: 114.12207}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653672573931
 Transform:
@@ -30043,19 +30224,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d386f197216c6444980d4182c59401be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzle1DragManager: {fileID: 0}
+  puzzle2DragManager: {fileID: 0}
   audioM: {fileID: 0}
   speed: 30
   theGarden: {fileID: 919132148335495078}
   startUI: {fileID: 61162932}
   EndingUI: {fileID: 984312774}
   titleUI: {fileID: 1081031275}
+  DecayUI: {fileID: 0}
   puzzle1: {fileID: 0}
   puzzle1Control: {fileID: 0}
   puzzle2: {fileID: 128892097}
   puzzle2Control: {fileID: 0}
   puzzle3: {fileID: 228340268}
   tree: {fileID: 0}
-  iOCCube: {fileID: 1161138354}
+  DecayCube: {fileID: 0}
+  IOCCube: {fileID: 0}
+  IOCOutsidePos: {fileID: 0}
   outsidePos: {fileID: 1757827335}
   endCube: {fileID: 543450652271811868}
   iOCFirstButton: {fileID: 1031992550}
