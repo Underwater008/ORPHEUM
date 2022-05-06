@@ -54,14 +54,15 @@ namespace EasyGameStudio.Jeremy
             if (this.is_selected != true)
             {
                 this.is_selected = true;
-                GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
+
+        GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
             }
 
-            if (this.material.GetInt("is_selected") != 1)
+      if (this.material.GetInt("is_selected") != 1)
                 this.material.SetInt("is_selected", 1);
-        }
 
-        private void change_to_not_selected()
+    }
+    private void change_to_not_selected()
         {
             if (this.is_selected != false)
             {
