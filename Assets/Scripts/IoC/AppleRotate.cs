@@ -8,6 +8,12 @@ using UnityEngine.VFX;
 
 public class AppleRotate : MonoBehaviour {
 
+  //Transition
+  public Transform transitionClouds;
+  public Transform trnasitionCloudsStart;
+  public Transform trnasitionCloudsEnd;
+  public GameObject CloudTrigger;
+
   //music
   public AudioManager audioM;
   public SoundManager soundM;
@@ -224,11 +230,14 @@ public class AppleRotate : MonoBehaviour {
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     puzzle3.SetActive(false);
+    Vector3 puzzle3Pos = puzzle3.transform.position;
     puzzle3Control.SetActive(false);
+    puzzle3.transform.DOMoveZ(puzzle3Pos.z + 2f, 1).OnComplete(() => {
+      //need audio
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
-      Cursor.visible = true;
-      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 2).OnComplete(() => {
-        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
+      puzzle3.SetActive(false);
+      thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
+        thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
             soundM.PlayDoorOpenAudio();
@@ -237,12 +246,20 @@ public class AppleRotate : MonoBehaviour {
             soundM.PlayAudioWaterOk();
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
              isRotate = true;
-              DecayPuzzleControl.StartDecay();
+              transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
+              transitionClouds.DOMove(trnasitionCloudsEnd.position, 3);
+            });
          });
-       });
+        });
      });
     });
    });
+  }
+
+  private void OnCollisionEnter(Collision collisionInfo) {
+    if (collisionInfo.gameObject == CloudTrigger) {
+      DecayPuzzleControl.StartDecay();
+    }
   }
 
   public void StartGame() 

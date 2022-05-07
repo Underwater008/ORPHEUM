@@ -240,12 +240,12 @@ public class DecayPuzzleControl : MonoBehaviour {
       EndingUI.SetActive(false);
       titleUI.SetActive(false);
       DecayUI.SetActive(false);
-      iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
+      iOCCube.SetActive(false);
+        /*transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCFirstButton.SetActive(false);
         endFirstBUtton.SetActive(false);
-
-      });
-      DecayCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
+      });*/
+      DecayCube.DOMove(new Vector3(0f, 0f, 0f), 0f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
 
           //CameraShake.ins.Shake();
