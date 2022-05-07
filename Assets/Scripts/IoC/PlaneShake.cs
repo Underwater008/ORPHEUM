@@ -33,7 +33,6 @@ public class PlaneShake : MonoBehaviour
             selected.change_to_selected();
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
-            // Rotate puzzle1 90 degrees when clicked the button
             soundManager.playShortTileDrag();
         rotateTarget.DOLocalRotate(new Vector3(10, 0, 0), 0.3f, RotateMode.Fast).OnComplete(() => {
           rotateTarget.DOLocalRotate(new Vector3(-10, 0, 0), 0.3f, RotateMode.Fast).OnComplete(() => {
@@ -41,6 +40,7 @@ public class PlaneShake : MonoBehaviour
               soundManager.playTileDrop();
               centerButton.DOMoveZ(centerButton.position.z + 2f, 0.5f);
               rotateTarget.DOMoveZ(rotateTarget.position.z + 2f, 0.5f).OnComplete(() => {
+                selected.change_to_not_selected();
                 isRotate = false;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;

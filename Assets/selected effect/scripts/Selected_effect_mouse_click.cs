@@ -49,7 +49,7 @@ namespace EasyGameStudio.Jeremy
         }
 
 
-        private void change_to_selected()
+        public void change_to_selected()
         {
             if (this.is_selected != true)
             {
@@ -62,7 +62,7 @@ namespace EasyGameStudio.Jeremy
                 this.material.SetInt("is_selected", 1);
 
     }
-    private void change_to_not_selected()
+    public void change_to_not_selected()
         {
             if (this.is_selected != false)
             {
