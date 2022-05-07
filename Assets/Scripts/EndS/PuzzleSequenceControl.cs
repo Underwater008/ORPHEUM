@@ -210,7 +210,10 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public void StartEndingSequence() {
     isEndingSeuence = true;
     //music
+    audioM.currentAudioSource.Stop();
     audioM.index = 3;
+    audioM.updateIndex();
+
     if (isEndingSeuence) {
 
       startUI.SetActive(false);
@@ -232,6 +235,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void RestartGame() {
+    audioM.currentAudioSource.Stop();
+    audioM.index = 0;
+    audioM.updateIndex();
 
     SceneManager.LoadScene(0);
   }

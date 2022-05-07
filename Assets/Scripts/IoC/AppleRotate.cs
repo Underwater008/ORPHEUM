@@ -83,15 +83,10 @@ public class AppleRotate : MonoBehaviour {
       titleUI.SetActive(false);
       DecayUI.SetActive(false);
       IOCPuzzle3UI.SetActive(true);
-
       Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
-      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {   //go closer to cube
-                                                                                   //CameraShake.ins.Shake();
-        //isStart = false;
+      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
         ShowStartButton();
       });
-      //CanShake = false;
-      //cubeBase.GetComponent<showStartButton>().appRotate = this;
     }
   }
 
@@ -101,10 +96,10 @@ public class AppleRotate : MonoBehaviour {
       transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
 
-    if (mouseConfined == true) {
-      Cursor.lockState = CursorLockMode.Confined;
-      Cursor.visible = false;
-    }
+      //if (mouseConfined == true) {
+      //  Cursor.lockState = CursorLockMode.Confined;
+      // Cursor.visible = false;
+   // }
   }
 
   public void ShowStartButton() {
@@ -246,7 +241,9 @@ public class AppleRotate : MonoBehaviour {
   public void StartGame() 
   {
     //music
+    audioM.currentAudioSource.Stop();
     audioM.index = 1;
+    audioM.updateIndex();
     Debug.Log("1");
     isStart = true;
     TestStart();
@@ -254,7 +251,10 @@ public class AppleRotate : MonoBehaviour {
 
   public void RestartGame() {
     //music
+    audioM.currentAudioSource.Stop();
     audioM.index = 0;
+    audioM.updateIndex();
+
     SceneManager.LoadScene(0);
     startUI.SetActive(true);
     EndUI.SetActive(true);

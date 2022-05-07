@@ -213,23 +213,12 @@ public class DecayPuzzleControl : MonoBehaviour {
     });
   }
 
-  public void StartGame() {
-    isStart = true;
-    if (isStart) {
-      startUI.SetActive(false);
-      EndingUI.SetActive(false);
-      titleUI.SetActive(false);
-      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
-        //CameraShake.ins.Shake();
-        ShowStartButton();
-      });
-      //cubeBase.GetComponent<showStartButton>().appRotate = this;
-    }
-  }
 
   public void StartDecay() {
     //music
+    audioM.currentAudioSource.Stop();
     audioM.index = 2;
+    audioM.updateIndex();
 
     isDecay = true;
     if (isDecay) {
@@ -253,6 +242,10 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void RestartGame() {
+    audioM.currentAudioSource.Stop();
+    audioM.index = 0;
+    audioM.updateIndex();
+
     SceneManager.LoadScene(0);
   }
 }
