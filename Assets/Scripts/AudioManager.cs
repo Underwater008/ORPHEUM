@@ -21,13 +21,20 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    updateIndex();
     }
 
-   void updateIndex() {
-      currentAudioSource = BGList[index];
-       if (!currentAudioSource.isPlaying) {
-          currentAudioSource.Play();
+   public void updateIndex() {
+    currentAudioSource = BGList[index];
+    playNext();
+  }
+
+  public void stopPrevious() {
+      currentAudioSource.Stop();
+  }
+
+  public void playNext() {
+    if (!currentAudioSource.isPlaying) {
+      currentAudioSource.Play();
     }
   }
 }

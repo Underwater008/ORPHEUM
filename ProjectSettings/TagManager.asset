@@ -6,6 +6,7 @@ TagManager:
   tags:
   - OpenTubes
   - audio_selected
+  - HoverAudio
   layers:
   - Default
   - TransparentFX
