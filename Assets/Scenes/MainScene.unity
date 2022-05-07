@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.34710628, g: 0.6037736, b: 0.31138006, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.001
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -46318,7 +46318,7 @@ MonoBehaviour:
   secondDoorOGPos: {fileID: 1216966948}
   thirdDoor: {fileID: 842622942}
   thirdDoorOpenPos: {fileID: 692241933}
-  thirdDoorOGPos: {fileID: 1542946721}
+  thirdDoorOGPos: {fileID: 43173529}
   smallTreePos: {fileID: 0}
   isStart: 0
   isEndingSeuence: 0
