@@ -74,6 +74,7 @@ public class AppleRotate : MonoBehaviour {
   //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
+  public bool mouseConfined = false;
   // Start is called before the first frame update
   void TestStart() {
     if (isStart) {
@@ -99,6 +100,11 @@ public class AppleRotate : MonoBehaviour {
     if (isRotate) {
       transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
+
+    if (mouseConfined == true) {
+      Cursor.lockState = CursorLockMode.Confined;
+      Cursor.visible = false;
+    }
   }
 
   public void ShowStartButton() {
@@ -108,17 +114,14 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
-    Cursor.lockState = CursorLockMode.Confined;
-    Cursor.visible = false;
+    mouseConfined = true;
     Debug.Log("3");
     isRotate = false;
     isStart = false;
     //apple.SetActive(false);
     puzzle1Control.SetActive(true);
     puzzle1.SetActive(true);
-
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
-
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> {    //move to look at puzzle
       rockDebris.Play();
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
@@ -126,8 +129,7 @@ public class AppleRotate : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
-          Cursor.visible = true;
-          Cursor.lockState = CursorLockMode.None;
+          mouseConfined = false;
           rockDebris.Stop();
           Debug.Log("look at puzzle");
       });
@@ -139,8 +141,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
-    Cursor.lockState = CursorLockMode.Confined;
-    Cursor.visible = false;
+    mouseConfined = true;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     puzzle1.SetActive(false);
@@ -164,8 +165,7 @@ public class AppleRotate : MonoBehaviour {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
-                  Cursor.visible = true;
-                  Cursor.lockState = CursorLockMode.None;
+                  mouseConfined = false;
                   rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
