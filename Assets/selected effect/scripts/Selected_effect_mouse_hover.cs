@@ -36,7 +36,7 @@ namespace EasyGameStudio.Jeremy
                 }
                 else
                 {
-                    this.change_to_not_selected();
+          this.change_to_not_selected();
                 }
             }
             else
