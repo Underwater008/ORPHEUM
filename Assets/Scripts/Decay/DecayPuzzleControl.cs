@@ -154,16 +154,16 @@ public class DecayPuzzleControl : MonoBehaviour {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
-              rockDebris.Play();
+              rockDebris2.Play();
               soundM.PlayDoorOpenAudio();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
-                rockDebris.Stop();
                 Cursor.visible = true;
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
                 puzzle2.GetComponent<DecayCube>().EnableAllChildren();
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
               });
@@ -196,10 +196,9 @@ public class DecayPuzzleControl : MonoBehaviour {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
-                rockDebris.Play();
+                rockDebris3.Play();
                 soundM.PlayDoorOpenAudio();
                 thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
-                  rockDebris.Stop();
                   Cursor.lockState = CursorLockMode.None;
                   Cursor.visible = true;
                   puzzle3.SetActive(true);
@@ -207,7 +206,9 @@ public class DecayPuzzleControl : MonoBehaviour {
                   puzzle3.GetComponent<DecayCube>().SaveChildrenPositions();
                   puzzle3.GetComponent<DecayCube>().EnableAllChildren();
                   thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
-                  thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+                  thirdDoor.DOMove(thirdDoorOpenPos.position, 2f).OnComplete(() => {
+                    rockDebris3.Stop();
+                  });
                 });
               });
             });
@@ -228,7 +229,6 @@ public class DecayPuzzleControl : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-            rockDebris.Play();
             soundM.PlayDoorOpenAudio();
             Cursor.visible = true;
             puzzleSequenceControl.StartEndingSequence();
