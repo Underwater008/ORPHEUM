@@ -48225,6 +48225,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d2821924b86cff5439f12b0289585dbf, type: 3}
   m_PrefabInstance: {fileID: 1906676587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1913905734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913905735}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913905735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913905734}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.0557926, y: 0.000000031465067, z: -1.196022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 543450651830162931}
+  m_Father: {fileID: 5892961184887757474}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1921202172
 GameObject:
   m_ObjectHideFlags: 0
@@ -56257,13 +56288,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147845615433}
-  m_LocalRotation: {x: -0.0000020862688, y: 0.7071068, z: -0.0000020862688, w: -0.7071068}
-  m_LocalPosition: {x: -1.1578826, y: 1.160336, z: -0.041868236}
-  m_LocalScale: {x: 66.481674, y: 66.48165, z: 66.48168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1578826, y: 1.1603361, z: -0.041868232}
+  m_LocalScale: {x: 66.48168, y: 66.48165, z: 66.48169}
   m_Children: []
-  m_Father: {fileID: 5892961184887757474}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -180, y: -90, z: 0}
+  m_Father: {fileID: 1913905735}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450651894473272
 Transform:
   m_ObjectHideFlags: 0
@@ -57164,6 +57195,7 @@ GameObject:
   - component: {fileID: 919132147845615435}
   - component: {fileID: 919132147845615436}
   - component: {fileID: 919132147845615437}
+  - component: {fileID: 919132147845615438}
   m_Layer: 0
   m_Name: TopRight
   m_TagString: audio_selected
@@ -57209,11 +57241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0825455d7199b1f4697e20aa24036aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateTarget: {fileID: 0}
-  target: {fileID: 0}
+  rotateTarget: {fileID: 543450651830162931}
+  target: {fileID: 919132147845615433}
   rotating: 0
-  soundManager: {fileID: 0}
-  centerButton: {fileID: 0}
+  soundManager: {fileID: 1201539280}
+  centerButton: {fileID: 173079174}
+  selected: {fileID: 919132147845615435}
 --- !u!82 &919132147845615437
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57310,6 +57343,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &919132147845615438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147845615433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c615c8e5021c3f749801960031d58ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132147845615433}
+        m_TargetAssemblyTypeName: PlaneShake, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerOnlyOnce: 0
 --- !u!1 &919132148141474834
 GameObject:
   m_ObjectHideFlags: 0
@@ -58386,6 +58447,7 @@ MonoBehaviour:
   rotating: 0
   soundManager: {fileID: 1201539280}
   centerButton: {fileID: 173079174}
+  selected: {fileID: 919132149453695450}
 --- !u!114 &919132149453695453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58405,18 +58467,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PlaneShake, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 919132149453695450}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -63100,7 +63150,7 @@ Transform:
   m_Children:
   - {fileID: 1240092156}
   - {fileID: 1981494215}
-  - {fileID: 543450651830162931}
+  - {fileID: 1913905735}
   - {fileID: 1349181019}
   - {fileID: 173079174}
   m_Father: {fileID: 130042479}

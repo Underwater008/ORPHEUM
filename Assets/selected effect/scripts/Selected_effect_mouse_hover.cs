@@ -63,7 +63,7 @@ namespace EasyGameStudio.Jeremy
             if (this.is_selected != false)
             {
                 this.is_selected = false;
-                GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
+                //GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
             }
 
             if (this.material.GetInt("is_selected") != 0)
