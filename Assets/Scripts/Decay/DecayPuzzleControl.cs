@@ -125,6 +125,7 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1VFX.Play();
     puzzle1Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
@@ -165,7 +166,7 @@ public class DecayPuzzleControl : MonoBehaviour {
     puzzle2Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
-    //puzzle2VFX.Play();
+    puzzle2VFX.Play();
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       //puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
@@ -197,6 +198,7 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
+    puzzle3VFX.Play();
     puzzle3Control.SetActive(false);
     //puzzle3VFX.Play();
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {

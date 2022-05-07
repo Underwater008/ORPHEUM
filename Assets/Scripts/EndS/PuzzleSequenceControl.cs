@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class PuzzleSequenceControl : MonoBehaviour {
 
@@ -61,6 +62,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public Transform thirdDoorOpenPos;
   public Transform thirdDoorOGPos;
   public Transform smallTreePos;
+
+  public VisualEffect puzzle1VFX;
+  public VisualEffect puzzle2VFX;
+  public VisualEffect puzzle3VFX;
+
 
   //public GameObject[] UIs;
 
@@ -120,6 +126,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1VFX.Play();
     Cursor.visible = false;
     puzzle1Control.SetActive(false);
     puzzle1DragManager.enabled = false;
@@ -154,6 +161,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    puzzle2VFX.Play();
     Cursor.visible = false;
     puzzle2Control.SetActive(false);
     puzzle2DragManager.enabled = false;
@@ -188,7 +196,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
-
+    puzzle3VFX.Play();
   }
 
   public void StartGame() 
