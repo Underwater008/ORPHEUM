@@ -240,9 +240,6 @@ public class DecayPuzzleControl : MonoBehaviour {
 
 
   public void StartDecay() {
-    puzzle1VFX.Stop();
-    puzzle2VFX.Stop();
-    puzzle3VFX.Stop();
 
     //music
     audioM.currentAudioSource.Stop();

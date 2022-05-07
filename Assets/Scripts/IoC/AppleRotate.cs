@@ -247,7 +247,7 @@ public class AppleRotate : MonoBehaviour {
             tree.transform.DOMove(treeSpawnPos.position, 1).OnComplete(() => {
              isRotate = true;
               transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
-              transitionClouds.DOMove(trnasitionCloudsEnd.position, 3);
+              transitionClouds.DOMove(trnasitionCloudsEnd.position, 15f);
             });
          });
         });
@@ -256,11 +256,6 @@ public class AppleRotate : MonoBehaviour {
    });
   }
 
-  private void OnCollisionEnter(Collision collisionInfo) {
-    if (collisionInfo.gameObject == CloudTrigger) {
-      DecayPuzzleControl.StartDecay();
-    }
-  }
 
   public void StartGame() 
   {

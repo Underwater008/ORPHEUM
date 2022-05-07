@@ -46,7 +46,7 @@ namespace EasyGameStudio.Jeremy
 
         }
 
-        private void change_to_selected()
+        public void change_to_selected()
         {
             if (this.is_selected != true)
             {
