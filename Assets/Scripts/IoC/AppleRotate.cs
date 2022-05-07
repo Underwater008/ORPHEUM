@@ -281,7 +281,11 @@ public class AppleRotate : MonoBehaviour {
 
   private void Start() {
     puzzle1Control.SetActive(false);
+    puzzle2Control.SetActive(false);
+    puzzle3Control.SetActive(false);
     puzzle1.SetActive(false);
+    puzzle2.SetActive(false);
+    puzzle3.SetActive(false);
     puzzle1VFX.Stop();
     puzzle2VFX.Stop();
     puzzle3VFX.Stop();
