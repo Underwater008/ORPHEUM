@@ -10,6 +10,7 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   //music
   public AudioManager audioM;
+  public SoundManager soundM;
 
   public float speed = 30;
   //public Animator warpAnimator;
@@ -103,6 +104,7 @@ public class DecayPuzzleControl : MonoBehaviour {
     //apple.SetActive(false);
     //puzzle1Control.SetActive(true)
     Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(() => {
+      soundM.PlayDoorOpenAudio();
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
@@ -123,9 +125,11 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   }
 
-  //When we shou the second puzzle in IoC
+  //When we show the second puzzle in IoC
   public void StartTheSecondStage() {
     puzzle1VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle1Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
@@ -144,6 +148,7 @@ public class DecayPuzzleControl : MonoBehaviour {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+              soundM.PlayDoorOpenAudio();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 Cursor.visible = true;
                 puzzle2.SetActive(true);
@@ -167,6 +172,9 @@ public class DecayPuzzleControl : MonoBehaviour {
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     puzzle2VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
+
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       //puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
@@ -180,6 +188,7 @@ public class DecayPuzzleControl : MonoBehaviour {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+                soundM.PlayDoorOpenAudio();
                 thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                   Cursor.lockState = CursorLockMode.None;
                   Cursor.visible = true;
@@ -199,6 +208,8 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   public void StartTheForthStage() {
     puzzle3VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle3Control.SetActive(false);
     //puzzle3VFX.Play();
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
@@ -207,6 +218,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+            soundM.PlayDoorOpenAudio();
             Cursor.visible = true;
             puzzleSequenceControl.StartEndingSequence();
           });

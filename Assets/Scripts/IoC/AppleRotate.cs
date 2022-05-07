@@ -119,6 +119,7 @@ public class AppleRotate : MonoBehaviour {
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> {    //move to look at puzzle
       rockDebris.Play();
+      soundM.PlayDoorOpenAudio();
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
         puzzle1Control.SetActive(true);
@@ -139,6 +140,7 @@ public class AppleRotate : MonoBehaviour {
     mouseConfined = true;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle1.SetActive(false);
     puzzle1Control.SetActive(false);
     firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
@@ -156,6 +158,7 @@ public class AppleRotate : MonoBehaviour {
             Camera.main.transform.DOMove(new Vector3 (0,0,-18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
               rockDebris2.Play();
+              soundM.PlayDoorOpenAudio();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
@@ -178,6 +181,7 @@ public class AppleRotate : MonoBehaviour {
     Cursor.visible = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle2.SetActive(false);
     puzzle2Control.SetActive(false);
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
@@ -195,6 +199,7 @@ public class AppleRotate : MonoBehaviour {
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1); //look at puzzle
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
               rockDebris3.Play();
+              soundM.PlayDoorOpenAudio();
               thirdDoorOGPos.DOMoveZ(thirdDoor.position.z - 2f, 2);
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
                 Cursor.visible = true;
@@ -217,6 +222,7 @@ public class AppleRotate : MonoBehaviour {
     Cursor.lockState = CursorLockMode.Confined;
     puzzle3VFX.Play();
     soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle3.SetActive(false);
     puzzle3Control.SetActive(false);
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
@@ -225,6 +231,7 @@ public class AppleRotate : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 3).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+            soundM.PlayDoorOpenAudio();
             tree.SetActive(true);
             tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
