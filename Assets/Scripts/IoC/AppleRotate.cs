@@ -108,7 +108,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
-    //Cursor.lockState = CursorLockMode.Confined;
+    Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     Debug.Log("3");
     isRotate = false;
@@ -127,6 +127,7 @@ public class AppleRotate : MonoBehaviour {
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
           Cursor.visible = true;
+          Cursor.lockState = CursorLockMode.None;
           rockDebris.Stop();
           Debug.Log("look at puzzle");
       });
@@ -138,6 +139,7 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
@@ -163,6 +165,7 @@ public class AppleRotate : MonoBehaviour {
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
                   Cursor.visible = true;
+                  Cursor.lockState = CursorLockMode.None;
                   rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
@@ -176,6 +179,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
@@ -199,6 +203,7 @@ public class AppleRotate : MonoBehaviour {
               thirdDoorOGPos.DOMoveZ(thirdDoor.position.z - 2f, 2);
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 rockDebris3.Stop();
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
@@ -214,6 +219,7 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheFourthStage(){
     Cursor.visible = false;
+    Cursor.lockState = CursorLockMode.Confined;
     puzzle3VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     puzzle3.SetActive(false);
