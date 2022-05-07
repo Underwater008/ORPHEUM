@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1336270289}
   m_HandleRect: {fileID: 1336270288}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -57196,6 +57196,7 @@ GameObject:
   - component: {fileID: 919132147845615436}
   - component: {fileID: 919132147845615437}
   - component: {fileID: 919132147845615438}
+  - component: {fileID: 919132147845615439}
   m_Layer: 0
   m_Name: TopRight
   m_TagString: audio_selected
@@ -57358,9 +57359,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 919132147845615433}
+      - m_Target: {fileID: 919132147845615436}
         m_TargetAssemblyTypeName: PlaneShake, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57371,6 +57372,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   triggerOnlyOnce: 0
+--- !u!114 &919132147845615439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147845615433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0647572cb81ab6c4ba5a05231cd8e698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_selected: 0
 --- !u!1 &919132148141474834
 GameObject:
   m_ObjectHideFlags: 0
@@ -58397,6 +58411,7 @@ GameObject:
   - component: {fileID: 919132149453695453}
   - component: {fileID: 919132149453695452}
   - component: {fileID: 919132149453695454}
+  - component: {fileID: 919132149453695455}
   m_Layer: 0
   m_Name: BottomLeft
   m_TagString: audio_selected
@@ -58572,6 +58587,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &919132149453695455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149453695449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0647572cb81ab6c4ba5a05231cd8e698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_selected: 0
 --- !u!1 &919132149619082397
 GameObject:
   m_ObjectHideFlags: 0
@@ -63144,8 +63172,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6522285749639184408}
-  m_LocalRotation: {x: -0, y: -0, z: 0.000000014901159, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.041500036}
+  m_LocalRotation: {x: -0.00077556353, y: -0.008590441, z: -0.0013329684, w: 0.9999619}
+  m_LocalPosition: {x: -0.00006836424, y: 0.000007034215, z: -0.041505598}
   m_LocalScale: {x: 0.015725533, y: 0.015725533, z: 0.015725534}
   m_Children:
   - {fileID: 1240092156}
@@ -63155,7 +63183,7 @@ Transform:
   - {fileID: 173079174}
   m_Father: {fileID: 130042479}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.09, y: -0.984, z: -0.152}
 --- !u!4 &5993847948504664055
 Transform:
   m_ObjectHideFlags: 0
