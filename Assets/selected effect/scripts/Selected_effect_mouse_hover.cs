@@ -26,6 +26,9 @@ namespace EasyGameStudio.Jeremy
         // Update is called once per frame
         void Update()
         {
+      if(GameManager.Instance.isGameStart == false) {
+        return;
+      }
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))

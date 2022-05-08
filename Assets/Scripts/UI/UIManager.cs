@@ -7,8 +7,7 @@ using UnityEngine.UI;
 //USAGE: Place this on an empty game object names UI  manaher as well as any buttons that are being controlled 
 public class UIManager : MonoBehaviour
 {
-  
-  
+
   //AUDIO MANAGEMENT
   public AudioManager AudioMan;
   public AudioSource BgMusic;
@@ -125,6 +124,7 @@ public class UIManager : MonoBehaviour
   
 //PLAY AND PAUSE
   public void PauseGame() {
+    GameManager.Instance.isGameStart = false;
        fadeIn = true; // Fade in panel
    pausePanel.SetActive(true);
       pauseButton.SetActive(false);
@@ -133,6 +133,7 @@ public class UIManager : MonoBehaviour
      
   }
    public void ResumeGame() {
+    GameManager.Instance.isGameStart = true;
     pausePanel.SetActive(false);
     pauseButton.SetActive(true);
     Time.timeScale = 1f; // HARK! TIME HAS RESUMED. WE HAVE RETURNED TO SUFFERING ;-;

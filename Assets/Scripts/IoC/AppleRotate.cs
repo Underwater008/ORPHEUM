@@ -116,6 +116,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
+    GameManager.Instance.isGameStart = false;
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     Debug.Log("IOC start 1st stage");
@@ -131,6 +132,7 @@ public class AppleRotate : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
+          GameManager.Instance.isGameStart = true;
           Cursor.lockState = CursorLockMode.None;
           Cursor.visible = true;
           rockDebris.Stop();
