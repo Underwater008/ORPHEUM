@@ -209,6 +209,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     puzzle3VFX.Play();
+    EndingGameEvt.Instance.EndGameAction();
   }
 
   public void StartGame() 
