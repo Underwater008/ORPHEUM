@@ -90,7 +90,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   public void ShowStartButton() {
     firstButton.gameObject.SetActive(true);
-    firstButton.DOMove(startButtonEndMovePos.position, 1);
+    firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
+      Cursor.visible = false;
+    });
     //ShowTree();
   }
 
@@ -226,7 +228,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartEndingSequence() {
-    isStart = false;
+    
     isEndingSeuence = true;
     //music
     audioM.currentAudioSource.Stop();
