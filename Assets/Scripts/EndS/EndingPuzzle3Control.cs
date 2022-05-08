@@ -32,6 +32,6 @@ public class EndingPuzzle3Control : MonoBehaviour {
   }
 
   public void Pass() {
-    stageControl.StartTheThirdStage();
+    stageControl.StartTheForthStage();
   }
 }
