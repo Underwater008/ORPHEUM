@@ -226,6 +226,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartEndingSequence() {
+    isStart = false;
     isEndingSeuence = true;
     //music
     audioM.currentAudioSource.Stop();
