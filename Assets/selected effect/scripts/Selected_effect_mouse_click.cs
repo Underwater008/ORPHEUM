@@ -24,7 +24,7 @@ namespace EasyGameStudio.Jeremy
         }
 
         // Update is called once per frame
-        void Update()
+        /*void Update()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -46,27 +46,28 @@ namespace EasyGameStudio.Jeremy
                 }
                 
             }
-        }
+        }*/
 
 
-        private void change_to_selected()
+        public void IOC_puzzle1_change_to_selected()
         {
             if (this.is_selected != true)
             {
                 this.is_selected = true;
-                GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
+
+        //GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
             }
 
-            if (this.material.GetInt("is_selected") != 1)
+      if (this.material.GetInt("is_selected") != 1)
                 this.material.SetInt("is_selected", 1);
-        }
 
-        private void change_to_not_selected()
+    }
+    public void IOC_puzzle1_change_to_not_selected()
         {
             if (this.is_selected != false)
             {
                 this.is_selected = false;
-                GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
+                //GameObject.FindGameObjectWithTag("audio_selected").GetComponent<AudioSource>().Play();
             }
 
             if (this.material.GetInt("is_selected") != 0)

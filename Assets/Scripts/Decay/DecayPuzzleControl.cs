@@ -10,6 +10,7 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   //music
   public AudioManager audioM;
+  public SoundManager soundM;
 
   public float speed = 30;
   //public Animator warpAnimator;
@@ -34,6 +35,11 @@ public class DecayPuzzleControl : MonoBehaviour {
   public VisualEffect puzzle1VFX;
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
+
+  public ParticleSystem rockDebris;
+  public ParticleSystem rockDebris2;
+  public ParticleSystem rockDebris3;
+
 
   //public GameObject waterPipe1;
   //public GameObject waterPipe2;
@@ -74,7 +80,6 @@ public class DecayPuzzleControl : MonoBehaviour {
   public PuzzleSequenceControl puzzleSequenceControl;
   // Start is called before the first frame update
   void Start() {
-
   }
 
 
@@ -85,15 +90,13 @@ public class DecayPuzzleControl : MonoBehaviour {
     }
   }
 
-  public void ShowStartButton() {
+  private void ShowStartButton() {
+    Camera.main.transform.DOMove(cameraPlayPos.position, 1);
     firstButton.gameObject.SetActive(true);
-    firstButton.DOMove(startButtonEndMovePos.position, 1);
-    //ShowTree();
+    firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
+      Cursor.visible = false;
+    });
   }
-
-  //public void ShowTree() {
-
-  //}
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
@@ -103,11 +106,14 @@ public class DecayPuzzleControl : MonoBehaviour {
     //apple.SetActive(false);
     //puzzle1Control.SetActive(true)
     Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(() => {
+      rockDebris.Play();
+      soundM.PlayDoorOpenAudio();
       //Animator anitor = cubeBase.GetComponent<Animator>();
       //Destroy(anitor)
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
+          rockDebris.Stop();
           //Cursor.lockState = CursorLockMode.None;
           Cursor.visible = true;
           firstBUtton.SetActive(true);
@@ -123,8 +129,11 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   }
 
-  //When we shou the second puzzle in IoC
+  //When we show the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle1Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
@@ -143,6 +152,8 @@ public class DecayPuzzleControl : MonoBehaviour {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+              rockDebris2.Play();
+              soundM.PlayDoorOpenAudio();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 Cursor.visible = true;
                 puzzle2.SetActive(true);
@@ -150,6 +161,7 @@ public class DecayPuzzleControl : MonoBehaviour {
                 puzzle2.GetComponent<DecayCube>().SaveChildrenPositions();
                 puzzle2.GetComponent<DecayCube>().EnableAllChildren();
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
               });
@@ -165,7 +177,10 @@ public class DecayPuzzleControl : MonoBehaviour {
     puzzle2Control.SetActive(false);
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
-    //puzzle2VFX.Play();
+    puzzle2VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
+
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       //puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
@@ -179,6 +194,8 @@ public class DecayPuzzleControl : MonoBehaviour {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+                rockDebris3.Play();
+                soundM.PlayDoorOpenAudio();
                 thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                   Cursor.lockState = CursorLockMode.None;
                   Cursor.visible = true;
@@ -187,7 +204,9 @@ public class DecayPuzzleControl : MonoBehaviour {
                   puzzle3.GetComponent<DecayCube>().SaveChildrenPositions();
                   puzzle3.GetComponent<DecayCube>().EnableAllChildren();
                   thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
-                  thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+                  thirdDoor.DOMove(thirdDoorOpenPos.position, 2f).OnComplete(() => {
+                    rockDebris3.Stop();
+                  });
                 });
               });
             });
@@ -197,6 +216,9 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
+    puzzle3VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     puzzle3Control.SetActive(false);
     //puzzle3VFX.Play();
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
@@ -205,6 +227,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
+            soundM.PlayDoorOpenAudio();
             Cursor.visible = true;
             puzzleSequenceControl.StartEndingSequence();
           });
@@ -213,37 +236,25 @@ public class DecayPuzzleControl : MonoBehaviour {
     });
   }
 
-  public void StartGame() {
-    isStart = true;
-    if (isStart) {
-      startUI.SetActive(false);
-      EndingUI.SetActive(false);
-      titleUI.SetActive(false);
-      Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
-        //CameraShake.ins.Shake();
-        ShowStartButton();
-      });
-      //cubeBase.GetComponent<showStartButton>().appRotate = this;
-    }
-  }
 
   public void StartDecay() {
     //music
+    audioM.currentAudioSource.Stop();
     audioM.index = 2;
-
+    audioM.updateIndex();
     isDecay = true;
     if (isDecay) {
       startUI.SetActive(false);
       EndingUI.SetActive(false);
       titleUI.SetActive(false);
       DecayUI.SetActive(false);
-      iOCCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
+      iOCCube.SetActive(false);
+        /*transform.DOMove(outsidePos.position, 2).OnComplete(() => {
         iOCFirstButton.SetActive(false);
         endFirstBUtton.SetActive(false);
-
-      });
-      DecayCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
-        Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
+      });*/
+      DecayCube.DOMove(new Vector3(0f, 0f, 0f), 0f).OnComplete(() => {
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(() => {
 
           //CameraShake.ins.Shake();
           ShowStartButton();
@@ -253,6 +264,10 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void RestartGame() {
+    audioM.currentAudioSource.Stop();
+    audioM.index = 0;
+    audioM.updateIndex();
+
     SceneManager.LoadScene(0);
   }
 }

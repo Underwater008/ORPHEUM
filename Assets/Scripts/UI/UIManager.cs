@@ -110,8 +110,9 @@ public class UIManager : MonoBehaviour
     // turn off anything that is on and has a return button
     fadeOut = true;
     creditsPanel.SetActive(false);
-     
-      pausePanel.SetActive(false);
+    //pauseButton.SetActive(true);
+
+    pausePanel.SetActive(false);
       if (soundPanel.activeSelf) // checking if sound panel is on already
         {
           pausePanel.SetActive(true);
@@ -133,6 +134,7 @@ public class UIManager : MonoBehaviour
   }
    public void ResumeGame() {
     pausePanel.SetActive(false);
+    pauseButton.SetActive(true);
     Time.timeScale = 1f; // HARK! TIME HAS RESUMED. WE HAVE RETURNED TO SUFFERING ;-;
     isGamePaused = false;
     fadeOut = true;

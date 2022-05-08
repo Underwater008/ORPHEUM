@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour {
   public AudioSource medtileDrag;
   public AudioSource shorttileDrag;
   public AudioSource puzzleCompleteChime;
+  public AudioSource doorOpenAudio;
+
 
   public void PlayAudioClick()
     {
@@ -40,6 +42,10 @@ public class SoundManager : MonoBehaviour {
       puzzleCompleteChime.Stop();
     puzzleCompleteChime.Play();
   }
+  public void PlayDoorOpenAudio() {
+    doorOpenAudio.Play();
+  }
+
 
   public void playTileDrop() {
     if (tileDrop.isPlaying)

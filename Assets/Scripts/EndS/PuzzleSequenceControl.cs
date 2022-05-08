@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class PuzzleSequenceControl : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //music
   public AudioManager audioM;
+  public SoundManager soundM;
 
   public float speed = 30;
   //public Animator warpAnimator;
@@ -62,6 +64,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public Transform thirdDoorOGPos;
   public Transform smallTreePos;
 
+  public VisualEffect puzzle1VFX;
+  public VisualEffect puzzle2VFX;
+  public VisualEffect puzzle3VFX;
+
+
   //public GameObject[] UIs;
 
   //private bool CanShake = true;
@@ -101,6 +108,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     //apple.SetActive(false);
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
     Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1).OnComplete(() => {    //move to look at puzzle
+      soundM.PlayDoorOpenAudio();
       //rockDebris.Play();
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
@@ -120,6 +128,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     Cursor.visible = false;
     puzzle1Control.SetActive(false);
     puzzle1DragManager.enabled = false;
@@ -136,6 +147,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+              soundM.PlayDoorOpenAudio();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
                 puzzle2DragManager.enabled = true;
@@ -154,6 +166,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    puzzle2VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     Cursor.visible = false;
     puzzle2Control.SetActive(false);
     puzzle2DragManager.enabled = false;
@@ -170,6 +185,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
             thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+              soundM.PlayDoorOpenAudio();
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle3.SetActive(true);
                 puzzle3DragManager.enabled = true;
@@ -188,7 +204,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
-
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
+    puzzle3VFX.Play();
   }
 
   public void StartGame() 
@@ -210,7 +228,10 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public void StartEndingSequence() {
     isEndingSeuence = true;
     //music
+    audioM.currentAudioSource.Stop();
     audioM.index = 3;
+    audioM.updateIndex();
+
     if (isEndingSeuence) {
 
       startUI.SetActive(false);
@@ -232,6 +253,9 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void RestartGame() {
+    audioM.currentAudioSource.Stop();
+    audioM.index = 0;
+    audioM.updateIndex();
 
     SceneManager.LoadScene(0);
   }
