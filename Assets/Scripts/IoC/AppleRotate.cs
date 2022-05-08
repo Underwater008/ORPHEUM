@@ -151,8 +151,9 @@ public class AppleRotate : MonoBehaviour {
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     Vector3 puzzle1Pos = puzzle1.transform.position;
-    puzzle1.transform.DOMoveZ(puzzle1Pos.z - 2f, 2).OnComplete(() => {
+    puzzle1.transform.DOMoveZ(puzzle1Pos.z - 1f, 2).OnComplete(() => {
       firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
+        puzzle1.SetActive(false);
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
@@ -186,21 +187,22 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    puzzle2Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
-    puzzle2.SetActive(false);
-    puzzle2Control.SetActive(false);
-    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+    Vector3 puzzle2Pos = puzzle2.transform.position;
+    puzzle2.transform.DOMoveZ(puzzle2Pos.z - 1f, 2).OnComplete(() => {
+      secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+        puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
          Debug.Log("puzzle3");
         Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
         Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(()=> { //look at cube
         flower.SetActive(true);
-        Debug.Log("hi");
         soundM.PlayAudioWaterOk();
         flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
           theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f).OnComplete(() => {
@@ -222,6 +224,7 @@ public class AppleRotate : MonoBehaviour {
           });
         });
       });
+    });
     });
     });
   }
