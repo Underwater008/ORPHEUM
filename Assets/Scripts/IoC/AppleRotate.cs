@@ -237,7 +237,7 @@ public class AppleRotate : MonoBehaviour {
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     Vector3 puzzle3Pos = puzzle3.transform.position;
-    puzzle3.transform.DOMoveZ(puzzle3Pos.z - 2f, 1).OnComplete(() => {
+    puzzle3.transform.DOMoveZ(puzzle3Pos.z - 1f, 1).OnComplete(() => {
       //need audio
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       puzzle3.SetActive(false);
