@@ -7,6 +7,10 @@ public class CloudTransitionTrigger : MonoBehaviour
 
   public GameObject IOCCube;
   public DecayPuzzleControl decayPuzzleControl;
+
+  public GameObject DecayCube;
+  public PuzzleSequenceControl puzzleSequenceControl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +26,14 @@ public class CloudTransitionTrigger : MonoBehaviour
   private void OnTriggerEnter(Collider other) {
 
       if (other.gameObject == IOCCube) {
-        decayPuzzleControl.StartDecay();
+      decayPuzzleControl.StartDecay();
+      Debug.Log("Decay");
+      this.gameObject.GetComponent<BoxCollider>().enabled = false;
       }
+
+      if (other.gameObject == DecayCube) {
+      puzzleSequenceControl.StartEndingSequence();
+    }
 
   }
 }

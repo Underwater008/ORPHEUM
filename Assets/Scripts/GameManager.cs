@@ -43,4 +43,8 @@ public class GameManager : MonoBehaviour
        obj.transform.position = Input.mousePosition;
        Destroy(obj,2f);
     }
+
+  public void QuitTheGame() {
+    Application.Quit();
+  }
 }

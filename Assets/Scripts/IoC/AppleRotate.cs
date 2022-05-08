@@ -8,6 +8,9 @@ using UnityEngine.VFX;
 
 public class AppleRotate : MonoBehaviour {
 
+  public GameObject IOC;
+  public GameObject Apple;
+
   //Transition
   public Transform transitionClouds;
   public Transform trnasitionCloudsStart;
@@ -82,10 +85,13 @@ public class AppleRotate : MonoBehaviour {
       titleUI.SetActive(false);
       DecayUI.SetActive(false);
       IOCPuzzle3UI.SetActive(true);
-      Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
+      Apple.SetActive(false);
+      IOC.transform.DOMove(new Vector3(0, 0, 0), 0).OnComplete(() => {
+        Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
       Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
         firstButton.gameObject.GetComponent<BoxCollider>().enabled = true;
         ShowStartButton();
+      });
       });
     }
   }

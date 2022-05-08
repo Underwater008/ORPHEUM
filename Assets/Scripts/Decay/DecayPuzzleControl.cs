@@ -100,34 +100,33 @@ public class DecayPuzzleControl : MonoBehaviour {
     Camera.main.transform.DOMove(cameraPlayPos.position, 1);
     firstButton.gameObject.SetActive(true);
     firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
-      Cursor.visible = false;
+      Cursor.visible = true;
+      GameManager.Instance.isGameStart = true;
+      transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
+      CloudTrigger.GetComponent<BoxCollider>().enabled = true;
     });
   }
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
-    //Cursor.lockState = CursorLockMode.Confined;
+    GameManager.Instance.isGameStart = false;
     Cursor.visible = false;
     isRotate = false;
-    //apple.SetActive(false);
-    //puzzle1Control.SetActive(true)
     Camera.main.transform.DOMove(cameraPuzzleView.position, 1).OnComplete(() => {
       rockDebris.Play();
       soundM.PlayDoorOpenAudio();
-      //Animator anitor = cubeBase.GetComponent<Animator>();
-      //Destroy(anitor)
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z - 2f, 1).OnComplete(() => {
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
           rockDebris.Stop();
           //Cursor.lockState = CursorLockMode.None;
           Cursor.visible = true;
-          firstBUtton.SetActive(true);
+          firstBUtton.SetActive(false);
         puzzle1.SetActive(true);
         puzzle1.GetComponent<DecayCube>().SaveChildrenPositions();
         puzzle1.GetComponent<DecayCube>().EnableAllChildren();
-        Debug.Log("finish 1");
-      });
+          GameManager.Instance.isGameStart = true;
+        });
       });
     });
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
@@ -137,13 +136,16 @@ public class DecayPuzzleControl : MonoBehaviour {
 
   //When we show the second puzzle in IoC
   public void StartTheSecondStage() {
+    GameManager.Instance.isGameStart = false;
+    Cursor.visible = false;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     puzzle1Control.SetActive(false);
-    //Cursor.lockState = CursorLockMode.Confined;
-    Cursor.visible = false;
-    firstDoor.DOMove(firstDoorOGPos.position, 2f).OnComplete(() => {
+    Vector3 puzzle1Pos = puzzle1.transform.position;
+    puzzle1.transform.DOMove(puzzle1Pos, 2).OnComplete(() => {
+    puzzle1.transform.DOMoveZ(puzzle1Pos.z - 1f, 1).OnComplete(() => {
+      firstDoor.DOMove(firstDoorOGPos.position, 2f).OnComplete(() => {
       // Hide the first puzzle and show the second puzzle
       Debug.Log("puzzle2");
       puzzle1.SetActive(false);
@@ -168,34 +170,32 @@ public class DecayPuzzleControl : MonoBehaviour {
                 puzzle2.GetComponent<DecayCube>().EnableAllChildren();
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
                   rockDebris2.Stop();
-                  Debug.Log("puzzle 2 start");
+                  GameManager.Instance.isGameStart = true;
                 });
               });
             });
           });
           });
         });
+        });
+      });
       });
     });
 }
 
   public void StartTheThirdStage() {
     puzzle2Control.SetActive(false);
-    //Cursor.lockState = CursorLockMode.Confined;
+    GameManager.Instance.isGameStart = false;
     Cursor.visible = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
-
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
-      //puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
         Debug.Log("puzzle3");
         Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
         Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => { //look at cube
-          //flower.SetActive(true);
-          //flower.transform.DOMove(grassSpawnPos.position, 1).OnComplete(() => {
             theGarden.transform.DORotate(new Vector3(0, 180f, 0), 2f, RotateMode.Fast).OnComplete(() => {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
@@ -203,7 +203,7 @@ public class DecayPuzzleControl : MonoBehaviour {
                 rockDebris3.Play();
                 soundM.PlayDoorOpenAudio();
                 thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
-                  Cursor.lockState = CursorLockMode.None;
+                  GameManager.Instance.isGameStart = true;
                   Cursor.visible = true;
                   puzzle3.SetActive(true);
                   puzzle3Control.SetActive(true);
@@ -222,21 +222,25 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
+    GameManager.Instance.isGameStart = true;
+    puzzle3Control.SetActive(false);
     puzzle3VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
-    puzzle3Control.SetActive(false);
-    //puzzle3VFX.Play();
-    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+    Vector3 puzzle3Pos = puzzle3.transform.position;
+    puzzle3.transform.DOMoveZ(puzzle3Pos.z - 1f, 1).OnComplete(() => {
+      thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       puzzle3.SetActive(false);
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
             soundM.PlayDoorOpenAudio();
-            Cursor.visible = true;
-            puzzleSequenceControl.StartEndingSequence();
+            isRotate = true;
+            transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
+            transitionClouds.DOMove(trnasitionCloudsEnd.position, 15f);
           });
+        });
         });
       });
     });
