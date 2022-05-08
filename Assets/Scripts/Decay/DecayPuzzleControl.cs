@@ -93,13 +93,10 @@ public class DecayPuzzleControl : MonoBehaviour {
   private void ShowStartButton() {
     Camera.main.transform.DOMove(cameraPlayPos.position, 1);
     firstButton.gameObject.SetActive(true);
-    firstButton.DOMove(startButtonEndMovePos.position, 1);
-    //ShowTree();
+    firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
+      Cursor.visible = false;
+    });
   }
-
-  //public void ShowTree() {
-
-  //}
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
