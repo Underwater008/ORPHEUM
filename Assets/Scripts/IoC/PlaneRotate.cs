@@ -37,6 +37,9 @@ public class PlaneRotate : MonoBehaviour
   }
 
   public void OnClick() {
+    if (GameManager.Instance.isGameStart == false) {
+      return;
+    }
     if (Cursor.visible) {
       puzzle1Control.SetActive(false);
       puzzle2Control.SetActive(false);
