@@ -90,7 +90,8 @@ public class DecayPuzzleControl : MonoBehaviour {
     }
   }
 
-  public void ShowStartButton() {
+  private void ShowStartButton() {
+    Camera.main.transform.DOMove(cameraPlayPos.position, 1);
     firstButton.gameObject.SetActive(true);
     firstButton.DOMove(startButtonEndMovePos.position, 1);
     //ShowTree();
@@ -240,12 +241,10 @@ public class DecayPuzzleControl : MonoBehaviour {
 
 
   public void StartDecay() {
-
     //music
     audioM.currentAudioSource.Stop();
     audioM.index = 2;
     audioM.updateIndex();
-
     isDecay = true;
     if (isDecay) {
       startUI.SetActive(false);
@@ -258,7 +257,7 @@ public class DecayPuzzleControl : MonoBehaviour {
         endFirstBUtton.SetActive(false);
       });*/
       DecayCube.DOMove(new Vector3(0f, 0f, 0f), 0f).OnComplete(() => {
-        Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
+        Camera.main.transform.DOMove(cameraOriginalPos.position, 2).OnComplete(() => {
 
           //CameraShake.ins.Shake();
           ShowStartButton();
