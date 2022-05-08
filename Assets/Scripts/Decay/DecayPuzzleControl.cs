@@ -8,6 +8,12 @@ using UnityEngine.VFX;
 
 public class DecayPuzzleControl : MonoBehaviour {
 
+  //Transition
+  public Transform transitionClouds;
+  public Transform trnasitionCloudsStart;
+  public Transform trnasitionCloudsEnd;
+  public GameObject CloudTrigger;
+
   //music
   public AudioManager audioM;
   public SoundManager soundM;
@@ -238,6 +244,7 @@ public class DecayPuzzleControl : MonoBehaviour {
 
 
   public void StartDecay() {
+    ChangeSky.Instance.ChangeColor(2);
     //music
     audioM.currentAudioSource.Stop();
     audioM.index = 2;
