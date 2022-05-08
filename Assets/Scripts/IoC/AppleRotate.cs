@@ -18,30 +18,24 @@ public class AppleRotate : MonoBehaviour {
   public AudioManager audioM;
   public SoundManager soundM;
 
-
+  //Rotation Speed
   public float speed = 30;
-  //public Animator warpAnimator;
+
   public GameObject theGarden;
- 
-  //public GameObject apple;
   public GameObject cubeBase;
-  //public GameObject cubeParent;
   public GameObject startUI;
   public GameObject EndUI;
   public GameObject titleUI;
   public GameObject DecayUI;
-  public GameObject IOCPuzzle3UI;
-  //FirstStage
+
+  public GameObject IOCPuzzle3UI;  //delete before build
+
   public GameObject puzzle1;
   public GameObject puzzle1Control;
-  //SecondStage
   public GameObject puzzle2;
   public GameObject puzzle2Control;
   public GameObject puzzle3;
   public GameObject puzzle3Control;
-  //public GameObject waterPipe1;
-  //public GameObject waterPipe2;
-  
 
   public GameObject tree;                 //the tree
   public GameObject grass;
@@ -75,15 +69,14 @@ public class AppleRotate : MonoBehaviour {
 
   public DecayPuzzleControl DecayPuzzleControl;
 
-  //public GameObject[] UIs;
-
-  //private bool CanShake = true;
   private bool isRotate = true;
   public bool isStart = false;
-  public bool mouseConfined = false;
-  // Start is called before the first frame update
+  //public bool mouseConfined = false;
+
   void TestStart() {
     if (isStart) {
+      Cursor.lockState = CursorLockMode.Confined;
+      Cursor.visible = false;
       startUI.SetActive(false);
       EndUI.SetActive(false);
       titleUI.SetActive(false);
@@ -91,6 +84,7 @@ public class AppleRotate : MonoBehaviour {
       IOCPuzzle3UI.SetActive(true);
       Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
       Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
+        firstButton.gameObject.GetComponent<BoxCollider>().enabled = true;
         ShowStartButton();
       });
     }
@@ -102,26 +96,32 @@ public class AppleRotate : MonoBehaviour {
       transform.Rotate(new Vector3(0, speed, 0) * Time.deltaTime, Space.World);
     }
 
-      //if (mouseConfined == true) {
-      //  Cursor.lockState = CursorLockMode.Confined;
-      // Cursor.visible = false;
-   // }
+      /*if (mouseConfined == true) {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+    }
+    if (mouseConfined == false) {
+      Cursor.lockState = CursorLockMode.None;
+      Cursor.visible = true;
+    }*/
   }
 
-  public void ShowStartButton() {
+  private void ShowStartButton() {
     firstButton.gameObject.SetActive(true);
-    firstButton.DOMove(startButtonEndMovePos.position, 1);
+    firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
+      Cursor.lockState = CursorLockMode.None;
+      Cursor.visible = true;
+    });
     //ShowTree();
   }
 
   public void StartTheFirstStage() {
-    mouseConfined = true;
-    Debug.Log("3");
+    Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
+    Debug.Log("IOC start 1st stage");
     isRotate = false;
     isStart = false;
     //apple.SetActive(false);
-    puzzle1Control.SetActive(true);
-    puzzle1.SetActive(true);
     Camera.main.transform.DORotate(new Vector3 (0,0,0), 1);
     Camera.main.transform.DOMove(new Vector3 (0,0, -18.5f), 1).OnComplete(()=> {    //move to look at puzzle
       rockDebris.Play();
@@ -131,7 +131,8 @@ public class AppleRotate : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(()=> {             //open door
-          mouseConfined = false;
+          Cursor.lockState = CursorLockMode.None;
+          Cursor.visible = true;
           rockDebris.Stop();
           Debug.Log("look at puzzle");
       });
@@ -143,15 +144,15 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
-    mouseConfined = true;
+    puzzle1Control.SetActive(false);
+    Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
-    puzzle1.SetActive(false);
-    puzzle1Control.SetActive(false);
-    firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
-      // Hide the first puzzle and show the second puzzle
-      Debug.Log("puzzle2");
+    Vector3 puzzle1Pos = puzzle1.transform.position;
+    puzzle1.transform.DOMoveZ(puzzle1Pos.z - 2f, 2).OnComplete(() => {
+      firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
       firstDoor.DOMoveZ(firstDoor.position.z + 2f, 1).OnComplete(() => {
       Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
@@ -169,7 +170,8 @@ public class AppleRotate : MonoBehaviour {
                 puzzle2.SetActive(true);
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
-                  mouseConfined = false;
+                  Cursor.lockState = CursorLockMode.None;
+                  Cursor.visible = true;
                   rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
@@ -177,6 +179,7 @@ public class AppleRotate : MonoBehaviour {
           });
         });  
       });
+    });
     });
     });
     });
@@ -224,15 +227,14 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFourthStage(){
-    Cursor.visible = false;
+    puzzle3Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
+    Cursor.visible = false;
     puzzle3VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
-    puzzle3.SetActive(false);
     Vector3 puzzle3Pos = puzzle3.transform.position;
-    puzzle3Control.SetActive(false);
-    puzzle3.transform.DOMoveZ(puzzle3Pos.z + 2f, 1).OnComplete(() => {
+    puzzle3.transform.DOMoveZ(puzzle3Pos.z - 2f, 1).OnComplete(() => {
       //need audio
     thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       puzzle3.SetActive(false);

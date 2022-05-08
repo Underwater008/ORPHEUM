@@ -58607,14 +58607,10 @@ GameObject:
   - component: {fileID: 3469287837760068182}
   - component: {fileID: 1711813854840057500}
   - component: {fileID: 919132147845615434}
-  - component: {fileID: 919132147845615435}
   - component: {fileID: 919132147845615436}
-  - component: {fileID: 919132147845615437}
-  - component: {fileID: 919132147845615438}
-  - component: {fileID: 919132147845615439}
   m_Layer: 0
   m_Name: TopRight
-  m_TagString: audio_selected
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58632,19 +58628,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0020116, y: 0.03515705, z: 0.03515706}
   m_Center: {x: 0.0000000037252903, y: 0.0000000037252903, z: -0.0000000018626451}
---- !u!114 &919132147845615435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147845615433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab6693003aa13734eaed8f1ccb802586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_selected: 0
 --- !u!114 &919132147845615436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58662,144 +58645,6 @@ MonoBehaviour:
   rotating: 0
   soundManager: {fileID: 1201539280}
   centerButton: {fileID: 173079174}
-  selected: {fileID: 919132147845615435}
---- !u!82 &919132147845615437
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147845615433}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a6b1234f943996b41a6d3e89257352c8, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &919132147845615438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147845615433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c615c8e5021c3f749801960031d58ae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 919132147845615436}
-        m_TargetAssemblyTypeName: PlaneShake, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  triggerOnlyOnce: 0
---- !u!114 &919132147845615439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147845615433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0647572cb81ab6c4ba5a05231cd8e698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_selected: 0
 --- !u!1 &919132148128551207
 GameObject:
   m_ObjectHideFlags: 0
@@ -60077,7 +59922,6 @@ GameObject:
   - component: {fileID: 919132149453695453}
   - component: {fileID: 919132149453695452}
   - component: {fileID: 919132149453695454}
-  - component: {fileID: 919132149453695455}
   m_Layer: 0
   m_Name: BottomLeft
   m_TagString: audio_selected
@@ -60128,7 +59972,6 @@ MonoBehaviour:
   rotating: 0
   soundManager: {fileID: 1201539280}
   centerButton: {fileID: 173079174}
-  selected: {fileID: 919132149453695450}
 --- !u!114 &919132149453695453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60253,19 +60096,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &919132149453695455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149453695449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0647572cb81ab6c4ba5a05231cd8e698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_selected: 0
 --- !u!1 &919132149619082397
 GameObject:
   m_ObjectHideFlags: 0

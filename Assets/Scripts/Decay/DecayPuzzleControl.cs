@@ -90,7 +90,7 @@ public class DecayPuzzleControl : MonoBehaviour {
     }
   }
 
-  public void ShowStartButton() {
+  private void ShowStartButton() {
     firstButton.gameObject.SetActive(true);
     firstButton.DOMove(startButtonEndMovePos.position, 1);
     //ShowTree();
