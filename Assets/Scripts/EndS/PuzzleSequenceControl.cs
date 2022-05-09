@@ -68,6 +68,10 @@ public class PuzzleSequenceControl : MonoBehaviour {
   public VisualEffect puzzle2VFX;
   public VisualEffect puzzle3VFX;
 
+  public ParticleSystem rockDebris;
+  public ParticleSystem rockDebris2;
+  public ParticleSystem rockDebris3;
+
 
   //public GameObject[] UIs;
 
@@ -112,6 +116,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     //apple.SetActive(false);
     Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
     Camera.main.transform.DOMove(new Vector3(0, 0, -18.5f), 1).OnComplete(() => {    //move to look at puzzle
+      rockDebris.Play();
       soundM.PlayDoorOpenAudio();
       //rockDebris.Play();
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z - 2f, 0);
@@ -122,7 +127,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
         firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
           GameManager.Instance.isGameStart = true;//open door
           Cursor.visible = true;
-          //rockDebris.Stop();
+          rockDebris.Stop();
           Debug.Log("look at puzzle");
         });
       });
@@ -137,6 +142,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
+    //soundM.PlayDoorOpenAudio();
     Cursor.visible = false;
     puzzle1Control.SetActive(false);
     puzzle1DragManager.enabled = false;
@@ -153,6 +159,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
             secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(()=> {
+              rockDebris2.Play();
               soundM.PlayDoorOpenAudio();
               secondDoor.DOMoveZ(secondDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle2.SetActive(true);
@@ -161,6 +168,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
                   GameManager.Instance.isGameStart = true;
                   Cursor.visible = true;
+                  rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 //});
               });
@@ -176,6 +184,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     GameManager.Instance.isGameStart = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
+    //rockDebris3.Play();
     soundM.PlayDoorOpenAudio();
     Cursor.visible = false;
     puzzle2Control.SetActive(false);
@@ -193,6 +202,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
             thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
             Camera.main.transform.DOMove(cameraPuzzleView.position, 1);
             Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
+              rockDebris3.Play();
               soundM.PlayDoorOpenAudio();
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                 puzzle3.SetActive(true);
@@ -201,6 +211,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2).OnComplete(() => {             //open door
                   GameManager.Instance.isGameStart = true;
                   Cursor.visible = true;
+                  rockDebris3.Stop();
                   Debug.Log("puzzle 3 start");
                   //});
                 });
