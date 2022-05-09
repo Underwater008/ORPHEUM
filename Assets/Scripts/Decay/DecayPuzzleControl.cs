@@ -211,7 +211,7 @@ public class DecayPuzzleControl : MonoBehaviour {
               Debug.Log("look at puzzle 3");
               Camera.main.transform.DOMove(cameraPuzzleView.position, 1); //look at puzzle
               Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1).OnComplete(() => {
-                thirdDoorOGPos.DOMoveZ(secondDoorOGPos.position.z - 2f, 0);
+                thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z - 2f, 0);
                 rockDebris3.Play();
                 soundM.PlayDoorOpenAudio();
                 thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
