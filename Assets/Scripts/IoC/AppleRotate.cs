@@ -293,8 +293,9 @@ public class AppleRotate : MonoBehaviour {
 
 
     GameObject.FindObjectOfType<WrapAnim>().BeginGame();
-
+    audioM.currentAudioSource.Stop();
     audioM.index = 1;
+    audioM.updateIndex();
     Debug.Log("1");
     isStart = true;
 
