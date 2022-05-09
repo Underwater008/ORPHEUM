@@ -237,10 +237,12 @@ public class AppleRotate : MonoBehaviour {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 GameManager.Instance.isGameStart = true;
-                rockDebris3.Stop();
+                //rockDebris3.Stop();
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
-                thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
+                thirdDoor.DOMove(thirdDoorOpenPos.position, 2f).OnComplete(() => {
+                  rockDebris3.Stop();
+                });
               });
               });
           });
@@ -270,7 +272,7 @@ public class AppleRotate : MonoBehaviour {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
           Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-            soundM.PlayDoorOpenAudio();
+            //soundM.PlayDoorOpenAudio();
             tree.SetActive(true);
             tree.transform.DOScale(treeScale, 1.5f);
             soundM.PlayAudioWaterOk();
