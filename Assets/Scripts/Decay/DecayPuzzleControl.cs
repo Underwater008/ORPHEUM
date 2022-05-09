@@ -235,7 +235,7 @@ public class DecayPuzzleControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
-    GameManager.Instance.isGameStart = true;
+    GameManager.Instance.isGameStart = false;
     puzzle3Control.SetActive(false);
     puzzle3VFX.Play();
     soundM.PlayPuzzleCompleteChime();

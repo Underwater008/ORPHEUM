@@ -16,6 +16,10 @@ public class DecayCubePart : MonoBehaviour
     originpos = transform.position;
   }
   private void OnMouseDrag() {
+
+    if (GameManager.Instance.isGameStart == false) {
+      return;
+    }
     if (Cursor.visible) {
       puzzle1Control.SetActive(false);
     puzzle2Control.SetActive(false);

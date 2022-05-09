@@ -96,6 +96,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
     Cursor.visible = false;
     firstButton.gameObject.SetActive(true);
     firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
+      GameManager.Instance.isGameStart = true;
       Cursor.visible = true;
     });
     //ShowTree();
@@ -107,6 +108,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
+    firstButton.gameObject.SetActive(false);
     GameManager.Instance.isGameStart = false;
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
@@ -181,14 +183,14 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    puzzle2Control.SetActive(false);
+    puzzle2DragManager.enabled = false;
     GameManager.Instance.isGameStart = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     //rockDebris3.Play();
     soundM.PlayDoorOpenAudio();
     Cursor.visible = false;
-    puzzle2Control.SetActive(false);
-    puzzle2DragManager.enabled = false;
     secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       // Hide the first puzzle and show the second puzzle
@@ -247,7 +249,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartEndingSequence() {
-    
+    ChangeSky.Instance.ChangeColor(3);
     isEndingSeuence = true;
     //music
     audioM.currentAudioSource.Stop();
