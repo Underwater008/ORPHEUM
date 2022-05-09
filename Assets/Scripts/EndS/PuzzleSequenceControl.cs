@@ -88,10 +88,11 @@ public class PuzzleSequenceControl : MonoBehaviour {
     }
   }
 
-  public void ShowStartButton() {
+  private void ShowStartButton() {
+    Cursor.visible = false;
     firstButton.gameObject.SetActive(true);
     firstButton.DOMove(startButtonEndMovePos.position, 1).OnComplete(() => {
-      Cursor.visible = false;
+      Cursor.visible = true;
     });
     //ShowTree();
   }
@@ -102,6 +103,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we show the first puzzle in IoC
   public void StartTheFirstStage() {
+    GameManager.Instance.isGameStart = false;
     //Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     Debug.Log("3");
@@ -117,7 +119,8 @@ public class PuzzleSequenceControl : MonoBehaviour {
         puzzle1Control.SetActive(true);
         puzzle1.SetActive(true);
         puzzle1DragManager.enabled = true;
-        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {             //open door
+        firstDoor.DOMove(firstDoorOpenPos.position, 2).OnComplete(() => {
+          GameManager.Instance.isGameStart = true;//open door
           Cursor.visible = true;
           //rockDebris.Stop();
           Debug.Log("look at puzzle");
@@ -130,6 +133,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    GameManager.Instance.isGameStart = false;
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
@@ -155,6 +159,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
                 puzzle2DragManager.enabled = true;
                 puzzle2Control.SetActive(true);
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  GameManager.Instance.isGameStart = true;
                   Cursor.visible = true;
                   Debug.Log("puzzle 2 start");
                 //});
@@ -168,6 +173,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    GameManager.Instance.isGameStart = false;
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
@@ -193,6 +199,7 @@ public class PuzzleSequenceControl : MonoBehaviour {
                 puzzle3DragManager.enabled = true;
                 puzzle3Control.SetActive(true);
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2).OnComplete(() => {             //open door
+                  GameManager.Instance.isGameStart = true;
                   Cursor.visible = true;
                   Debug.Log("puzzle 3 start");
                   //});
@@ -242,11 +249,8 @@ public class PuzzleSequenceControl : MonoBehaviour {
       EndingUI.SetActive(false);
       DecayUI.SetActive(false);
       titleUI.SetActive(false);
-      IOCCube.transform.DOMove(IOCOutsidePos.position, 2);
-      DecayCube.transform.DOMove(outsidePos.position, 2).OnComplete(() => {
-        //DecayCube.SetActive(false);
-      });
-      endCube.DOMove(new Vector3(0f, 0f, 0f), 4f).OnComplete(() => {
+      DecayCube.SetActive(false);
+      endCube.DOMove(new Vector3(0f, 0f, 0f), 0f).OnComplete(() => {
         Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
          
           //CameraShake.ins.Shake();

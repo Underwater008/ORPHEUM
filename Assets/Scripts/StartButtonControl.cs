@@ -34,6 +34,7 @@ public class StartButtonControl : MonoBehaviour {
     });
   }
     else if (puzzleSeqControl.GetComponent<PuzzleSequenceControl>().isEndingSeuence == true) {
+      //GameManager.Instance.isGameStart = false;
       Debug.Log("pressed Ending first button");
       soundManager.PlayAudioClick();
       soundManager.PlayAudioRotate();

@@ -233,7 +233,7 @@ public class AppleRotate : MonoBehaviour {
               rockDebris3.Play();
               soundM.PlayDoorOpenAudio();
               thirdDoorOGPos.DOMoveZ(thirdDoor.position.z - 2f, 2);
-              thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
+              thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 1).OnComplete(() => {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 GameManager.Instance.isGameStart = true;
@@ -254,7 +254,6 @@ public class AppleRotate : MonoBehaviour {
 
   public void StartTheFourthStage(){
     soundM.PlayPuzzleCompleteChime();
-    soundM.PlayDoorOpenAudio();
     GameManager.Instance.isGameStart = false;
     puzzle3Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
