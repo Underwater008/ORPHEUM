@@ -26,10 +26,15 @@ namespace EasyGameStudio.Jeremy
         // Update is called once per frame
         void Update()
         {
-      if(GameManager.Instance.isGameStart == false) {
+      if (GameManager.Instance.isGameStart == false) {
+
+        if (is_selected) {
+          this.change_to_not_selected();
+        }
+
         return;
       }
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {

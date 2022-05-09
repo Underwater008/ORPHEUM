@@ -42,7 +42,7 @@ public class IoCPuzzleControl : MonoBehaviour
       //soundManager.PlayAudioWaterOk();
       stageControl.StartTheSecondStage();
 
-      soundManager.PlayPuzzleCompleteChime();
+      //soundManager.PlayPuzzleCompleteChime();
     }
 }
 }

@@ -157,6 +157,8 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    puzzle1VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
     GameManager.Instance.isGameStart = false;
     puzzle1Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
@@ -165,8 +167,7 @@ public class AppleRotate : MonoBehaviour {
     puzzle1.transform.DOMove(puzzle1Pos, 2).OnComplete(() => {
     soundM.PlayDoorOpenAudio();
     puzzle1.transform.DOMoveZ(puzzle1Pos.z - 1f, 2).OnComplete(() => {
-    puzzle1VFX.Play();
-    soundM.PlayPuzzleCompleteChime();
+      soundM.PlayDoorOpenAudio();
       firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
         puzzle1.SetActive(false);
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
