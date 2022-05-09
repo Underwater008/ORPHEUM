@@ -190,7 +190,10 @@ public class DecayPuzzleControl : MonoBehaviour {
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
-    secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
+    Vector3 puzzle2Pos = puzzle2.transform.position;
+    puzzle2.transform.DOMove(puzzle2Pos, 2).OnComplete(() => {
+      puzzle2.transform.DOMoveZ(puzzle2Pos.z - 1f, 1).OnComplete(() => {
+        secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
       secondDoor.DOMoveZ(secondDoor.position.z + 2f, 1).OnComplete(() => {
         Debug.Log("puzzle3");
@@ -215,7 +218,9 @@ public class DecayPuzzleControl : MonoBehaviour {
                   });
                 });
               });
-            });
+              });
+              });
+      });
           });
         });
       });
@@ -228,6 +233,7 @@ public class DecayPuzzleControl : MonoBehaviour {
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     Vector3 puzzle3Pos = puzzle3.transform.position;
+    puzzle3.transform.DOMove(puzzle3Pos, 2).OnComplete(() => {
     puzzle3.transform.DOMoveZ(puzzle3Pos.z - 1f, 1).OnComplete(() => {
       thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       puzzle3.SetActive(false);
@@ -238,10 +244,12 @@ public class DecayPuzzleControl : MonoBehaviour {
             soundM.PlayDoorOpenAudio();
             isRotate = true;
             transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
+            CloudTrigger.gameObject.GetComponent<BoxCollider>().enabled = true;
             transitionClouds.DOMove(trnasitionCloudsEnd.position, 15f);
           });
         });
         });
+      });
       });
     });
   }

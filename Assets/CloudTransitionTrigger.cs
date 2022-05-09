@@ -32,6 +32,7 @@ public class CloudTransitionTrigger : MonoBehaviour
       }
 
       if (other.gameObject == DecayCube) {
+      Debug.Log("Ending");
       puzzleSequenceControl.StartEndingSequence();
     }
 

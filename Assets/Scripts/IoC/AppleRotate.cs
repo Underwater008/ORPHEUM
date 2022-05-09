@@ -72,11 +72,11 @@ public class AppleRotate : MonoBehaviour {
 
   public DecayPuzzleControl DecayPuzzleControl;
 
-  private bool isRotate = true;
+  private bool isRotate = false;
   public bool isStart = false;
   //public bool mouseConfined = false;
 
-  void TestStart() {
+  public void TestStart() {
     if (isStart) {
       Cursor.lockState = CursorLockMode.Confined;
       Cursor.visible = false;
@@ -85,13 +85,17 @@ public class AppleRotate : MonoBehaviour {
       titleUI.SetActive(false);
       DecayUI.SetActive(false);
       IOCPuzzle3UI.SetActive(true);
-      Apple.SetActive(false);
-      IOC.transform.DOMove(new Vector3(0, 0, 0), 0).OnComplete(() => {
+      //Apple.SetActive(false);
+      theGarden.transform.DOScale(114.1221f, 1).OnComplete(() => {
+        //GameObject.FindObjectOfType<WrapAnim>().DetachFromParent();
+        GameObject.FindObjectOfType<WrapAnim>().DeleteCube();
+      });
         Camera.main.transform.DORotate(new Vector3 (35, 0,0), 1);
       Camera.main.transform.DOMove(cameraPlayPos.position, 2).OnComplete(() => {
+
         firstButton.gameObject.GetComponent<BoxCollider>().enabled = true;
         ShowStartButton();
-      });
+
       });
     }
   }
@@ -152,14 +156,16 @@ public class AppleRotate : MonoBehaviour {
 
   //When we shou the second puzzle in IoC
   public void StartTheSecondStage() {
+    GameManager.Instance.isGameStart = false;
     puzzle1Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
+    Vector3 puzzle1Pos = puzzle1.transform.position;
+    puzzle1.transform.DOMove(puzzle1Pos, 2).OnComplete(() => {
+    soundM.PlayDoorOpenAudio();
+    puzzle1.transform.DOMoveZ(puzzle1Pos.z - 1f, 2).OnComplete(() => {
     puzzle1VFX.Play();
     soundM.PlayPuzzleCompleteChime();
-    soundM.PlayDoorOpenAudio();
-    Vector3 puzzle1Pos = puzzle1.transform.position;
-    puzzle1.transform.DOMoveZ(puzzle1Pos.z - 1f, 2).OnComplete(() => {
       firstDoor.DOMove(firstDoorOGPos.position, 2).OnComplete(() => {
         puzzle1.SetActive(false);
       firstDoorOGPos.DOMoveZ(firstDoorOGPos.position.z + 2f, 0);
@@ -181,10 +187,12 @@ public class AppleRotate : MonoBehaviour {
                 secondDoor.DOMove(secondDoorOpenPos.position, 2).OnComplete(() => {             //open door
                   Cursor.lockState = CursorLockMode.None;
                   Cursor.visible = true;
+                  GameManager.Instance.isGameStart = true;
                   rockDebris2.Stop();
                   Debug.Log("puzzle 2 start");
                 });
-              });
+                });
+            });
           });
         });  
       });
@@ -198,11 +206,13 @@ public class AppleRotate : MonoBehaviour {
     puzzle2Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
+    GameManager.Instance.isGameStart = false;
+    Vector3 puzzle2Pos = puzzle2.transform.position;
+    puzzle2.transform.DOMove(puzzle2Pos, 2).OnComplete(() => {
+    soundM.PlayDoorOpenAudio();
+    puzzle2.transform.DOMoveZ(puzzle2Pos.z - 1f, 2).OnComplete(() => {
     puzzle2VFX.Play();
     soundM.PlayPuzzleCompleteChime();
-    soundM.PlayDoorOpenAudio();
-    Vector3 puzzle2Pos = puzzle2.transform.position;
-    puzzle2.transform.DOMoveZ(puzzle2Pos.z - 1f, 2).OnComplete(() => {
       secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
         puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
@@ -223,12 +233,14 @@ public class AppleRotate : MonoBehaviour {
               thirdDoor.DOMoveZ(thirdDoor.position.z - 2f, 2).OnComplete(() => {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                GameManager.Instance.isGameStart = true;
                 rockDebris3.Stop();
                 puzzle3.SetActive(true);
                 puzzle3Control.SetActive(true);
                 thirdDoor.DOMove(thirdDoorOpenPos.position, 2f);
               });
-            });
+              });
+          });
           });
         });
       });
@@ -238,6 +250,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFourthStage(){
+    GameManager.Instance.isGameStart = false;
     puzzle3Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
@@ -270,15 +283,24 @@ public class AppleRotate : MonoBehaviour {
   }
 
 
-  public void StartGame() 
-  {
+  public void StartGame() {
     //music
-    audioM.currentAudioSource.Stop();
+
+
+    GameObject.FindObjectOfType<WrapAnim>().BeginGame();
+
     audioM.index = 1;
-    audioM.updateIndex();
     Debug.Log("1");
     isStart = true;
-    TestStart();
+
+    // TestStart();
+  }
+
+  public void TestStart1() {
+    startUI.SetActive(false);
+    EndUI.SetActive(false);
+    titleUI.SetActive(false);
+    DecayUI.SetActive(false);
   }
 
   public void RestartGame() {
