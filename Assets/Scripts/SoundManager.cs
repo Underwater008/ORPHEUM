@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour {
   public AudioSource shorttileDrag;
   public AudioSource puzzleCompleteChime;
   public AudioSource doorOpenAudio;
+  public AudioSource endingDrag;
 
 
   public void PlayAudioClick()
@@ -66,6 +67,11 @@ public class SoundManager : MonoBehaviour {
     if (shorttileDrag.isPlaying)
       shorttileDrag.Stop();
     shorttileDrag.Play();
+  }
+  public void PlayEndingDrag() {
+    if (!endingDrag.isPlaying) {
+      endingDrag.Play();
+    }
   }
 
 

@@ -19,7 +19,7 @@ public class DragthisCubeP2 : MonoBehaviour {
 
   public int curx = 1;
   public int curY = 1;
-
+  public SoundManager soundManager;
 
   private void Start() {
     // lastCubePostion = transform.position;
@@ -88,7 +88,7 @@ public class DragthisCubeP2 : MonoBehaviour {
 
           if (Puzzle2DragManager._drag.CanthisGridMove(curx, curY, "Right")) {
             Debug.Log("向右滑");
-
+            soundManager.PlayEndingDrag();
             // Puzzle2DragManager._drag.cellArray[curx, curY] = 0;
             StartCoroutine(MoveStone(Vector3.right, Mathf.Sign(direction.x), true));
           }
@@ -100,6 +100,7 @@ public class DragthisCubeP2 : MonoBehaviour {
           if (Puzzle2DragManager._drag.CanthisGridMove(curx, curY, "Left")) {
             // Puzzle2DragManager._drag.cellArray[curx, curY] = 0;
             Debug.Log("向左滑");
+            soundManager.PlayEndingDrag();
             StartCoroutine(MoveStone(Vector3.left, Mathf.Sign(direction.x), true));
           }
         }
@@ -111,6 +112,7 @@ public class DragthisCubeP2 : MonoBehaviour {
             if (Puzzle2DragManager._drag.CanthisGridMove(curx, curY, "Up")) {
               // Puzzle2DragManager._drag.cellArray[curx, curY] = 0;
               Debug.Log("向上滑");
+              soundManager.PlayEndingDrag();
               StartCoroutine(MoveStone(Vector3.up, Mathf.Sign(direction.y), false));
             }
 
@@ -118,6 +120,7 @@ public class DragthisCubeP2 : MonoBehaviour {
           else {
             if (Puzzle2DragManager._drag.CanthisGridMove(curx, curY, "Down")) {
               Debug.Log("向下滑");
+              soundManager.PlayEndingDrag();
               StartCoroutine(MoveStone(Vector3.down, Mathf.Sign(direction.y), false));
             }
           }
