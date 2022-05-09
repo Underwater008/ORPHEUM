@@ -205,6 +205,8 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheThirdStage() {
+    puzzle2VFX.Play();
+    soundM.PlayPuzzleCompleteChime();
     puzzle2Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
@@ -213,8 +215,7 @@ public class AppleRotate : MonoBehaviour {
     puzzle2.transform.DOMove(puzzle2Pos, 2).OnComplete(() => {
     soundM.PlayDoorOpenAudio();
     puzzle2.transform.DOMoveZ(puzzle2Pos.z - 1f, 2).OnComplete(() => {
-    puzzle2VFX.Play();
-    soundM.PlayPuzzleCompleteChime();
+      soundM.PlayDoorOpenAudio();
       secondDoor.DOMove(secondDoorOGPos.position, 2).OnComplete(() => {
         puzzle2.SetActive(false);
       secondDoorOGPos.DOMoveZ(secondDoorOGPos.position.z + 2f, 0);
@@ -252,17 +253,19 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFourthStage(){
+    soundM.PlayPuzzleCompleteChime();
+    soundM.PlayDoorOpenAudio();
     GameManager.Instance.isGameStart = false;
     puzzle3Control.SetActive(false);
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
     puzzle3VFX.Play();
-    soundM.PlayPuzzleCompleteChime();
-    soundM.PlayDoorOpenAudio();
     Vector3 puzzle3Pos = puzzle3.transform.position;
-    puzzle3.transform.DOMoveZ(puzzle3Pos.z - 1f, 1).OnComplete(() => {
-      //need audio
-    thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
+    puzzle3.transform.DOMove(puzzle3Pos, 2).OnComplete(() => {
+      soundM.PlayDoorOpenAudio();
+      puzzle3.transform.DOMoveZ(puzzle3Pos.z - 1f, 1).OnComplete(() => {
+        soundM.PlayDoorOpenAudio();
+        thirdDoor.DOMove(thirdDoorOGPos.position, 2).OnComplete(() => {
       puzzle3.SetActive(false);
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
@@ -277,7 +280,8 @@ public class AppleRotate : MonoBehaviour {
               transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
               transitionClouds.DOMove(trnasitionCloudsEnd.position, 15f);
             });
-         });
+            });
+        });
         });
      });
     });
