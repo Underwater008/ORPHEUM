@@ -126,6 +126,7 @@ public class AppleRotate : MonoBehaviour {
   }
 
   public void StartTheFirstStage() {
+    GameObject.FindObjectOfType<Rotate_self>().speed = 0;
     GameManager.Instance.isGameStart = false;
     Cursor.lockState = CursorLockMode.Confined;
     Cursor.visible = false;
