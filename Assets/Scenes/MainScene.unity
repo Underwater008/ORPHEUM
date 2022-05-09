@@ -5938,6 +5938,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 254738322}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &61542754
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7417,6 +7418,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 1520911030}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &120751084
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16933,6 +16935,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 568104465}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!114 &244598437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21433,6 +21436,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 254738322}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &481975107
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30471,6 +30475,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 1520911030}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &667313472
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31201,6 +31206,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 568104465}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!114 &697724840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48243,6 +48249,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 254738322}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &1072184798
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48347,6 +48354,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 1520911030}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &1080965064
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54147,6 +54155,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 254738322}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &1362624194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54707,6 +54716,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 1520911030}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!64 &1376430059
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -80775,6 +80785,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 568104465}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!114 &1784694000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91572,6 +91583,7 @@ MonoBehaviour:
   distance: 13.5
   manager: {fileID: 568104465}
   hasbeenLocked: 1
+  soundManager: {fileID: 1201539280}
 --- !u!114 &2080529749
 MonoBehaviour:
   m_ObjectHideFlags: 0
