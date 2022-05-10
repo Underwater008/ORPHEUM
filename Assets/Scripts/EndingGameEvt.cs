@@ -37,9 +37,9 @@ public class EndingGameEvt : MonoBehaviour
          Camera.main.transform.DOMove(puzzleSequenceControl.cameraOriginalPos.position, 1).OnComplete(()=>{
 
           endingDissovle.gameObject.SetActive(true);
-          AppleLowPoly.transform.SetParent(puzzleSequenceControl.transform.parent);
+           AppleLowPoly.transform.DOMove(new Vector3(0, 0, 0), 0);
            //AppleLowPoly.transform.DOLocalMoveY(15f,1f).OnComplete(()=>{
-           puzzleSequenceControl.gameObject.transform.DOMove(new Vector3(0, 0, 0), 0);
+           puzzleSequenceControl.gameObject.SetActive(false);
             AppleLowPoly.transform.DORotate(new Vector3(0,360,0),5f).SetRelative(true).SetEase(Ease.Linear).SetLoops(-1,LoopType.Restart);
 
             UIManager.creditsPanel.gameObject.SetActive(true);

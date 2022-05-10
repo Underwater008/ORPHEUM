@@ -14154,7 +14154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2953242042628108675, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2953242042628108675, guid: fa935806d6396ba40878f8c8cf0fe459, type: 3}
       propertyPath: m_LocalScale.x
@@ -17764,7 +17764,7 @@ Transform:
   m_LocalScale: {x: 0.008762547, y: 0.008762547, z: 0.008762547}
   m_Children: []
   m_Father: {fileID: 1791687141}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277745278
 GameObject:
@@ -28140,7 +28140,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1791687141}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1081515785, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: UIManager
@@ -28160,23 +28160,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.043812733
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.043812737
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.043812737
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 148.32999
       objectReference: {fileID: 0}
     - target: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28216,11 +28216,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
---- !u!4 &574790325 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4387727491460383437, guid: 884f93ce64a58ed45bd52181876c0524, type: 3}
-  m_PrefabInstance: {fileID: 574790324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583883286
 GameObject:
   m_ObjectHideFlags: 0
@@ -33930,7 +33925,7 @@ Transform:
   m_LocalScale: {x: 0.008762547, y: 0.008762547, z: 0.008762547}
   m_Children: []
   m_Father: {fileID: 1791687141}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842622941
 GameObject:
@@ -62590,7 +62585,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d945c681c4504df439962c1a6f33d8af, type: 2}
     - target: {fileID: 6688703465276863721, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6688703465276863721, guid: c698b8856f9f81f4781e26fbc36e2a3e, type: 3}
       propertyPath: m_LocalScale.x
@@ -80863,7 +80858,6 @@ Transform:
   - {fileID: 228340269}
   - {fileID: 354117355}
   - {fileID: 543450652271811868}
-  - {fileID: 574790325}
   - {fileID: 276724738}
   - {fileID: 1500491076}
   - {fileID: 206319651}
@@ -84259,7 +84253,7 @@ Transform:
   - {fileID: 138419874}
   - {fileID: 2098951121}
   m_Father: {fileID: 1791687141}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
 --- !u!114 &1975251555
 MonoBehaviour:
@@ -104158,7 +104152,6 @@ GameObject:
   - component: {fileID: 543450652271811868}
   - component: {fileID: 3469287838402646713}
   - component: {fileID: 1711813854339688051}
-  - component: {fileID: 919132148335495079}
   m_Layer: 0
   m_Name: Ending Seq Cube
   m_TagString: Untagged
@@ -104166,22 +104159,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919132148335495079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148335495078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddb4a45e28b0e045bbc979cf2dfe963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzleSequenceControl: {fileID: 0}
-  UIManager: {fileID: 0}
-  AppleLowPoly: {fileID: 0}
-  endingDissovle: {fileID: 0}
 --- !u!1 &919132148343733914
 GameObject:
   m_ObjectHideFlags: 0

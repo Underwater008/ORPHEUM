@@ -33,11 +33,17 @@ public class DecayCubePart : MonoBehaviour
   }
   }
   private void OnMouseDown() {
-
+    if (GameManager.Instance.isGameStart == false) {
+      return;
+    }
     soundManager.PlayAudioClick();
 
   }
     private void OnMouseUp() {
+
+    if (GameManager.Instance.isGameStart == false) {
+      return;
+    }
 
     puzzle1Control.SetActive(true);
     puzzle2Control.SetActive(true);
