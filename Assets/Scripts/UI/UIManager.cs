@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
   public GameObject creditsButton;
   public GameObject pauseButton;
   public GameObject soundPanel;
+  public GameObject instructions;
+  public GameObject instructionsBack;
 
   //UI FANCY SHAMNCIES 
   [SerializeField] private CanvasGroup PauseGroup;
@@ -121,7 +123,18 @@ public class UIManager : MonoBehaviour
    
 
   }
-  
+
+  public void Instructions() {
+    //GameManager.Instance.isGameStart = false;
+    instructions.SetActive(true);
+    instructionsBack.SetActive(true);
+
+  }
+
+  public void InstructionsBack() {
+    instructions.SetActive(false);
+    instructionsBack.SetActive(false);
+  }
 //PLAY AND PAUSE
   public void PauseGame() {
     GameManager.Instance.isGameStart = false;
