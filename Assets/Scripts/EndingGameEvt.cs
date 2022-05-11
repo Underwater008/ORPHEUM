@@ -32,7 +32,7 @@ public class EndingGameEvt : MonoBehaviour
 
 
         // this.transform.localScale =Vector3.zero;
-        Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
          Camera.main.transform.DOMove(puzzleSequenceControl.cameraOriginalPos.position, 1).OnComplete(()=>{
 
           endingDissovle.gameObject.SetActive(true);
