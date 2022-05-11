@@ -26,8 +26,6 @@ public class EndingGameEvt : MonoBehaviour
 
     public void EndGameAction(){
     Cursor.visible=false;
-   puzzleSequenceControl.puzzle3Control.SetActive(false);
-   puzzleSequenceControl.puzzle3DragManager.enabled=false;
    puzzleSequenceControl.thirdDoor.DOMove(puzzleSequenceControl.thirdDoorOGPos.position,2).OnComplete(()=>{
 
       puzzleSequenceControl.thirdDoor.DOMoveZ(puzzleSequenceControl.thirdDoorOGPos.position.z+2f,1f).OnComplete(()=>{

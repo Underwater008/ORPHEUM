@@ -226,6 +226,8 @@ public class PuzzleSequenceControl : MonoBehaviour {
   }
 
   public void StartTheForthStage() {
+    puzzle3Control.SetActive(false);
+    puzzle3DragManager.enabled = false;
     soundM.PlayPuzzleCompleteChime();
     soundM.PlayDoorOpenAudio();
     puzzle3VFX.Play();
