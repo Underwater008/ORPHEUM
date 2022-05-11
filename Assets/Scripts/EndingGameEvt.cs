@@ -29,9 +29,10 @@ public class EndingGameEvt : MonoBehaviour
    puzzleSequenceControl.thirdDoor.DOMove(puzzleSequenceControl.thirdDoorOGPos.position,2).OnComplete(()=>{
 
       puzzleSequenceControl.thirdDoor.DOMoveZ(puzzleSequenceControl.thirdDoorOGPos.position.z+2f,1f).OnComplete(()=>{
-    
-          
-          // this.transform.localScale =Vector3.zero;
+
+
+        // this.transform.localScale =Vector3.zero;
+        Camera.main.transform.DORotate(new Vector3(0, 0, 0), 1);
          Camera.main.transform.DOMove(puzzleSequenceControl.cameraOriginalPos.position, 1).OnComplete(()=>{
 
           endingDissovle.gameObject.SetActive(true);
