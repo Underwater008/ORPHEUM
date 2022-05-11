@@ -248,10 +248,12 @@ public class DecayPuzzleControl : MonoBehaviour {
       puzzle3.SetActive(false);
       thirdDoorOGPos.DOMoveZ(thirdDoorOGPos.position.z + 2f, 0).OnComplete(() => {
         thirdDoor.DOMoveZ(thirdDoor.position.z + 2f, 1).OnComplete(() => {
-          Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1);
+        Camera.main.transform.DORotate(new Vector3(20, 0, 0), 1).OnComplete(() => {
+          //soundM.PlayDoorOpenAudio();
+
+        });
           BlendManager.Instance.ChangeTheTreeToDecay();
           Camera.main.transform.DOMove(cameraOriginalPos.position, 1).OnComplete(() => {
-            soundM.PlayDoorOpenAudio();
             isRotate = true;
             transitionClouds.DOMove(trnasitionCloudsStart.position, 0);
             CloudTrigger.gameObject.GetComponent<BoxCollider>().enabled = true;
